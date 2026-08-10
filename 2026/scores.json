@@ -1,0 +1,21 @@
+{
+    "weeks": {
+        "1": {
+            "players": {
+                "1": {
+                    "total": 10.0,
+                    "breakdown": [
+                        {
+                            "name": "Rule 1",
+                            "score": 4.5
+                        },
+                        {
+                            "name": "Rule 2",
+                            "score": 5.5
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -154,8 +154,10 @@
             <span>Chaos League</span>
         </div>
         <div class="header-controls">
-            <label class="week-label" for="weekSelect">Week</label>
-            <select id="weekSelect" class="week-select" aria-label="Select week">
+            <select id="yearSelect" class="year-select" aria-label="Select Year">
+                <option value="">Loading…</option>
+            </select>
+            <select id="weekSelect" class="week-select" aria-label="Select Week">
                 <option value="">Loading…</option>
             </select>
             <button id="btnRefresh" class="btn-refresh" title="Refresh data" aria-label="Refresh data">↻ Refresh</button>
@@ -191,6 +193,7 @@
             let teamsData = null;      // { teams: { "id": { name, owner?, roster } } }
             let scoresData = null;     // { weeks: { "1": { players: {...} } } }
             let selectedWeek = null;
+            let selectedYear = null;
             let expandedMatchupIndex = null;
             let allWeeks = [];
 
@@ -211,9 +214,9 @@
 
             async function loadAllData() {
                 const [schedule, teams, scores] = await Promise.all([
-                    fetchJSON('schedule.json'),
-                    fetchJSON('teams.json'),
-                    fetchJSON('scores.json')
+                    fetchJSON(selectedYear + '/schedule.json'),
+                    fetchJSON(selectedYear + '/teams.json'),
+                    fetchJSON(selectedYear + '/scores.json')
                 ]);
                 return { schedule, teams, scores };
             }
@@ -492,9 +495,25 @@
                 }
             }
 
+            function populateYearSelect() {
+                yearSelect.innerHTML = '';
+                var year = 2023;
+                const currentYear = new Date().getFullYear();
+                selectedYear = selectedYear || currentYear;
+                while (year <= currentYear) {
+                    const opt = document.createElement('option');
+                    opt.value = year;
+                    opt.textContent = year;
+                    if (year === selectedYear) opt.selected = true;
+                    yearSelect.appendChild(opt);
+                    year++;
+                }
+            }
+
             function populateWeekSelect() {
                 weekSelect.innerHTML = '';
                 if (allWeeks.length === 0) { weekSelect.innerHTML = '<option value="">No weeks</option>'; return; }
+                selectedWeek = selectedWeek || determineCurrentWeek(scheduleData);
                 allWeeks.forEach(w => {
                     const opt = document.createElement('option');
                     opt.value = w;
@@ -507,6 +526,13 @@
             // ──────────────────────────────────────
             // 🎧 Event listeners
             // ──────────────────────────────────────
+            yearSelect.addEventListener('change', function() {
+                selectedYear = parseInt(this.value, 10);
+                expandedMatchupIndex = null;
+                renderHomeView();
+                window.scrollTo({top:0,behavior:'smooth'});
+            });
+
             weekSelect.addEventListener('change', function() {
                 selectedWeek = this.value;
                 expandedMatchupIndex = null;
@@ -524,7 +550,6 @@
                         if (!isNaN(na) && !isNaN(nb)) return na - nb;
                         return a.localeCompare(b, undefined, {numeric:true});
                     });
-                    selectedWeek = determineCurrentWeek(scheduleData);
                     populateWeekSelect();
                     renderHomeView();
                     window.scrollTo({top:0,behavior:'smooth'});
