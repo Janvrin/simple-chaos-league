@@ -48,7 +48,12 @@
         .header-brand { display: flex; align-items: center; gap: 10px; font-size: 1.4rem; font-weight: 700; letter-spacing: -0.3px; }
         .header-brand .icon { width: 38px; height: 38px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
         .header-controls { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-        .week-label { font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.9; white-space: nowrap; }
+        .year-select {
+            appearance: none; background: rgba(255,255,255,0.13); color: #fff; border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 8px; padding: 10px 36px 10px 14px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: var(--transition);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 12px center; min-width: 100px;
+        }
         .week-select {
             appearance: none; background: rgba(255,255,255,0.13); color: #fff; border: 2px solid rgba(255,255,255,0.3);
             border-radius: 8px; padding: 10px 36px 10px 14px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: var(--transition);
@@ -475,6 +480,7 @@
             async function initialize() {
                 mainContent.innerHTML = `<div class="status-message"><div class="spinner"></div><p>Loading league data…</p><p style="font-size:0.8rem;color:#aaa;">Fetching from GitHub repo</p></div>`;
                 try {
+                    populateYearSelect();
                     const data = await loadAllData();
                     scheduleData = data.schedule;
                     teamsData = data.teams;
@@ -485,7 +491,6 @@
                         if (!isNaN(na) && !isNaN(nb)) return na - nb;
                         return a.localeCompare(b, undefined, {numeric:true});
                     });
-                    selectedWeek = determineCurrentWeek(scheduleData);
                     populateWeekSelect();
                     renderHomeView();
                 } catch (err) {
@@ -529,6 +534,14 @@
             yearSelect.addEventListener('change', function() {
                 selectedYear = parseInt(this.value, 10);
                 expandedMatchupIndex = null;
+                loadAllData().then(data => {
+                    scheduleData = data.schedule;
+                    teamsData = data.teams;
+                    scoresData = data.scores;
+                }).catch(err => {
+                    console.error(err);
+                    mainContent.innerHTML = `<div class="error-box"><p><strong>⚠️ Unable to load league data</strong></p><p style="font-size:0.85rem;margin-top:4px;">${escapeHTML(err.message)}</p><p style="font-size:0.8rem;color:#888;margin-top:6px;">Check repo settings and file paths:<br><code style="word-break:break-all;">${RAW_BASE}schedule.json</code></p><button onclick="location.reload()">🔄 Retry</button></div>`;
+                });
                 renderHomeView();
                 window.scrollTo({top:0,behavior:'smooth'});
             });
@@ -543,6 +556,7 @@
             btnRefresh.addEventListener('click', async function() {
                 btnRefresh.textContent = '⟳ Loading…'; btnRefresh.disabled = true;
                 try {
+                    populateYearSelect();
                     const data = await loadAllData();
                     scheduleData = data.schedule; teamsData = data.teams; scoresData = data.scores;
                     allWeeks = Object.keys(scheduleData?.weeks || {}).sort((a,b) => {
