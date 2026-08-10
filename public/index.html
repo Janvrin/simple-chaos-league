@@ -599,12 +599,6 @@
                     scheduleData = data.schedule;
                     teamsData = data.teams;
                     scoresData = data.scores;
-
-                    allWeeks = Object.keys(scheduleData?.weeks || {}).sort((a,b) => {
-                        const na = parseInt(a,10), nb = parseInt(b,10);
-                        if (!isNaN(na) && !isNaN(nb)) return na - nb;
-                        return a.localeCompare(b, undefined, {numeric:true});
-                    });
                     populateWeekSelect();
                     renderHomeView();
                 } catch (err) {
@@ -630,6 +624,11 @@
             }
 
             function populateWeekSelect() {
+                allWeeks = Object.keys(scheduleData?.weeks || {}).sort((a,b) => {
+                    const na = parseInt(a,10), nb = parseInt(b,10);
+                    if (!isNaN(na) && !isNaN(nb)) return na - nb;
+                    return a.localeCompare(b, undefined, {numeric:true});
+                });
                 weekSelect.innerHTML = '';
                 if (allWeeks.length === 0) { weekSelect.innerHTML = '<option value="">No weeks</option>'; return; }
                 selectedWeek = selectedWeek || determineCurrentWeek(scheduleData);
@@ -652,6 +651,7 @@
                     scheduleData = data.schedule;
                     teamsData = data.teams;
                     scoresData = data.scores;
+                    populateWeekSelect();
                     renderHomeView();
                     window.scrollTo({top:0,behavior:'smooth'});
                 }).catch(err => {

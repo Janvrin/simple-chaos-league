@@ -1,50 +1,1652 @@
 {
-    "teams": {
-        "1": {
-            "name": "Jaxon's Team",
-            "owner": "Jaxon",
-            "roster": [
-                {
-                    "id": "1",
-                    "name": "Player 1",
-                    "position": "QB"
-                }
-            ]
+  "teams": {
+    "1": {
+      "name": "ChucJo",
+      "owner": "ChucJo",
+      "roster": [
+        {
+          "name": "Matthew Golden",
+          "id": "12501"
         },
-        "2": {
-            "name": "Mason's Team",
-            "owner": "Mason",
-            "roster": []
+        {
+          "name": "Tez Johnson",
+          "id": "12485"
         },
-        "3": {
-            "name": "Mark's Team",
-            "owner": "Mark",
-            "roster": []
+        {
+          "name": "Kyler Murray",
+          "id": "5849"
         },
-        "4": {
-            "name": "Tyler's Team",
-            "owner": "Tyler",
-            "roster": []
+        {
+          "name": "DeAndre Hopkins",
+          "id": "1426"
         },
-        "5": {
-            "name": "Jacob's Team",
-            "owner": "Jacob",
-            "roster": []
+        {
+          "name": "Darren Waller",
+          "id": "2505"
         },
-        "6": {
-            "name": "Payton's Team",
-            "owner": "Payton",
-            "roster": []
+        {
+          "name": "Travis Kelce",
+          "id": "1466"
         },
-        "7": {
-            "name": "Matt's Team",
-            "owner": "Matt",
-            "roster": []
+        {
+          "name": "Myles Price",
+          "id": "13075"
         },
-        "8": {
-            "name": "Dylan's Team",
-            "owner": "Dylan",
-            "roster": []
+        {
+          "name": "Nikko Remigio",
+          "id": "11320"
+        },
+        {
+          "name": "Kareem Hunt",
+          "id": "4098"
+        },
+        {
+          "name": "Courtland Sutton",
+          "id": "5045"
+        },
+        {
+          "name": "Xavier Smith",
+          "id": "11168"
+        },
+        {
+          "name": "Zay Flowers",
+          "id": "9997"
+        },
+        {
+          "name": "Adonai Mitchell",
+          "id": "11625"
+        },
+        {
+          "name": "Quentin Johnston",
+          "id": "9754"
+        },
+        {
+          "name": "Bo Melton",
+          "id": "8204"
+        },
+        {
+          "name": "Keon Coleman",
+          "id": "11637"
+        },
+        {
+          "name": "Ty Chandler",
+          "id": "8230"
+        },
+        {
+          "name": "Hassan Haskins",
+          "id": "8123"
+        },
+        {
+          "name": "Romeo Doubs",
+          "id": "8121"
+        },
+        {
+          "name": "Cam Skattebo",
+          "id": "12481"
+        },
+        {
+          "name": "Rashod Bateman",
+          "id": "7571"
+        },
+        {
+          "name": "David Montgomery",
+          "id": "5892"
+        },
+        {
+          "name": "Travis Etienne",
+          "id": "7543"
+        },
+        {
+          "name": "Bo Nix",
+          "id": "11563"
+        },
+        {
+          "name": "Russell Wilson",
+          "id": "1234"
+        },
+        {
+          "name": "Jameis Winston",
+          "id": "2306"
+        },
+        {
+          "name": "George Kittle",
+          "id": "4217"
+        },
+        {
+          "name": "Kameron Johnson",
+          "id": "11994"
+        },
+        {
+          "name": "Los Angeles Rams",
+          "id": "LAR"
+        },
+        {
+          "name": "Ollie Gordon",
+          "id": "12495"
+        },
+        {
+          "name": "Jacory Croskey-Merritt",
+          "id": "12533"
+        },
+        {
+          "name": "Evan Engram",
+          "id": "4066"
+        },
+        {
+          "name": "Jaxson Dart",
+          "id": "12508"
+        },
+        {
+          "name": "Alec Pierce",
+          "id": "8142"
+        },
+        {
+          "name": "Amari Cooper",
+          "id": "2309"
+        },
+        {
+          "name": "Washington Commanders",
+          "id": "WAS"
+        },
+        {
+          "name": "Keaton Mitchell",
+          "id": "9511"
+        },
+        {
+          "name": "Austin Ekeler",
+          "id": "4663"
+        },
+        {
+          "name": "Craig Reynolds",
+          "id": "6659"
+        },
+        {
+          "name": "Britain Covey",
+          "id": "8414"
+        },
+        {
+          "name": "Jalen Tolbert",
+          "id": "8117"
+        },
+        {
+          "name": "Calvin Austin",
+          "id": "8125"
+        },
+        {
+          "name": "Chris Godwin",
+          "id": "4037"
+        },
+        {
+          "name": "Ladd McConkey",
+          "id": "11635"
+        },
+        {
+          "name": "Jalen Hurts",
+          "id": "6904"
+        },
+        {
+          "name": "Baltimore Ravens",
+          "id": "BAL"
+        },
+        {
+          "name": "Cade Otton",
+          "id": "8111"
+        },
+        {
+          "name": "Jayden Reed",
+          "id": "10222"
+        },
+        {
+          "name": "James Cook",
+          "id": "8138"
+        },
+        {
+          "name": "Joe Flacco",
+          "id": "19"
         }
+      ]
+    },
+    "2": {
+      "name": "HolyBean",
+      "owner": "HolyBean",
+      "roster": [
+        {
+          "name": "Riley Patterson",
+          "id": "7922"
+        },
+        {
+          "name": "Kansas City Chiefs",
+          "id": "KC"
+        },
+        {
+          "name": "Jermaine Burton",
+          "id": "11640"
+        },
+        {
+          "name": "Dalton Schultz",
+          "id": "5001"
+        },
+        {
+          "name": "Brock Bowers",
+          "id": "11604"
+        },
+        {
+          "name": "Josh Jacobs",
+          "id": "5850"
+        },
+        {
+          "name": "Zamir White",
+          "id": "8139"
+        },
+        {
+          "name": "Greg Dortch",
+          "id": "5970"
+        },
+        {
+          "name": "Ka'imi Fairbairn",
+          "id": "3451"
+        },
+        {
+          "name": "Joey Slye",
+          "id": "6528"
+        },
+        {
+          "name": "Josh Allen",
+          "id": "4984"
+        },
+        {
+          "name": "Chris Olave",
+          "id": "8144"
+        },
+        {
+          "name": "Tennessee Titans",
+          "id": "TEN"
+        },
+        {
+          "name": "Ja'Tavion Sanders",
+          "id": "11600"
+        },
+        {
+          "name": "Jaylen Warren",
+          "id": "8228"
+        },
+        {
+          "name": "Kyren Williams",
+          "id": "8150"
+        },
+        {
+          "name": "Brian Thomas",
+          "id": "11631"
+        },
+        {
+          "name": "Rasheen Ali",
+          "id": "11570"
+        },
+        {
+          "name": "Tyjae Spears",
+          "id": "9508"
+        },
+        {
+          "name": "Tetairoa McMillan",
+          "id": "12526"
+        },
+        {
+          "name": "Trevor Etienne",
+          "id": "12531"
+        },
+        {
+          "name": "Michael Penix",
+          "id": "11559"
+        },
+        {
+          "name": "Marvin Mims",
+          "id": "9494"
+        },
+        {
+          "name": "De'Von Achane",
+          "id": "9226"
+        },
+        {
+          "name": "Rashee Rice",
+          "id": "10229"
+        },
+        {
+          "name": "Tyrone Tracy",
+          "id": "11655"
+        },
+        {
+          "name": "Tyler Conklin",
+          "id": "5133"
+        },
+        {
+          "name": "Trevor Lawrence",
+          "id": "7523"
+        },
+        {
+          "name": "Hunter Henry",
+          "id": "3214"
+        },
+        {
+          "name": "Jason Sanders",
+          "id": "5119"
+        },
+        {
+          "name": "Gunner Olszewski",
+          "id": "6699"
+        },
+        {
+          "name": "Chimere Dike",
+          "id": "12540"
+        },
+        {
+          "name": "Tampa Bay Buccaneers",
+          "id": "TB"
+        },
+        {
+          "name": "RJ Harvey",
+          "id": "12489"
+        },
+        {
+          "name": "Julius Chestnut",
+          "id": "8254"
+        },
+        {
+          "name": "Blake Corum",
+          "id": "11586"
+        },
+        {
+          "name": "Deebo Samuel",
+          "id": "5872"
+        },
+        {
+          "name": "Brashard Smith",
+          "id": "12455"
+        },
+        {
+          "name": "Dontayvion Wicks",
+          "id": "9486"
+        },
+        {
+          "name": "Dyami Brown",
+          "id": "7587"
+        },
+        {
+          "name": "Ja'Marr Chase",
+          "id": "7564"
+        },
+        {
+          "name": "Kalif Raymond",
+          "id": "3634"
+        },
+        {
+          "name": "Matt Gay",
+          "id": "6083"
+        },
+        {
+          "name": "Geno Smith",
+          "id": "1373"
+        },
+        {
+          "name": "Dylan Laube",
+          "id": "11574"
+        },
+        {
+          "name": "Charlie Jones",
+          "id": "10228"
+        },
+        {
+          "name": "Justice Hill",
+          "id": "5995"
+        },
+        {
+          "name": "Khalil Shakir",
+          "id": "8134"
+        },
+        {
+          "name": "Jaleel McLaughlin",
+          "id": "11439"
+        },
+        {
+          "name": "Kayshon Boutte",
+          "id": "9504"
+        }
+      ]
+    },
+    "3": {
+      "name": "SurfaceHayes",
+      "owner": "SurfaceHayes",
+      "roster": [
+        {
+          "name": "Ray Davis",
+          "id": "11575"
+        },
+        {
+          "name": "KeAndre Lambert-Smith",
+          "id": "12670"
+        },
+        {
+          "name": "Jake Bates",
+          "id": "11539"
+        },
+        {
+          "name": "Graham Gano",
+          "id": "503"
+        },
+        {
+          "name": "Alvin Kamara",
+          "id": "4035"
+        },
+        {
+          "name": "Roschon Johnson",
+          "id": "10235"
+        },
+        {
+          "name": "Chuba Hubbard",
+          "id": "7594"
+        },
+        {
+          "name": "Ty Johnson",
+          "id": "6039"
+        },
+        {
+          "name": "New York Giants",
+          "id": "NYG"
+        },
+        {
+          "name": "San Francisco 49ers",
+          "id": "SF"
+        },
+        {
+          "name": "Philadelphia Eagles",
+          "id": "PHI"
+        },
+        {
+          "name": "AJ Barner",
+          "id": "11603"
+        },
+        {
+          "name": "Mason Taylor",
+          "id": "12498"
+        },
+        {
+          "name": "Kenny Gainwell",
+          "id": "7567"
+        },
+        {
+          "name": "Jaylin Noel",
+          "id": "12536"
+        },
+        {
+          "name": "Dameon Pierce",
+          "id": "8129"
+        },
+        {
+          "name": "Jordan Watkins",
+          "id": "12634"
+        },
+        {
+          "name": "Dont'e Thornton",
+          "id": "12541"
+        },
+        {
+          "name": "Cam Little",
+          "id": "11786"
+        },
+        {
+          "name": "Derius Davis",
+          "id": "10234"
+        },
+        {
+          "name": "Chris Boswell",
+          "id": "1945"
+        },
+        {
+          "name": "KaVontae Turpin",
+          "id": "8917"
+        },
+        {
+          "name": "Will Reichard",
+          "id": "11792"
+        },
+        {
+          "name": "Jaylin Lane",
+          "id": "12641"
+        },
+        {
+          "name": "George Holani",
+          "id": "12048"
+        },
+        {
+          "name": "Tony Pollard",
+          "id": "5967"
+        },
+        {
+          "name": "Will Shipley",
+          "id": "11577"
+        },
+        {
+          "name": "DeAndre Carter",
+          "id": "2750"
+        },
+        {
+          "name": "Velus Jones",
+          "id": "8223"
+        },
+        {
+          "name": "Kaleb Johnson",
+          "id": "12504"
+        },
+        {
+          "name": "Elijah Moore",
+          "id": "7596"
+        },
+        {
+          "name": "Theo Johnson",
+          "id": "11597"
+        },
+        {
+          "name": "Tucker Kraft",
+          "id": "9484"
+        },
+        {
+          "name": "Nico Collins",
+          "id": "7569"
+        },
+        {
+          "name": "Ricky Pearsall",
+          "id": "11638"
+        },
+        {
+          "name": "Nick Chubb",
+          "id": "4988"
+        },
+        {
+          "name": "Isaac Guerendo",
+          "id": "11651"
+        },
+        {
+          "name": "Sean Tucker",
+          "id": "9506"
+        },
+        {
+          "name": "James Conner",
+          "id": "4137"
+        },
+        {
+          "name": "Baker Mayfield",
+          "id": "4892"
+        },
+        {
+          "name": "Aaron Rodgers",
+          "id": "96"
+        },
+        {
+          "name": "Jamari Thrash",
+          "id": "11633"
+        },
+        {
+          "name": "Zach Ertz",
+          "id": "1339"
+        },
+        {
+          "name": "Rome Odunze",
+          "id": "11620"
+        },
+        {
+          "name": "Devin Singletary",
+          "id": "6130"
+        },
+        {
+          "name": "Dak Prescott",
+          "id": "3294"
+        },
+        {
+          "name": "LaJohntay Wester",
+          "id": "12699"
+        },
+        {
+          "name": "Oronde Gadsden",
+          "id": "12493"
+        },
+        {
+          "name": "Jerry Jeudy",
+          "id": "6783"
+        },
+        {
+          "name": "CeeDee Lamb",
+          "id": "6786"
+        }
+      ]
+    },
+    "4": {
+      "name": "bowdly",
+      "owner": "bowdly",
+      "roster": [
+        {
+          "name": "Jalen Royals",
+          "id": "12505"
+        },
+        {
+          "name": "Javonte Williams",
+          "id": "7588"
+        },
+        {
+          "name": "Drake Maye",
+          "id": "11564"
+        },
+        {
+          "name": "Jonathan Taylor",
+          "id": "6813"
+        },
+        {
+          "name": "Miles Sanders",
+          "id": "6151"
+        },
+        {
+          "name": "Daniel Carlson",
+          "id": "5095"
+        },
+        {
+          "name": "Michael Mayer",
+          "id": "9482"
+        },
+        {
+          "name": "Tyler Loop",
+          "id": "12711"
+        },
+        {
+          "name": "Cincinnati Bengals",
+          "id": "CIN"
+        },
+        {
+          "name": "Najee Harris",
+          "id": "7528"
+        },
+        {
+          "name": "Ray-Ray McCloud",
+          "id": "5096"
+        },
+        {
+          "name": "DJ Giddens",
+          "id": "12471"
+        },
+        {
+          "name": "Justin Jefferson",
+          "id": "6794"
+        },
+        {
+          "name": "Elijah Arroyo",
+          "id": "12521"
+        },
+        {
+          "name": "Dillon Gabriel",
+          "id": "12486"
+        },
+        {
+          "name": "Aaron Jones",
+          "id": "4199"
+        },
+        {
+          "name": "Terry McLaurin",
+          "id": "5927"
+        },
+        {
+          "name": "Cole Kmet",
+          "id": "6826"
+        },
+        {
+          "name": "Dalton Kincaid",
+          "id": "10236"
+        },
+        {
+          "name": "Jameson Williams",
+          "id": "8148"
+        },
+        {
+          "name": "Green Bay Packers",
+          "id": "GB"
+        },
+        {
+          "name": "New Orleans Saints",
+          "id": "NO"
+        },
+        {
+          "name": "Jack Bech",
+          "id": "12483"
+        },
+        {
+          "name": "Jared Goff",
+          "id": "3163"
+        },
+        {
+          "name": "Xavier Worthy",
+          "id": "11624"
+        },
+        {
+          "name": "Joe Burrow",
+          "id": "6770"
+        },
+        {
+          "name": "Jaydon Blue",
+          "id": "12457"
+        },
+        {
+          "name": "Mike Gesicki",
+          "id": "4993"
+        },
+        {
+          "name": "Rashid Shaheed",
+          "id": "8676"
+        },
+        {
+          "name": "Josh Williams",
+          "id": "12787"
+        },
+        {
+          "name": "Jimmy Horn",
+          "id": "12523"
+        },
+        {
+          "name": "Tutu Atwell",
+          "id": "7562"
+        },
+        {
+          "name": "Tyreek Hill",
+          "id": "3321"
+        },
+        {
+          "name": "Tahj Brooks",
+          "id": "12543"
+        },
+        {
+          "name": "Tre' Harris",
+          "id": "12509"
+        },
+        {
+          "name": "Andre Szmyt",
+          "id": "11261"
+        },
+        {
+          "name": "Tyler Shough",
+          "id": "12545"
+        },
+        {
+          "name": "Jalen McMillan",
+          "id": "11618"
+        },
+        {
+          "name": "New York Jets",
+          "id": "NYJ"
+        },
+        {
+          "name": "Luther Burden",
+          "id": "12519"
+        },
+        {
+          "name": "Seattle Seahawks",
+          "id": "SEA"
+        },
+        {
+          "name": "Dustin Hopkins",
+          "id": "1348"
+        },
+        {
+          "name": "Elijah Mitchell",
+          "id": "7561"
+        },
+        {
+          "name": "T.J. Hockenson",
+          "id": "5844"
+        },
+        {
+          "name": "Daniel Jones",
+          "id": "5870"
+        },
+        {
+          "name": "Harrison Butker",
+          "id": "4227"
+        },
+        {
+          "name": "Rachaad White",
+          "id": "8136"
+        },
+        {
+          "name": "Noah Gray",
+          "id": "7828"
+        },
+        {
+          "name": "Kyle Pitts",
+          "id": "7553"
+        },
+        {
+          "name": "Bucky Irving",
+          "id": "11584"
+        }
+      ]
+    },
+    "5": {
+      "name": "LumberJohn95",
+      "owner": "LumberJohn95",
+      "roster": [
+        {
+          "name": "Minnesota Vikings",
+          "id": "MIN"
+        },
+        {
+          "name": "Breece Hall",
+          "id": "8155"
+        },
+        {
+          "name": "DK Metcalf",
+          "id": "5846"
+        },
+        {
+          "name": "Michael Pittman",
+          "id": "6819"
+        },
+        {
+          "name": "Jaylen Wright",
+          "id": "11643"
+        },
+        {
+          "name": "Artavis Pierce",
+          "id": "7227"
+        },
+        {
+          "name": "Michael Badgley",
+          "id": "5230"
+        },
+        {
+          "name": "Sam Hartman",
+          "id": "11558"
+        },
+        {
+          "name": "Jonnu Smith",
+          "id": "4144"
+        },
+        {
+          "name": "De'Lance Turner",
+          "id": "5464"
+        },
+        {
+          "name": "Brandon Aiyuk",
+          "id": "6803"
+        },
+        {
+          "name": "Jayden Higgins",
+          "id": "12484"
+        },
+        {
+          "name": "Mark Andrews",
+          "id": "5012"
+        },
+        {
+          "name": "Xavier Legette",
+          "id": "11626"
+        },
+        {
+          "name": "Joshua Palmer",
+          "id": "7670"
+        },
+        {
+          "name": "Miami Dolphins",
+          "id": "MIA"
+        },
+        {
+          "name": "Pat Bryant",
+          "id": "12492"
+        },
+        {
+          "name": "Damien Martinez",
+          "id": "12462"
+        },
+        {
+          "name": "Quinshon Judkins",
+          "id": "12512"
+        },
+        {
+          "name": "Brock Purdy",
+          "id": "8183"
+        },
+        {
+          "name": "Trevon Grimes",
+          "id": "7949"
+        },
+        {
+          "name": "Cooper Kupp",
+          "id": "4039"
+        },
+        {
+          "name": "Elic Ayomanor",
+          "id": "12499"
+        },
+        {
+          "name": "Marquise Brown",
+          "id": "5848"
+        },
+        {
+          "name": "Raheem Mostert",
+          "id": "2749"
+        },
+        {
+          "name": "Myron Mitchell",
+          "id": "7578"
+        },
+        {
+          "name": "Tyler Lockett",
+          "id": "2374"
+        },
+        {
+          "name": "Dallas Goedert",
+          "id": "5022"
+        },
+        {
+          "name": "DJ Moore",
+          "id": "4983"
+        },
+        {
+          "name": "Saquon Barkley",
+          "id": "4866"
+        },
+        {
+          "name": "Justin Fields",
+          "id": "7591"
+        },
+        {
+          "name": "Calvin Ridley",
+          "id": "4981"
+        },
+        {
+          "name": "Puka Nacua",
+          "id": "9493"
+        },
+        {
+          "name": "Derrick Henry",
+          "id": "3198"
+        },
+        {
+          "name": "Mike Evans",
+          "id": "2216"
+        },
+        {
+          "name": "Woody Marks",
+          "id": "12474"
+        },
+        {
+          "name": "Jake Elliott",
+          "id": "4195"
+        },
+        {
+          "name": "Sam LaPorta",
+          "id": "10859"
+        },
+        {
+          "name": "Tee Higgins",
+          "id": "6801"
+        },
+        {
+          "name": "Shedeur Sanders",
+          "id": "12524"
+        },
+        {
+          "name": "Arizona Cardinals",
+          "id": "ARI"
+        },
+        {
+          "name": "Trey Benson",
+          "id": "11589"
+        },
+        {
+          "name": "Isiah Pacheco",
+          "id": "8205"
+        },
+        {
+          "name": "Brian Robinson",
+          "id": "8154"
+        },
+        {
+          "name": "Tua Tagovailoa",
+          "id": "6768"
+        },
+        {
+          "name": "Deontay Burnett",
+          "id": "5290"
+        },
+        {
+          "name": "Younghoe Koo",
+          "id": "4666"
+        },
+        {
+          "name": "Jaylen Waddle",
+          "id": "7526"
+        },
+        {
+          "name": "Matthew Stafford",
+          "id": "421"
+        },
+        {
+          "name": "Elijah Wellman",
+          "id": "5296"
+        }
+      ]
+    },
+    "6": {
+      "name": "falcon695",
+      "owner": "falcon695",
+      "roster": [
+        {
+          "name": "Brandon McManus",
+          "id": "1433"
+        },
+        {
+          "name": "Emanuel Wilson",
+          "id": "11435"
+        },
+        {
+          "name": "Caleb Williams",
+          "id": "11560"
+        },
+        {
+          "name": "Tyler Bass",
+          "id": "7042"
+        },
+        {
+          "name": "Chicago Bears",
+          "id": "CHI"
+        },
+        {
+          "name": "Skyy Moore",
+          "id": "8168"
+        },
+        {
+          "name": "Jordan James",
+          "id": "12467"
+        },
+        {
+          "name": "Jamal Agnew",
+          "id": "4198"
+        },
+        {
+          "name": "Kendre Miller",
+          "id": "9757"
+        },
+        {
+          "name": "Joe Mixon",
+          "id": "4018"
+        },
+        {
+          "name": "Tank Bigsby",
+          "id": "9225"
+        },
+        {
+          "name": "Jordan Whittington",
+          "id": "11623"
+        },
+        {
+          "name": "Christian Kirk",
+          "id": "4950"
+        },
+        {
+          "name": "Gage Larvadain",
+          "id": "13101"
+        },
+        {
+          "name": "Kyle Monangai",
+          "id": "12534"
+        },
+        {
+          "name": "Kene Nwangwu",
+          "id": "7720"
+        },
+        {
+          "name": "Mac Hippenhammer",
+          "id": "11247"
+        },
+        {
+          "name": "Keenan Allen",
+          "id": "1479"
+        },
+        {
+          "name": "Cedric Tillman",
+          "id": "10444"
+        },
+        {
+          "name": "Malik Nabers",
+          "id": "11632"
+        },
+        {
+          "name": "Jacksonville Jaguars",
+          "id": "JAX"
+        },
+        {
+          "name": "Matthew Wright",
+          "id": "6268"
+        },
+        {
+          "name": "Adam Thielen",
+          "id": "1689"
+        },
+        {
+          "name": "Ashton Jeanty",
+          "id": "12527"
+        },
+        {
+          "name": "J.J. McCarthy",
+          "id": "11565"
+        },
+        {
+          "name": "Antonio Gibson",
+          "id": "6945"
+        },
+        {
+          "name": "Trey McBride",
+          "id": "8130"
+        },
+        {
+          "name": "A.J. Brown",
+          "id": "5859"
+        },
+        {
+          "name": "Andrei Iosivas",
+          "id": "10226"
+        },
+        {
+          "name": "Jerome Ford",
+          "id": "8143"
+        },
+        {
+          "name": "Tyler Allgeier",
+          "id": "8132"
+        },
+        {
+          "name": "Los Angeles Chargers",
+          "id": "LAC"
+        },
+        {
+          "name": "Roman Wilson",
+          "id": "11630"
+        },
+        {
+          "name": "Luke McCaffrey",
+          "id": "11650"
+        },
+        {
+          "name": "Jakobi Meyers",
+          "id": "5947"
+        },
+        {
+          "name": "Christian Watson",
+          "id": "8167"
+        },
+        {
+          "name": "Brenton Strange",
+          "id": "9480"
+        },
+        {
+          "name": "Davante Adams",
+          "id": "2133"
+        },
+        {
+          "name": "Jake Moody",
+          "id": "10937"
+        },
+        {
+          "name": "Justin Herbert",
+          "id": "6797"
+        },
+        {
+          "name": "Isaiah Likely",
+          "id": "8131"
+        },
+        {
+          "name": "Jimmy Garoppolo",
+          "id": "1837"
+        },
+        {
+          "name": "Indianapolis Colts",
+          "id": "IND"
+        },
+        {
+          "name": "Braxton Berrios",
+          "id": "5121"
+        },
+        {
+          "name": "Jordan Love",
+          "id": "6804"
+        },
+        {
+          "name": "D'Andre Swift",
+          "id": "6790"
+        },
+        {
+          "name": "TreVeyon Henderson",
+          "id": "12529"
+        },
+        {
+          "name": "Chad Ryland",
+          "id": "10955"
+        },
+        {
+          "name": "Jaxon Smith-Njigba",
+          "id": "9488"
+        },
+        {
+          "name": "New England Patriots",
+          "id": "NE"
+        }
+      ]
+    },
+    "7": {
+      "name": "Demalthus",
+      "owner": "Demalthus",
+      "roster": [
+        {
+          "name": "Juwan Johnson",
+          "id": "7002"
+        },
+        {
+          "name": "David Njoku",
+          "id": "4033"
+        },
+        {
+          "name": "Jayden Daniels",
+          "id": "11566"
+        },
+        {
+          "name": "Zach Charbonnet",
+          "id": "9753"
+        },
+        {
+          "name": "Chig Okonkwo",
+          "id": "8210"
+        },
+        {
+          "name": "Jalen Milroe",
+          "id": "12510"
+        },
+        {
+          "name": "Darius Slayton",
+          "id": "6149"
+        },
+        {
+          "name": "C.J. Stroud",
+          "id": "9758"
+        },
+        {
+          "name": "Jason Myers",
+          "id": "2747"
+        },
+        {
+          "name": "Montana Lemonious-Craig",
+          "id": "13222"
+        },
+        {
+          "name": "Cairo Santos",
+          "id": "2020"
+        },
+        {
+          "name": "Raheem Blackshear",
+          "id": "8255"
+        },
+        {
+          "name": "Wan'Dale Robinson",
+          "id": "8126"
+        },
+        {
+          "name": "Nick Folk",
+          "id": "650"
+        },
+        {
+          "name": "Andy Borregales",
+          "id": "12713"
+        },
+        {
+          "name": "Chase Brown",
+          "id": "9224"
+        },
+        {
+          "name": "Spencer Rattler",
+          "id": "11562"
+        },
+        {
+          "name": "Pat Freiermuth",
+          "id": "7600"
+        },
+        {
+          "name": "Kyle Williams",
+          "id": "12547"
+        },
+        {
+          "name": "Detroit Lions",
+          "id": "DET"
+        },
+        {
+          "name": "Xavier Gipson",
+          "id": "11306"
+        },
+        {
+          "name": "Blake Grupe",
+          "id": "11058"
+        },
+        {
+          "name": "Samaje Perine",
+          "id": "4147"
+        },
+        {
+          "name": "Amon-Ra St. Brown",
+          "id": "7547"
+        },
+        {
+          "name": "Kenneth Walker",
+          "id": "8151"
+        },
+        {
+          "name": "Taysom Hill",
+          "id": "4381"
+        },
+        {
+          "name": "Marvin Harrison",
+          "id": "11628"
+        },
+        {
+          "name": "Anthony Richardson",
+          "id": "9229"
+        },
+        {
+          "name": "DeVonta Smith",
+          "id": "7525"
+        },
+        {
+          "name": "Bijan Robinson",
+          "id": "9509"
+        },
+        {
+          "name": "Hunter Renfrow",
+          "id": "5955"
+        },
+        {
+          "name": "Troy Franklin",
+          "id": "11627"
+        },
+        {
+          "name": "Carolina Panthers",
+          "id": "CAR"
+        },
+        {
+          "name": "Cleveland Browns",
+          "id": "CLE"
+        },
+        {
+          "name": "Josh Reynolds",
+          "id": "4171"
+        },
+        {
+          "name": "Devin Duvernay",
+          "id": "6847"
+        },
+        {
+          "name": "Braelon Allen",
+          "id": "11576"
+        },
+        {
+          "name": "George Pickens",
+          "id": "8137"
+        },
+        {
+          "name": "Dallas Cowboys",
+          "id": "DAL"
+        },
+        {
+          "name": "Bryce Young",
+          "id": "9228"
+        },
+        {
+          "name": "DeMario Douglas",
+          "id": "9501"
+        },
+        {
+          "name": "Evan McPherson",
+          "id": "7839"
+        },
+        {
+          "name": "Las Vegas Raiders",
+          "id": "LV"
+        },
+        {
+          "name": "Jake Ferguson",
+          "id": "8110"
+        },
+        {
+          "name": "Cameron Dicker",
+          "id": "8259"
+        },
+        {
+          "name": "Michael Wilson",
+          "id": "10232"
+        },
+        {
+          "name": "Isaac TeSlaa",
+          "id": "12535"
+        },
+        {
+          "name": "Ryan Fitzgerald",
+          "id": "12961"
+        },
+        {
+          "name": "Jauan Jennings",
+          "id": "7049"
+        },
+        {
+          "name": "Omarion Hampton",
+          "id": "12507"
+        }
+      ]
+    },
+    "8": {
+      "name": "darthjafar",
+      "owner": "darthjafar",
+      "roster": [
+        {
+          "name": "J.K. Dobbins",
+          "id": "6806"
+        },
+        {
+          "name": "Jordan Addison",
+          "id": "9756"
+        },
+        {
+          "name": "Spencer Shrader",
+          "id": "12185"
+        },
+        {
+          "name": "Denver Broncos",
+          "id": "DEN"
+        },
+        {
+          "name": "Jarquez Hunter",
+          "id": "11569"
+        },
+        {
+          "name": "Joshua Karty",
+          "id": "11789"
+        },
+        {
+          "name": "Harold Fannin",
+          "id": "12506"
+        },
+        {
+          "name": "Will Dissly",
+          "id": "5010"
+        },
+        {
+          "name": "Anthony Gould",
+          "id": "11762"
+        },
+        {
+          "name": "Josh Downs",
+          "id": "9500"
+        },
+        {
+          "name": "Gardner Minshew",
+          "id": "6011"
+        },
+        {
+          "name": "Emari Demercado",
+          "id": "11199"
+        },
+        {
+          "name": "Rhamondre Stevenson",
+          "id": "7611"
+        },
+        {
+          "name": "Buffalo Bills",
+          "id": "BUF"
+        },
+        {
+          "name": "Jalen Coker",
+          "id": "11646"
+        },
+        {
+          "name": "David Moore",
+          "id": "4274"
+        },
+        {
+          "name": "Dylan Sampson",
+          "id": "12469"
+        },
+        {
+          "name": "Tory Horton",
+          "id": "12497"
+        },
+        {
+          "name": "Stefon Diggs",
+          "id": "2449"
+        },
+        {
+          "name": "Wil Lutz",
+          "id": "3678"
+        },
+        {
+          "name": "Darnell Mooney",
+          "id": "7090"
+        },
+        {
+          "name": "Jahmyr Gibbs",
+          "id": "9221"
+        },
+        {
+          "name": "Drake London",
+          "id": "8112"
+        },
+        {
+          "name": "Bhayshul Tuten",
+          "id": "12490"
+        },
+        {
+          "name": "Travis Hunter",
+          "id": "12530"
+        },
+        {
+          "name": "Chris Rodriguez",
+          "id": "10219"
+        },
+        {
+          "name": "Atlanta Falcons",
+          "id": "ATL"
+        },
+        {
+          "name": "Olamide Zaccheaus",
+          "id": "6271"
+        },
+        {
+          "name": "Tre Tucker",
+          "id": "10213"
+        },
+        {
+          "name": "Christian McCaffrey",
+          "id": "4034"
+        },
+        {
+          "name": "Tai Felton",
+          "id": "12496"
+        },
+        {
+          "name": "Cam Ward",
+          "id": "12522"
+        },
+        {
+          "name": "Garrett Wilson",
+          "id": "8146"
+        },
+        {
+          "name": "Rico Dowdle",
+          "id": "7021"
+        },
+        {
+          "name": "Jordan Mason",
+          "id": "8408"
+        },
+        {
+          "name": "Terrance Ferguson",
+          "id": "12487"
+        },
+        {
+          "name": "Emeka Egbuka",
+          "id": "12514"
+        },
+        {
+          "name": "Tyler Higbee",
+          "id": "3271"
+        },
+        {
+          "name": "Tyler Warren",
+          "id": "12518"
+        },
+        {
+          "name": "Chase McLaughlin",
+          "id": "6650"
+        },
+        {
+          "name": "Jeremy McNichols",
+          "id": "4219"
+        },
+        {
+          "name": "Lamar Jackson",
+          "id": "4881"
+        },
+        {
+          "name": "Patrick Mahomes",
+          "id": "4046"
+        },
+        {
+          "name": "Pittsburgh Steelers",
+          "id": "PIT"
+        },
+        {
+          "name": "Sam Darnold",
+          "id": "4943"
+        },
+        {
+          "name": "Malik Washington",
+          "id": "11610"
+        },
+        {
+          "name": "Colston Loveland",
+          "id": "12517"
+        },
+        {
+          "name": "Houston Texans",
+          "id": "HOU"
+        },
+        {
+          "name": "Parker Washington",
+          "id": "9487"
+        },
+        {
+          "name": "Brandon Aubrey",
+          "id": "11533"
+        }
+      ]
     }
+  }
 }
