@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fantasy Football League</title>
+    <title>Chaos League</title>
     <style>
         :root {
             --bg: #f0f2f5;
@@ -67,7 +67,6 @@
         .error-box { background: #fff5f5; border: 1px solid #fecaca; border-radius: var(--radius); padding: 24px; text-align: center; color: #b91c1c; }
         .error-box button { margin-top: 12px; background: #b91c1c; color: #fff; border: none; border-radius: 6px; padding: 10px 20px; cursor: pointer; font-weight: 600; }
         .matchups-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
-        @media (min-width: 700px) { .matchups-grid { grid-template-columns: 1fr 1fr; } }
         .matchup-card {
             background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow); cursor: pointer;
             transition: var(--transition); border: 2px solid transparent; overflow: hidden; user-select: none; position: relative;
@@ -152,7 +151,7 @@
     <header class="header">
         <div class="header-brand">
             <span class="icon">🏈</span>
-            <span>Fantasy League</span>
+            <span>Chaos League</span>
         </div>
         <div class="header-controls">
             <label class="week-label" for="weekSelect">Week</label>
@@ -377,9 +376,7 @@
                 const t2Owner = getTeamOwner(matchup.team2);
 
                 let html = '';
-                html += `<div class="roster-column">
-                    <div class="roster-team-name">${escapeHTML(t1Name)}</div>
-                    <div class="roster-team-owner">${escapeHTML(t1Owner)}</div>`;
+                html += `<div class="roster-column">`;
                 if (roster1.length === 0) html += `<div class="roster-empty">No players on roster</div>`;
                 else roster1.forEach(p => {
                     const sc = getPlayerDisplayScore(p.id);
@@ -390,9 +387,7 @@
                 });
                 html += `</div>`;
 
-                html += `<div class="roster-column">
-                    <div class="roster-team-name">${escapeHTML(t2Name)}</div>
-                    <div class="roster-team-owner">${escapeHTML(t2Owner)}</div>`;
+                html += `<div class="roster-column">`;
                 if (roster2.length === 0) html += `<div class="roster-empty">No players on roster</div>`;
                 else roster2.forEach(p => {
                     const sc = getPlayerDisplayScore(p.id);
@@ -402,7 +397,6 @@
                     </div>`;
                 });
                 html += `</div>`;
-                html += `<div class="detail-close-hint">Click the matchup card again or press <strong>Esc</strong> to collapse</div>`;
                 container.innerHTML = html;
 
                 container.querySelectorAll('.roster-player').forEach(el => {
@@ -427,9 +421,12 @@
                 if (wasActive) {
                     expandedMatchupIndex = null;
                     document.getElementById('backBar')?.classList.remove('visible');
+                    cards.forEach(c => { c.style.display = 'block'; });
                 } else {
                     clicked.classList.add('active');
                     clicked.setAttribute('aria-expanded','true');
+                    cards.forEach(c => { c.style.display = 'none'; });
+                    clicked.style.display = 'block';
                     expandedMatchupIndex = index;
                     renderMatchupDetail(index);
                     document.getElementById('backBar')?.classList.add('visible');
