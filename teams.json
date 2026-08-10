@@ -1,0 +1,42 @@
+{
+    "1": {
+        "name": "Jaxon's Team",
+        "owner": "Jaxon",
+        "roster": []
+    },
+    "2": {
+        "name": "Mason's Team",
+        "owner": "Mason",
+        "roster": []
+    },
+    "3": {
+        "name": "Mark's Team",
+        "owner": "Mark",
+        "roster": []
+    },
+    "4": {
+        "name": "Tyler's Team",
+        "owner": "Tyler",
+        "roster": []
+    },
+    "5": {
+        "name": "Jacob's Team",
+        "owner": "Jacob",
+        "roster": []
+    },
+    "6": {
+        "name": "Payton's Team",
+        "owner": "Payton",
+        "roster": []
+    },
+    "7": {
+        "name": "Matt's Team",
+        "owner": "Matt",
+        "roster": []
+    },
+    "8": {
+        "name": "Dylan's Team",
+        "owner": "Dylan",
+        "roster": []
+    }
+}
