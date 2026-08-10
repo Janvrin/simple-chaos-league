@@ -150,6 +150,22 @@
             .matchup-team-score { font-size: 1.5rem; }
             .matchup-vs { width: 34px; height: 34px; font-size: 0.7rem; }
         }
+        .player-position {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 6px;
+            vertical-align: middle;
+            text-transform: uppercase;
+        }
+        .player-position.bench {
+            background: #fff3e0;
+            color: #e65100;
+        }
     </style>
 </head>
 <body>
@@ -249,11 +265,16 @@
             // ──────────────────────────────────────
             // 🧮 Helpers (week-aware)
             // ──────────────────────────────────────
-            function getPlayerScore(playerId) {
-                const weekScores = scoresData?.weeks?.[selectedWeek]?.players;
-                if (!weekScores) return null;
-                const player = weekScores[playerId];
-                return (player && typeof player.total === 'number') ? player.total : null;
+            function getPlayerScore(teamId, playerId) {
+                const weekTeams = scoresData?.weeks?.[selectedWeek]?.teams;
+                if (!weekTeams) return null;
+                const team = weekTeams[teamId];
+                if (!team || !team.players) return null;
+                const player = team.players[playerId];
+                if (player && typeof player.total === 'number') {
+                    return Math.round(player.total * 100) / 100;
+                }
+                return null;
             }
 
             function getPlayerBreakdown(playerId) {
@@ -277,17 +298,25 @@
             }
 
             function getTeamTotalScore(teamId) {
+                const weekTeams = scoresData?.weeks?.[selectedWeek]?.teams;
+                const team = weekTeams ? weekTeams[teamId] : null;
                 const roster = getTeamRoster(teamId);
                 let total = 0, hasAnyScore = false;
                 for (const player of roster) {
-                    const score = getPlayerScore(player.id);
-                    if (score !== null) { total += score; hasAnyScore = true; }
+                    const playerData = team?.players?.[player.id];
+                    // Skip if position is BENCH
+                    if (playerData && playerData.position === "BENCH") continue;
+                    const score = getPlayerScore(teamId, player.id);
+                    if (score !== null) {
+                        total += score;
+                        hasAnyScore = true;
+                    }
                 }
-                return { total, hasAnyScore };
+                return { total: Math.round(total * 100) / 100, hasAnyScore };
             }
 
-            function getPlayerDisplayScore(playerId) {
-                return getPlayerScore(playerId);
+            function getPlayerDisplayScore(teamId, playerId) {
+                return getPlayerScore(teamId, playerId);
             }
 
             // ──────────────────────────────────────
@@ -387,9 +416,13 @@
                 html += `<div class="roster-column">`;
                 if (roster1.length === 0) html += `<div class="roster-empty">No players on roster</div>`;
                 else roster1.forEach(p => {
-                    const sc = getPlayerDisplayScore(p.id);
-                    html += `<div class="roster-player" data-player-id="${escapeHTML(p.id)}" data-player-name="${escapeHTML(p.name)}" role="button" tabindex="0">
-                        <span class="roster-player-name">${escapeHTML(p.name)}</span>
+                    const sc = getPlayerDisplayScore(matchup.team1, p.id);
+                    const pos = scoresData?.weeks?.[selectedWeek]?.teams?.[matchup.team1]?.players?.[p.id]?.position || '';
+                    html += `<div class="roster-player" data-player-id="${escapeHTML(p.id)}" data-player-name="${escapeHTML(p.name)}" data-team-id="${escapeHTML(matchup.team1)}" role="button" tabindex="0">
+                        <span class="roster-player-name">
+                            ${escapeHTML(p.name)}
+                            <span class="player-position">${escapeHTML(pos)}</span>
+                        </span>
                         <span class="roster-player-score${sc === null ? ' missing' : ''}">${sc !== null ? sc : '—'}</span>
                     </div>`;
                 });
@@ -398,9 +431,13 @@
                 html += `<div class="roster-column">`;
                 if (roster2.length === 0) html += `<div class="roster-empty">No players on roster</div>`;
                 else roster2.forEach(p => {
-                    const sc = getPlayerDisplayScore(p.id);
-                    html += `<div class="roster-player" data-player-id="${escapeHTML(p.id)}" data-player-name="${escapeHTML(p.name)}" role="button" tabindex="0">
-                        <span class="roster-player-name">${escapeHTML(p.name)}</span>
+                    const sc = getPlayerDisplayScore(matchup.team2, p.id);
+                    const pos = scoresData?.weeks?.[selectedWeek]?.teams?.[matchup.team2]?.players?.[p.id]?.position || '';
+                    html += `<div class="roster-player" data-player-id="${escapeHTML(p.id)}" data-player-name="${escapeHTML(p.name)}" data-team-id="${escapeHTML(matchup.team2)}" role="button" tabindex="0">
+                        <span class="roster-player-name">
+                            ${escapeHTML(p.name)}
+                            <span class="player-position">${escapeHTML(pos)}</span>
+                        </span>
                         <span class="roster-player-score${sc === null ? ' missing' : ''}">${sc !== null ? sc : '—'}</span>
                     </div>`;
                 });
@@ -410,12 +447,12 @@
                 container.querySelectorAll('.roster-player').forEach(el => {
                     el.addEventListener('click', function(e) {
                         e.stopPropagation();
-                        showPlayerModal(this.dataset.playerId, this.dataset.playerName);
+                        showPlayerModal(this.dataset.playerId, this.dataset.playerName, this.dataset.teamId);
                     });
                     el.addEventListener('keydown', function(e) {
                         if (e.key === 'Enter' || e.key === ' ') {
                             e.preventDefault(); e.stopPropagation();
-                            showPlayerModal(this.dataset.playerId, this.dataset.playerName);
+                            showPlayerModal(this.dataset.teamId, this.dataset.playerId, this.dataset.playerName);
                         }
                     });
                 });
@@ -442,9 +479,12 @@
                 }
             }
 
-            function showPlayerModal(playerId, playerName) {
-                const breakdown = getPlayerBreakdown(playerId);
-                const total = getPlayerScore(playerId);
+            function showPlayerModal(teamId, playerId, playerName) {
+                const weekTeams = scoresData?.weeks?.[selectedWeek]?.teams;
+                const playerData = weekTeams?.[teamId]?.players?.[playerId];
+                const breakdown = playerData?.breakdown || [];
+                const total = playerData?.total !== undefined ? Math.round(playerData.total * 100) / 100 : null;
+
                 modalTitle.textContent = playerName || `Player ${playerId}`;
                 let body = `<div class="modal-total"><div class="modal-total-label">Total Score</div><div class="modal-total-value">${total !== null ? total : '—'}</div></div>`;
                 if (breakdown.length === 0) {
@@ -452,8 +492,13 @@
                 } else {
                     body += `<table class="breakdown-table"><thead><tr><th>Category</th><th>Score</th></tr></thead><tbody>`;
                     let sum = 0;
-                    breakdown.forEach(item => { sum += item.score || 0; body += `<tr><td>${escapeHTML(item.name||'Unknown')}</td><td class="score-cell">${item.score||0}</td></tr>`; });
-                    body += `<tr class="total-row"><td><strong>Total</strong></td><td class="score-cell"><strong>${sum}</strong></td></tr></tbody></table>`;
+                    breakdown.forEach(item => {
+                        const score = Math.round((item.score || 0) * 100) / 100;
+                        sum += score;
+                        body += `<tr><td>${escapeHTML(item.name||'Unknown')}</td><td class="score-cell">${score}</td></tr>`;
+                    });
+                    const roundedSum = Math.round(sum * 100) / 100;
+                    body += `<tr class="total-row"><td><strong>Total</strong></td><td class="score-cell"><strong>${roundedSum}</strong></td></tr></tbody></table>`;
                 }
                 modalBody.innerHTML = body;
                 playerModal.style.display = 'flex';

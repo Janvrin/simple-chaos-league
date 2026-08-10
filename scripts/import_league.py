@@ -40,7 +40,7 @@ def get_regular_season_weeks(settings):
     playoff_start = settings.get("playoff_week_start")
     if playoff_start:
         return list(range(1, playoff_start))
-    # if not set, default to 18 weeks
+    # default 18 weeks
     return list(range(1, 19))
 
 
@@ -55,59 +55,61 @@ def main():
 
     print(f"Fetching data for Sleeper league {league_id} …")
 
-    # ---- League info (season, scoring, settings) ----
+    # ---- League info ----
     league = fetch_json(f"league/{league_id}")
     season = league["season"]
     scoring = league["scoring_settings"]
     regular_weeks = get_regular_season_weeks(league.get("settings", {}))
 
-    # ---- Users (owner names) ----
+    # ---- Users ----
     users = fetch_json(f"league/{league_id}/users")
     user_map = {u["user_id"]: u.get("display_name", f"User {u['user_id']}") for u in users}
 
-    # ---- Rosters (teams) ----
+    # ---- Rosters ----
     rosters = fetch_json(f"league/{league_id}/rosters")
-    roster_map = {}          # roster_id -> roster object
-    roster_owner = {}        # roster_id -> display_name
+    roster_map = {}
+    roster_owner = {}
     for r in rosters:
         rid = r["roster_id"]
         roster_map[rid] = r
         owner_id = r.get("owner_id")
         roster_owner[rid] = user_map.get(owner_id, f"Owner of {rid}")
 
-    # ---- Global player database (id -> name) ----
-    print("Downloading player database (this may take a moment) …")
+    # ---- Player database ----
+    print("Downloading player database …")
     all_players = fetch_json("players/nfl")
 
     def player_name(pid):
         p = all_players.get(str(pid))
         if not p:
             return f"Unknown Player ({pid})"
-        # handles real players (full_name / first+last) and defenses (name)
         return (p.get("full_name") or
                 f"{p.get('first_name', '')} {p.get('last_name', '')}".strip() or
                 p.get("name") or
                 f"Player {pid}")
 
-    # ---- NFL season start date (for schedule dates) ----
+    def player_position(pid):
+        """Return NFL position (e.g. QB, RB) from player database, or empty string."""
+        p = all_players.get(str(pid))
+        return p.get("position", "") if p else ""
+
+    # ---- NFL season start date ----
     state = fetch_json("state/nfl")
-    season_start_str = state.get("season_start_date")
-    if not season_start_str:
-        season_start_str = f"{season}-09-01"  # fallback
+    season_start_str = state.get("season_start_date") or f"{season}-09-01"
     season_start = datetime.strptime(season_start_str, "%Y-%m-%d")
 
-    # ---- Build teams.json ----
+    # ---- teams.json ----
     teams = {}
     for rid, roster in roster_map.items():
         player_ids = roster.get("players", [])
         roster_players = [{"name": player_name(pid), "id": str(pid)} for pid in player_ids]
         teams[str(rid)] = {
-            "name": roster_owner[rid],          # use owner's display name as team name
+            "name": roster_owner[rid],
             "owner": roster_owner[rid],
             "roster": roster_players,
         }
 
-    # ---- Build schedule.json and scores.json ----
+    # ---- schedule.json & scores.json ----
     schedule = {"weeks": {}}
     scores = {"weeks": {}}
 
@@ -115,19 +117,17 @@ def main():
         print(f"Processing week {week} …")
         week_str = str(week)
 
-        # Fetch matchups for this week
         matchups = fetch_json(f"league/{league_id}/matchups/{week}")
         if not matchups:
-            continue  # no data (bye week or beyond season)
+            continue
 
-        # Week date (Thursday of the league's start week)
         week_date = season_start + timedelta(weeks=week - 1)
         schedule["weeks"][week_str] = {
             "date": week_date.strftime("%Y-%m-%d"),
             "matchups": [],
         }
 
-        # Fetch player stats for the week (for breakdown)
+        # Stats for breakdown
         stats_url = f"stats/nfl/regular/{season}/{week}"
         try:
             player_stats = fetch_json(stats_url)
@@ -135,7 +135,7 @@ def main():
             print(f"Warning: Could not fetch stats for week {week}, skipping breakdown.")
             player_stats = {}
 
-        # ✅ Group roster entries by matchup_id to get true matchup pairs
+        # Group by matchup_id
         matchup_groups = defaultdict(list)
         for m in matchups:
             matchup_groups[m["matchup_id"]].append(m)
@@ -151,17 +151,23 @@ def main():
                 "team2": team2_id,
             })
 
-        # ---- Build week scores (all rosters) ----
-        week_scores = {}
+        # ---- Build weekly team scores ----
+        week_teams = {}
         for m in matchups:
-            roster_id = m["roster_id"]
+            roster_id = str(m["roster_id"])
+            starters = set(str(s) for s in m.get("starters", []))
             players_points = m.get("players_points", {})
-            all_roster_players = roster_map[roster_id].get("players", [])
+
+            team_players = {}
+            all_roster_players = roster_map[int(roster_id)].get("players", [])
 
             for player_id in all_roster_players:
                 pid = str(player_id)
                 total = players_points.get(str(player_id), 0.0)
+                is_starter = pid in starters
+                position = player_position(pid) if is_starter else "BENCH"
 
+                # Build breakdown
                 breakdown = []
                 stats = player_stats.get(pid)
                 if stats:
@@ -170,18 +176,20 @@ def main():
                             points = round(value * scoring[stat], 2)
                             if points != 0:
                                 breakdown.append({"name": stat, "score": points})
-                # Ensure at least one entry (total)
                 if not breakdown:
                     breakdown.append({"name": "total", "score": total})
 
-                week_scores[pid] = {
+                team_players[pid] = {
                     "total": total,
                     "breakdown": breakdown,
+                    "position": position,
                 }
 
-        scores["weeks"][week_str] = {"players": week_scores}
+            week_teams[roster_id] = {"players": team_players}
 
-    # ---- Write JSON files ----
+        scores["weeks"][week_str] = {"teams": week_teams}
+
+    # ---- Write output ----
     (output_dir / "teams.json").write_text(json.dumps({"teams": teams}, indent=2), encoding="utf-8")
     (output_dir / "schedule.json").write_text(json.dumps(schedule, indent=2), encoding="utf-8")
     (output_dir / "scores.json").write_text(json.dumps(scores, indent=2), encoding="utf-8")
