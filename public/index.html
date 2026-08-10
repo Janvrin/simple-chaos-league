@@ -54,6 +54,9 @@
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
             background-repeat: no-repeat; background-position: right 12px center; min-width: 100px;
         }
+        .year-select:hover { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.55); }
+        .year-select:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(249,168,37,0.25); }
+        .year-select option { background: #1a3c1a; color: #fff; }
         .week-select {
             appearance: none; background: rgba(255,255,255,0.13); color: #fff; border: 2px solid rgba(255,255,255,0.3);
             border-radius: 8px; padding: 10px 36px 10px 14px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: var(--transition);
@@ -166,6 +169,36 @@
             background: #fff3e0;
             color: #e65100;
         }
+        .player-position-badge {
+            display: inline-block;
+            min-width: 28px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-right: 8px;
+            text-align: center;
+            text-transform: uppercase;
+            flex-shrink: 0;
+        }
+        .player-position-badge.bench {
+            background: #fff3e0;
+            color: #e65100;
+        }
+
+        /* Bench player row – gray tone */
+        .roster-player.position-bench {
+            opacity: 0.65;
+            background: #fafafa;
+        }
+        .roster-player.position-bench:hover {
+            background: #f0f0f0;
+        }
+        .roster-player.position-bench .roster-player-name {
+            color: #777;
+        }
     </style>
 </head>
 <body>
@@ -206,6 +239,7 @@
             const GITHUB_REPO = 'simple-chaos-league';
             const GITHUB_BRANCH = 'main';
             const RAW_BASE = `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/${GITHUB_BRANCH}/`;
+            const POSITION_ORDER = ["QB", "WR", "RB", "TE", "K", "DEF", "FLEX", "SUPERFLEX", "BENCH"];
 
             // ──────────────────────────────────────
             // 🧠 Global state
@@ -412,47 +446,82 @@
                 const t1Owner = getTeamOwner(matchup.team1);
                 const t2Owner = getTeamOwner(matchup.team2);
 
-                let html = '';
-                html += `<div class="roster-column">`;
-                if (roster1.length === 0) html += `<div class="roster-empty">No players on roster</div>`;
-                else roster1.forEach(p => {
-                    const sc = getPlayerDisplayScore(matchup.team1, p.id);
-                    const pos = scoresData?.weeks?.[selectedWeek]?.teams?.[matchup.team1]?.players?.[p.id]?.position || '';
-                    html += `<div class="roster-player" data-player-id="${escapeHTML(p.id)}" data-player-name="${escapeHTML(p.name)}" data-team-id="${escapeHTML(matchup.team1)}" role="button" tabindex="0">
-                        <span class="roster-player-name">
-                            ${escapeHTML(p.name)}
-                            <span class="player-position">${escapeHTML(pos)}</span>
-                        </span>
-                        <span class="roster-player-score${sc === null ? ' missing' : ''}">${sc !== null ? sc : '—'}</span>
-                    </div>`;
-                });
-                html += `</div>`;
+                // Week team data from scores for positions
+                const weekTeams = scoresData?.weeks?.[selectedWeek]?.teams;
+                const team1Data = weekTeams?.[matchup.team1];
+                const team2Data = weekTeams?.[matchup.team2];
 
-                html += `<div class="roster-column">`;
-                if (roster2.length === 0) html += `<div class="roster-empty">No players on roster</div>`;
-                else roster2.forEach(p => {
-                    const sc = getPlayerDisplayScore(matchup.team2, p.id);
-                    const pos = scoresData?.weeks?.[selectedWeek]?.teams?.[matchup.team2]?.players?.[p.id]?.position || '';
-                    html += `<div class="roster-player" data-player-id="${escapeHTML(p.id)}" data-player-name="${escapeHTML(p.name)}" data-team-id="${escapeHTML(matchup.team2)}" role="button" tabindex="0">
-                        <span class="roster-player-name">
-                            ${escapeHTML(p.name)}
-                            <span class="player-position">${escapeHTML(pos)}</span>
-                        </span>
-                        <span class="roster-player-score${sc === null ? ' missing' : ''}">${sc !== null ? sc : '—'}</span>
-                    </div>`;
-                });
-                html += `</div>`;
+                // Helper to build sorted roster HTML for a team
+                function buildRosterHtml(teamId, teamData) {
+                    const roster = getTeamRoster(teamId);
+                    const enriched = roster.map(p => {
+                        const playerInfo = teamData?.players?.[p.id];
+                        const score = getPlayerDisplayScore(teamId, p.id);
+                        const pos = playerInfo?.position || '';
+                        return { ...p, score, pos };
+                    });
+
+                    enriched.sort((a, b) => {
+                        const orderA = POSITION_ORDER.indexOf(a.pos);
+                        const orderB = POSITION_ORDER.indexOf(b.pos);
+                        const posA = orderA === -1 ? POSITION_ORDER.length : orderA;
+                        const posB = orderB === -1 ? POSITION_ORDER.length : orderB;
+                        if (posA !== posB) return posA - posB;
+                        const scoreA = a.score !== null ? a.score : -Infinity;
+                        const scoreB = b.score !== null ? b.score : -Infinity;
+                        return scoreB - scoreA;
+                    });
+
+                    let html = '';
+                    if (enriched.length === 0) {
+                        html += `<div class="roster-empty">No players on roster</div>`;
+                    } else {
+                        enriched.forEach(p => {
+                            const sc = p.score;
+                            const posDisplay = escapeHTML(p.pos || '—');
+                            html += `
+                            <div class="roster-player position-${p.pos.toLowerCase()}"
+                                data-player-id="${escapeHTML(p.id)}"
+                                data-player-name="${escapeHTML(p.name)}"
+                                data-team-id="${escapeHTML(teamId)}"
+                                role="button" tabindex="0">
+                            <span class="player-position-badge ${p.pos.toLowerCase()}">${posDisplay}</span>
+                            <span class="roster-player-name">${escapeHTML(p.name)}</span>
+                            <span class="roster-player-score${sc === null ? ' missing' : ''}">${sc !== null ? sc : '—'}</span>
+                            </div>`;
+                        });
+                    }
+                    return html;
+                }
+
+                // Build the two columns
+                let html = '';
+                html += `<div class="roster-column">
+                    ${buildRosterHtml(matchup.team1, team1Data)}
+                </div>`;
+                html += `<div class="roster-column">
+                    ${buildRosterHtml(matchup.team2, team2Data)}
+                </div>`;
+
                 container.innerHTML = html;
 
+                // Attach player click / keyboard listeners
                 container.querySelectorAll('.roster-player').forEach(el => {
                     el.addEventListener('click', function(e) {
                         e.stopPropagation();
-                        showPlayerModal(this.dataset.playerId, this.dataset.playerName, this.dataset.teamId);
+                        const playerId = this.dataset.playerId;
+                        const playerName = this.dataset.playerName;
+                        const teamId = this.dataset.teamId;
+                        showPlayerModal(teamId, playerId, playerName);
                     });
                     el.addEventListener('keydown', function(e) {
                         if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault(); e.stopPropagation();
-                            showPlayerModal(this.dataset.teamId, this.dataset.playerId, this.dataset.playerName);
+                            e.preventDefault();
+                            e.stopPropagation();
+                            const playerId = this.dataset.playerId;
+                            const playerName = this.dataset.playerName;
+                            const teamId = this.dataset.teamId;
+                            showPlayerModal(teamId, playerId, playerName);
                         }
                     });
                 });
@@ -577,18 +646,18 @@
             // 🎧 Event listeners
             // ──────────────────────────────────────
             yearSelect.addEventListener('change', function() {
-                selectedYear = parseInt(this.value, 10);
+                selectedYear = this.value;
                 expandedMatchupIndex = null;
                 loadAllData().then(data => {
                     scheduleData = data.schedule;
                     teamsData = data.teams;
                     scoresData = data.scores;
+                    renderHomeView();
+                    window.scrollTo({top:0,behavior:'smooth'});
                 }).catch(err => {
                     console.error(err);
                     mainContent.innerHTML = `<div class="error-box"><p><strong>⚠️ Unable to load league data</strong></p><p style="font-size:0.85rem;margin-top:4px;">${escapeHTML(err.message)}</p><p style="font-size:0.8rem;color:#888;margin-top:6px;">Check repo settings and file paths:<br><code style="word-break:break-all;">${RAW_BASE}schedule.json</code></p><button onclick="location.reload()">🔄 Retry</button></div>`;
                 });
-                renderHomeView();
-                window.scrollTo({top:0,behavior:'smooth'});
             });
 
             weekSelect.addEventListener('change', function() {
