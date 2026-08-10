@@ -3,7 +3,13 @@
         "1": {
             "name": "Jaxon's Team",
             "owner": "Jaxon",
-            "roster": []
+            "roster": [
+                {
+                    "id": "1",
+                    "name": "Player 1",
+                    "position": "QB"
+                }
+            ]
         },
         "2": {
             "name": "Mason's Team",
