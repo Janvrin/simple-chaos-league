@@ -239,7 +239,7 @@
             const GITHUB_REPO = 'simple-chaos-league';
             const GITHUB_BRANCH = 'main';
             const RAW_BASE = `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/${GITHUB_BRANCH}/`;
-            const POSITION_ORDER = ["QB", "WR", "RB", "TE", "K", "DEF", "FLEX", "SUPERFLEX", "BENCH"];
+            const POSITION_ORDER = ["QB", "WR", "RB", "TE", "K", "DEF"];
 
             // ──────────────────────────────────────
             // 🧠 Global state
@@ -462,8 +462,8 @@
                     });
 
                     enriched.sort((a, b) => {
-                        const orderA = POSITION_ORDER.indexOf(a.pos);
-                        const orderB = POSITION_ORDER.indexOf(b.pos);
+                        const orderA = a.pos === "BENCH" ? POSITION_ORDER.length + 1 : POSITION_ORDER.indexOf(a.pos);
+                        const orderB = b.pos === "BENCH" ? POSITION_ORDER.length + 1 : POSITION_ORDER.indexOf(b.pos);
                         const posA = orderA === -1 ? POSITION_ORDER.length : orderA;
                         const posB = orderB === -1 ? POSITION_ORDER.length : orderB;
                         if (posA !== posB) return posA - posB;
