@@ -4,15 +4,14 @@ Fantasy score generator – best‑ball league with custom scoring pipeline.
 DataFrames are global; each rule function extracts its own data.
 
 Usage:
-    python generate_scores.py --year 2023
-    python generate_scores.py --year 2023 --week 5
+    python generate_scores.py
+    python generate_scores.py --week 5
 """
 
 import argparse
 import json
 import sys
 from io import StringIO
-from collections import defaultdict
 
 import numpy as np
 import pandas as pd
@@ -84,11 +83,11 @@ def default_sleeper(player_id: str, week: int, year: int) -> tuple[float, list]:
     pts_pass_tds = pass_tds * 4
     pts_ints = ints * -1
     if pass_yards:
-        breakdown.append({"name": f"{pass_yards} passing yards", "score": round(pts_pass_yards, 2)})
+        breakdown.append({"rule_id": -1, "description": f"{pass_yards} passing yards", "score": round(pts_pass_yards, 2)})
     if pass_tds:
-        breakdown.append({"name": f"{pass_tds} passing TDs", "score": round(pts_pass_tds, 2)})
+        breakdown.append({"rule_id": -1, "description": f"{pass_tds} passing TDs", "score": round(pts_pass_tds, 2)})
     if ints:
-        breakdown.append({"name": f"{ints} interceptions", "score": round(pts_ints, 2)})
+        breakdown.append({"rule_id": -1, "description": f"{ints} interceptions", "score": round(pts_ints, 2)})
     pts += pts_pass_yards + pts_pass_tds + pts_ints
 
     # Rushing
@@ -97,9 +96,9 @@ def default_sleeper(player_id: str, week: int, year: int) -> tuple[float, list]:
     pts_rush_yards = rush_yards * 0.1
     pts_rush_tds = rush_tds * 6
     if rush_yards:
-        breakdown.append({"name": f"{rush_yards} rushing yards", "score": round(pts_rush_yards, 2)})
+        breakdown.append({"rule_id": -1, "description": f"{rush_yards} rushing yards", "score": round(pts_rush_yards, 2)})
     if rush_tds:
-        breakdown.append({"name": f"{rush_tds} rushing TDs", "score": round(pts_rush_tds, 2)})
+        breakdown.append({"rule_id": -1, "description": f"{rush_tds} rushing TDs", "score": round(pts_rush_tds, 2)})
     pts += pts_rush_yards + pts_rush_tds
 
     # Receiving
@@ -110,47 +109,47 @@ def default_sleeper(player_id: str, week: int, year: int) -> tuple[float, list]:
     pts_rec_tds = rec_tds * 6
     pts_receptions = receptions * 1   # PPR
     if rec_yards:
-        breakdown.append({"name": f"{rec_yards} receiving yards", "score": round(pts_rec_yards, 2)})
+        breakdown.append({"rule_id": -1, "description": f"{rec_yards} receiving yards", "score": round(pts_rec_yards, 2)})
     if rec_tds:
-        breakdown.append({"name": f"{rec_tds} receiving TDs", "score": round(pts_rec_tds, 2)})
+        breakdown.append({"rule_id": -1, "description": f"{rec_tds} receiving TDs", "score": round(pts_rec_tds, 2)})
     if receptions:
-        breakdown.append({"name": f"{receptions} receptions", "score": round(pts_receptions, 2)})
+        breakdown.append({"rule_id": -1, "description": f"{receptions} receptions", "score": round(pts_receptions, 2)})
     pts += pts_rec_yards + pts_rec_tds + pts_receptions
 
     # Fumbles lost
     fumbles_lost = stats.get("fumble_lost", 0) or stats.get("fumbles_lost", 0)
     if fumbles_lost:
         pts_fum = fumbles_lost * -2
-        breakdown.append({"name": f"{fumbles_lost} fumbles lost", "score": round(pts_fum, 2)})
+        breakdown.append({"rule_id": -1, "description": f"{fumbles_lost} fumbles lost", "score": round(pts_fum, 2)})
         pts += pts_fum
 
     # 2‑point conversions
     two_pts_passing = stats.get("passing_2pt_conversion", 0)
     if two_pts_passing:
         pts_2pt_pass = two_pts_passing * 2
-        breakdown.append({"name": f"{two_pts_passing} passing two-point conversions", "score": round(pts_2pt_pass, 2)})
+        breakdown.append({"rule_id": -1, "description": f"{two_pts_passing} passing two-point conversions", "score": round(pts_2pt_pass, 2)})
         pts += pts_2pt_pass
     two_pts_rushing = stats.get("rushing_2pt_conversion", 0)
     if two_pts_rushing:
         pts_2pt_rush = two_pts_rushing * 2
-        breakdown.append({"name": f"{two_pts_rushing} rushing two-point conversions", "score": round(pts_2pt_rush, 2)})
+        breakdown.append({"rule_id": -1, "description": f"{two_pts_rushing} rushing two-point conversions", "score": round(pts_2pt_rush, 2)})
         pts += pts_2pt_rush
     two_pts_receiving = stats.get("receiving_2pt_conversion", 0)
     if two_pts_receiving:
         pts_2pt_rec = two_pts_receiving * 2
-        breakdown.append({"name": f"{two_pts_receiving} receiving two-point conversions", "score": round(pts_2pt_rec, 2)})
+        breakdown.append({"rule_id": -1, "description": f"{two_pts_receiving} receiving two-point conversions", "score": round(pts_2pt_rec, 2)})
         pts += pts_2pt_rec
 
     # PATs (extra points)
     pat_made = stats.get("pat_made", 0)
     if pat_made:
         pts_pat = pat_made * 1
-        breakdown.append({"name": f"{pat_made} PATs made", "score": round(pts_pat, 2)})
+        breakdown.append({"rule_id": -1, "description": f"{pat_made} PATs made", "score": round(pts_pat, 2)})
         pts += pts_pat
     pat_missed = stats.get("pat_missed", 0)
     if pat_missed:
         pts_pat_miss = pat_missed * -1
-        breakdown.append({"name": f"{pat_missed} PATs missed", "score": round(pts_pat_miss, 2)})
+        breakdown.append({"rule_id": -1, "description": f"{pat_missed} PATs missed", "score": round(pts_pat_miss, 2)})
         pts += pts_pat_miss
 
     # Field goals made by distance bucket
@@ -162,14 +161,14 @@ def default_sleeper(player_id: str, week: int, year: int) -> tuple[float, list]:
         made = stats.get(col, 0)
         if made:
             pts_fg = made * points_per
-            breakdown.append({"name": f"{made} FG {col.replace('fg_made_','').replace('_','-')} yards", "score": round(pts_fg, 2)})
+            breakdown.append({"rule_id": -1, "description": f"{made} FG {col.replace('fg_made_','').replace('_','-')} yards", "score": round(pts_fg, 2)})
             pts += pts_fg
 
     # Missed field goals (any distance) = -1
     fg_missed = stats.get("fg_missed", 0)
     if fg_missed:
         pts_fg_miss = fg_missed * -1
-        breakdown.append({"name": f"{fg_missed} FG missed", "score": round(pts_fg_miss, 2)})
+        breakdown.append({"rule_id": -1, "description": f"{fg_missed} FG missed", "score": round(pts_fg_miss, 2)})
         pts += pts_fg_miss
 
     return pts, breakdown
@@ -196,35 +195,35 @@ def defense_score(team_abbr: str, week: int, year: int) -> tuple[float, list]:
     sacks = team_row.get("def_sacks", 0)
     if sacks:
         pts_sacks = sacks * 1
-        breakdown.append({"name": f"{sacks} sacks", "score": round(pts_sacks, 2)})
+        breakdown.append({"rule_id": -1, "description": f"{sacks} sacks", "score": round(pts_sacks, 2)})
         pts += pts_sacks
 
     # Interceptions (2 points)
     interceptions = team_row.get("def_interceptions", 0)
     if interceptions:
         pts_int = interceptions * 2
-        breakdown.append({"name": f"{interceptions} interceptions", "score": round(pts_int, 2)})
+        breakdown.append({"rule_id": -1, "description": f"{interceptions} interceptions", "score": round(pts_int, 2)})
         pts += pts_int
 
     # Fumble recoveries (2 points)
     fumbles_rec = team_row.get("fumble_recovery_opp", 0)
     if fumbles_rec:
         pts_fr = fumbles_rec * 2
-        breakdown.append({"name": f"{fumbles_rec} fumble recoveries", "score": round(pts_fr, 2)})
+        breakdown.append({"rule_id": -1, "description": f"{fumbles_rec} fumble recoveries", "score": round(pts_fr, 2)})
         pts += pts_fr
 
     # Defensive TDs (6 points)
     def_tds = team_row.get("def_tds", 0)
     if def_tds:
         pts_td = def_tds * 6
-        breakdown.append({"name": f"{def_tds} defensive TDs", "score": round(pts_td, 2)})
+        breakdown.append({"rule_id": -1, "description": f"{def_tds} defensive TDs", "score": round(pts_td, 2)})
         pts += pts_td
 
     # Safeties (2 points)
     safeties = team_row.get("def_safeties", 0)
     if safeties:
         pts_safety = safeties * 2
-        breakdown.append({"name": f"{safeties} safeties", "score": round(pts_safety, 2)})
+        breakdown.append({"rule_id": -1, "description": f"{safeties} safeties", "score": round(pts_safety, 2)})
         pts += pts_safety
 
     # Points allowed brackets
@@ -245,7 +244,7 @@ def defense_score(team_abbr: str, week: int, year: int) -> tuple[float, list]:
     else:
         bracket_pts = -4
 
-    breakdown.append({"name": f"{points_allowed} points allowed", "score": bracket_pts})
+    breakdown.append({"rule_id": -1, "description": f"{points_allowed} points allowed", "score": bracket_pts})
     pts += bracket_pts
 
     score = round(pts, 2)
@@ -281,7 +280,8 @@ def MASON(score: float, breakdown: list,
 
     new_score = round(score * snap_pct, 2)
     breakdown.append({
-        "name": f"{(snap_pct * 100):.1f}% offensive snaps",
+        "rule_id": 1,
+        "description": f"{(snap_pct * 100):.1f}% offensive snaps",
         "score": round(new_score - score, 2)
     })
     return new_score, breakdown
@@ -342,7 +342,7 @@ def PAYTON(score: float, breakdown: list,
     game = game_row.iloc[0].to_dict()
     if (game.get("home_team") == team and game.get("home_score") < game.get("away_score")) or \
        (game.get("away_team") == team and game.get("away_score") < game.get("home_score")):
-        breakdown.append({"name": "Team lost", "score": -score})
+        breakdown.append({"rule_id": 6, "description": "Team lost", "score": -score})
         score = 0
     return score, breakdown
     
@@ -360,7 +360,7 @@ def JAXON(score: float, breakdown: list,
 
     for _, row in pbp_row.iterrows():
         timeouts = row["home_timeouts_remaining"] + row["away_timeouts_remaining"]
-        breakdown.append({"name": f"Timeouts remaining TD penalty", "score": -timeouts})
+        breakdown.append({"rule_id": 0, "description": f"{timeouts} timeouts remaining during TD", "score": -timeouts})
         score -= timeouts
     return score, breakdown
 
@@ -378,7 +378,7 @@ def TYLER(score: float, breakdown: list,
         sacks = team_row.iloc[0].get("def_sacks", 0)
         if sacks:
             bonus = -10 * sacks
-            breakdown.append({"name": f"{sacks} sacks", "score": bonus})
+            breakdown.append({"rule_id": 3, "description": f"{sacks} sacks", "score": bonus})
             score += bonus
         return score, breakdown
 
@@ -391,7 +391,7 @@ def TYLER(score: float, breakdown: list,
     sacks = stats.get("sacks_suffered", 0)
     if sacks:
         bonus = 10 * sacks
-        breakdown.append({"name": f"Suffered {sacks} sacks", "score": bonus})
+        breakdown.append({"rule_id": 3, "description": f"Suffered {sacks} sacks", "score": bonus})
         score += bonus
     return score, breakdown
 
@@ -410,7 +410,7 @@ def MARK(score: float, breakdown: list,
     team = stats.get("team")
     if team in bird_teams:
         bonus = stats.get("reception", 0) or stats.get("receptions", 0)
-        breakdown.append({"name": f"{bonus} receptions for a bird team", "score": bonus})
+        breakdown.append({"rule_id": 2, "description": f"{bonus} receptions for a bird team", "score": bonus})
         score += bonus
 
     return score, breakdown
@@ -421,29 +421,31 @@ def JACOB(score: float, breakdown: list,
     2x points, +10 points for plays over 20 yards
     """
     global pbp_df
-    big_plays = 0
-    bonus = 0
+
     for _, row in pbp_df[((pbp_df["rusher_player_id"] == player_id) | (pbp_df["lateral_rusher_player_id"] == player_id) | (pbp_df["lateral_receiver_player_id"] == player_id)) & (pbp_df["week"] == week)].iterrows():
         yards = row.get("rushing_yards", 0)
         if yards >= 20:
-            big_plays += 1
-            bonus += 10
+            bonus = 10
             bonus += row.get("rushing_yards", 0) * 0.1
             if row.get("td_player_id") == player_id:
                 bonus += 6
+                breakdown.append({"rule_id": 5, "description": f"{yards} yard TD rush", "score": bonus})
+            else:
+                breakdown.append({"rule_id": 5, "description": f"{yards} yard rush", "score": bonus})
+            score += bonus
 
-    for _, row in pbp_df[(pbp_df["receiving_player_id"] == player_id) & (pbp_df["week"] == week)].iterrows():
+    for _, row in pbp_df[(pbp_df["receiver_player_id"] == player_id) & (pbp_df["week"] == week)].iterrows():
         yards = row.get("receiving_yards", 0)
         if yards >= 20:
-            big_plays += 1
-            bonus += 11
+            bonus = 11
             bonus += row.get("receiving_yards", 0) * 0.1
             if row.get("td_player_id") == player_id:
                 bonus += 6
+                breakdown.append({"rule_id": 5, "description": f"{yards} yard TD reception", "score": bonus})
+            else:
+                breakdown.append({"rule_id": 5, "description": f"{yards} yard reception", "score": bonus})
+            score += bonus
 
-    if big_plays > 0:
-        breakdown.append({"name": f"{big_plays} big plays (>=20 yards)", "score": bonus})
-        score += bonus
     return score, breakdown
 
 def MATT(score: float, breakdown: list,
@@ -459,7 +461,7 @@ def MATT(score: float, breakdown: list,
     tackles = stats.get("tackles", 0)
     if tackles > 0 and (stats.get("position") == "QB"):
         bonus = 100 * tackles
-        breakdown.append({"name": f"{tackles} tackle(s) by QB", "score": bonus})
+        breakdown.append({"rule_id": 4, "description": f"{tackles} tackles by QB", "score": bonus})
         score += bonus
     return score, breakdown
 
@@ -479,14 +481,24 @@ def Y2023(score: float, breakdown: list,
     pts_punt_return_yards = punt_return_yards * 0.5
     pts_kickoff_return_yards = kickoff_return_yards * 0.5
     if punt_return_yards:
-        breakdown.append({"name": f"{punt_return_yards} punt return yards", "score": round(pts_punt_return_yards, 2)})
+        breakdown.append({"rule_id": 8, "description": f"{punt_return_yards} punt return yards", "score": round(pts_punt_return_yards, 2)})
     if kickoff_return_yards:
-        breakdown.append({"name": f"{kickoff_return_yards} kickoff return yards", "score": round(pts_kickoff_return_yards, 2)})
+        breakdown.append({"rule_id": 8, "description": f"{kickoff_return_yards} kickoff return yards", "score": round(pts_kickoff_return_yards, 2)})
     score += pts_punt_return_yards + pts_kickoff_return_yards
     
     return score, breakdown
 
 def Y2024(score: float, breakdown: list,
+          player_id: str, week: int, year: int) -> tuple[float, list]:
+    """
+    x2 points for defense.
+    """
+    if player_id in TEAM_ABBREVIATIONS:
+        breakdown.append({"rule_id": 10, "description": "Defense x2", "score": score})
+        score *= 2
+    return score, breakdown
+
+def Y2025(score: float, breakdown: list,
           player_id: str, week: int, year: int) -> tuple[float, list]:
     """
     +1 point per sack yard.
@@ -497,20 +509,11 @@ def Y2024(score: float, breakdown: list,
         if not team_row.empty:
             sack_yards = team_row.iloc[0].get("def_sack_yards", 0)
             if sack_yards:
-                breakdown.append({"name": f"{sack_yards} sack yards", "score": sack_yards})
+                breakdown.append({"rule_id": 9, "description": f"{sack_yards} sack yards", "score": sack_yards})
                 score += sack_yards
 
     return score, breakdown
 
-def Y2025(score: float, breakdown: list,
-          player_id: str, week: int, year: int) -> tuple[float, list]:
-    """
-    x2 points for defense.
-    """
-    if player_id in TEAM_ABBREVIATIONS:
-        breakdown.append({"name": "Defense x2", "score": score})
-        score *= 2
-    return score, breakdown
 
 
 def calculate_score(player_id: str, week: int, year: int) -> tuple[float, list[dict]]:
@@ -572,7 +575,6 @@ def main():
     global pbp_df, snap_df, weekly_df, players_df, team_df, game_df, TEAM_ABBREVIATIONS
 
     parser = argparse.ArgumentParser(description="Generate best‑ball fantasy scores.")
-    parser.add_argument("--year", type=int, required=True)
     parser.add_argument("--week", type=int)
     parser.add_argument("--teams", default="teams.json")
     parser.add_argument("--schedule", default="schedule.json")
@@ -581,10 +583,10 @@ def main():
     parser.add_argument("--output", default="scores.json")
     args = parser.parse_args()
 
-    teams_data = load_json(f"{args.year}/{args.teams}")
-    schedule_data = load_json(f"{args.year}/{args.schedule}")
+    teams_data = load_json(f"2025/{args.teams}")
+    schedule_data = load_json(f"2025/{args.schedule}")
     player_map = load_json(args.player_map)
-    roster_slots = load_json(f"{args.year}/{args.roster}")
+    roster_slots = load_json(f"2025/{args.roster}")
 
     weeks_to_process = []
     if args.week:
@@ -597,11 +599,11 @@ def main():
 
     # Load DataFrames globally
     print("Fetching data …")
-    pbp_df = fetch_csv(PBP_URL.format(year=args.year))
-    snap_df = fetch_csv(SNAP_COUNTS_URL.format(year=args.year))
-    weekly_df = fetch_csv(WEEKLY_STATS_URL.format(year=args.year))
+    pbp_df = fetch_csv(PBP_URL.format(year=2025))
+    snap_df = fetch_csv(SNAP_COUNTS_URL.format(year=2025))
+    weekly_df = fetch_csv(WEEKLY_STATS_URL.format(year=2025))
     players_df = fetch_csv(PLAYERS_URL)   # one-time large file
-    team_df = fetch_csv(TEAM_STATS_URL.format(year=args.year))
+    team_df = fetch_csv(TEAM_STATS_URL.format(year=2025))
     game_df = fetch_csv(GAME_STATS_URL)
 
     TEAM_ABBREVIATIONS = set(team_df["team"].dropna().unique())
@@ -623,7 +625,7 @@ def main():
                     continue
 
                 # Run scoring pipeline
-                total, breakdown = calculate_score(nfl_id, week_int, int(args.year))
+                total, breakdown = calculate_score(nfl_id, week_int, 2025)
 
                 # Get real NFL position for best‑ball (from weekly stats)
                 wk_row = weekly_df[(weekly_df["player_id"] == nfl_id) & (weekly_df["week"] == week_int)]

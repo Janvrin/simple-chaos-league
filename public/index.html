@@ -221,12 +221,12 @@
     <main class="main-container" id="mainContent"></main>
 
     <div id="playerModal" class="modal-overlay" style="display:none;" aria-hidden="true">
-        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="playerModalTitle">
             <div class="modal-header">
-                <span class="modal-player-name" id="modalTitle">Player Name</span>
-                <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+                <span class="modal-player-name" id="playerModalTitle">Player Name</span>
+                <button class="modal-close" id="playerModalClose" aria-label="Close modal">&times;</button>
             </div>
-            <div class="modal-body" id="modalBody"></div>
+            <div class="modal-body" id="playerModalBody"></div>
         </div>
     </div>
 
@@ -255,20 +255,26 @@
             // 🧠 Global state
             // ──────────────────────────────────────
             let scheduleData = null;
-            let teamsData = null;      // { teams: { "id": { name, owner?, roster } } }
-            let scoresData = null;     // { weeks: { "1": { players: {...} } } }
+            let teamsData = null;
+            let scoresData = null;
+            let rulesData = null;
             let selectedWeek = null;
             let selectedYear = null;
             let expandedMatchupIndex = null;
             let allWeeks = [];
+            let rulesImpact = null;
 
             const mainContent = document.getElementById('mainContent');
             const weekSelect = document.getElementById('weekSelect');
             const btnRefresh = document.getElementById('btnRefresh');
             const playerModal = document.getElementById('playerModal');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalBody = document.getElementById('modalBody');
-            const modalClose = document.getElementById('modalClose');
+            const playerModalTitle = document.getElementById('playerModalTitle');
+            const playerModalBody = document.getElementById('playerModalBody');
+            const playerModalClose = document.getElementById('playerModalClose');
+            const rulesModal = document.getElementById('rulesModal');
+            const rulesModalTitle = document.getElementById('rulesModalTitle');
+            const rulesModalBody = document.getElementById('rulesModalBody');
+            const rulesModalClose = document.getElementById('rulesModalClose');
 
             async function fetchJSON(filename) {
                 const url = RAW_BASE + filename;
@@ -278,12 +284,13 @@
             }
 
             async function loadAllData() {
-                const [schedule, teams, scores] = await Promise.all([
+                const [schedule, teams, scores, rules] = await Promise.all([
                     fetchJSON(selectedYear + '/schedule.json'),
                     fetchJSON(selectedYear + '/teams.json'),
-                    fetchJSON(selectedYear + '/scores.json')
+                    fetchJSON(selectedYear + '/scores.json'),
+                    fetchJSON(selectedYear + '/rules.json')
                 ]);
-                return { schedule, teams, scores };
+                return { schedule, teams, scores, rules };
             }
 
             function determineCurrentWeek(schedule) {
@@ -357,10 +364,6 @@
                     }
                 }
                 return { total: Math.round(total * 100) / 100, hasAnyScore };
-            }
-
-            function getPlayerDisplayScore(teamId, playerId) {
-                return getPlayerScore(teamId, playerId);
             }
 
             // ──────────────────────────────────────
@@ -466,7 +469,7 @@
                     const roster = getTeamRoster(teamId);
                     const enriched = roster.map(p => {
                         const playerInfo = teamData?.players?.[p.id];
-                        const score = getPlayerDisplayScore(teamId, p.id);
+                        const score = getPlayerScore(teamId, p.id);
                         const pos = playerInfo?.position || '';
                         return { ...p, score, pos };
                     });
@@ -570,14 +573,11 @@
                     body += `<p style="text-align:center;color:#999;padding:12px;">No breakdown data available.</p>`;
                 } else {
                     body += `<table class="breakdown-table"><thead><tr><th>Category</th><th>Score</th></tr></thead><tbody>`;
-                    let sum = 0;
                     breakdown.forEach(item => {
                         const score = Math.round((item.score || 0) * 100) / 100;
-                        sum += score;
-                        body += `<tr><td>${escapeHTML(item.name||'Unknown')}</td><td class="score-cell">${score}</td></tr>`;
+                        body += `<tr><td>${escapeHTML(item.description||'Unknown')}</td><td class="score-cell">${score}</td></tr>`;
                     });
-                    const roundedSum = Math.round(sum * 100) / 100;
-                    body += `<tr class="total-row"><td><strong>Total</strong></td><td class="score-cell"><strong>${roundedSum}</strong></td></tr></tbody></table>`;
+                    body += `<tr class="total-row"><td><strong>Total</strong></td><td class="score-cell"><strong>${total !== null ? total : '—'}</strong></td></tr></tbody></table>`;
                 }
                 modalBody.innerHTML = body;
                 playerModal.style.display = 'flex';
@@ -589,6 +589,47 @@
             function hidePlayerModal() {
                 playerModal.style.display = 'none';
                 playerModal.setAttribute('aria-hidden','true');
+                document.body.style.overflow = '';
+            }
+
+            function calculateRuleImpact() {
+                if (rulesImpact !== null) return rulesImpact;
+                rulesImpact = {};
+                
+                for (const rule of rulesData || []) {
+                    rulesImpact[rule.id] = 0;
+                }
+
+                for (const week of scoresData?.weeks?.items || []) {
+                    for (const player of week.players?.items || []) {
+                        if (player.position === "BENCH") continue;
+                        for (const breakdown of player.breakdown || []) {
+                            rulesImpact[breakdown.rule_id] += breakdown.score || 0;
+                        }
+                    }
+                }
+            }
+
+            function showRulesModal() {
+                calculateRuleImpact();
+                rulesModalTitle.textContent = 'League Rules';
+                let body = `<div class="modal-total"><div class="modal-total-label">Total Score</div><div class="modal-total-value">${total !== null ? total : '—'}</div></div>`;
+                body += `<table class="breakdown-table"><thead><tr><th>Name</th><th>Owner</th><th>Description</th><th>Example</th><th>Impact</th></tr></thead><tbody>`;
+                for (const rule of rulesData || []) {
+                    body += `<tr><td>${escapeHTML(rule.name||'Unknown')}</td><td>${escapeHTML(rule.owner||'Unknown')}</td><td>${escapeHTML(rule.description||'Unknown')}</td><td>${escapeHTML(rule.example||'Unknown')}</td><td>${escapeHTML(rulesImpact[rule.id]||'Unknown')}</td></tr>`;
+                }
+                body += `</tbody></table>`;
+
+                rulesModalBody.innerHTML = body;
+                rulesModal.style.display = 'flex';
+                rulesModal.setAttribute('aria-hidden','false');
+                document.body.style.overflow = 'hidden';
+                rulesModalClose.focus();
+            }
+
+            function hideRulesModal() {
+                rulesModal.style.display = 'none';
+                rulesModal.setAttribute('aria-hidden','true');
                 document.body.style.overflow = '';
             }
 
@@ -609,6 +650,7 @@
                     scheduleData = data.schedule;
                     teamsData = data.teams;
                     scoresData = data.scores;
+                    rulesData = data.rules;
                     populateWeekSelect();
                     renderHomeView();
                 } catch (err) {
