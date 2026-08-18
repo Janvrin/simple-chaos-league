@@ -1,0 +1,71 @@
+[
+    {
+        "id": 0,
+        "name": "TD Timeout",
+        "user": "Jaxon",
+        "description": "-1 pt per TD for each timeout each team has remaining",
+        "example": "Offense 2 timeouts + Defense 1 timeout = -3 pts"
+    },
+    {
+        "id": 1,
+        "name": "TBD",
+        "user": "Mason",
+        "description": "Offensive players have their final score multiplied by their offensive snap %",
+        "example": "85% snap -> final score x 0.85"
+    },
+    {
+        "id": 2,
+        "name": "Bird Law",
+        "user": "Mark",
+        "description": "+1 pt per reception for players on teams with a bird mascot (Cardinals, Falcons, Ravens, Seahawks, Eagles)"
+    },
+    {
+        "id": 3,
+        "name": "TBD",
+        "user": "Tyler",
+        "description": "+10 pts per sack suffered by QB, -10 pts per sack for defense"
+    },
+    {
+        "id": 4,
+        "name": "TBD",
+        "user": "Matt",
+        "description": "+100 pts for tackle by QB"
+    },
+    {
+        "id": 5,
+        "name": "TBD",
+        "user": "Jacob",
+        "description": "x2, +10 pts for plays of 20 or more yards",
+        "example": "25yd rec TD -> (2.5 YD + 6 TD + 1 PPR) x 2 = 19"
+    },
+    {
+        "id": 6,
+        "name": "Win or Go Home",
+        "user": "Payton",
+        "description": "x0 pts for players on a team that lost"
+    },
+    {
+        "id": 7,
+        "name": "Worst Ball",
+        "user": "Dylan",
+        "description": "Starting slots are now filled with the lowest scoring players, this excludes scores of zero but not negative scores"
+    },
+    {
+        "id": 8,
+        "name": "",
+        "user": "2023",
+        "description": "+0.5 pts per punt/kickoff return yard"
+    },
+    {
+        "id": 9,
+        "name": "",
+        "user": "2024",
+        "description": "x2 pts for defense"
+    },
+    {
+        "id": 10,
+        "name": "",
+        "user": "2025",
+        "description": "+1 pt per sack yard for defense"
+    }
+]

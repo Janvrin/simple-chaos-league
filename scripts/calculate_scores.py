@@ -254,6 +254,9 @@ def defense_score(team_abbr: str, week: int, year: int) -> tuple[float, list]:
 
 def MASON(score: float, breakdown: list,
           player_id: str, week: int, year: int) -> tuple[float, list]:
+    """
+    Multiply score by offensive snap percentage.
+    """
     global players_df, snap_df, TEAM_ABBREVIATIONS
 
     # Skip defenses
@@ -283,10 +286,189 @@ def MASON(score: float, breakdown: list,
     })
     return new_score, breakdown
 
+def DYLAN(players_scores: list, roster_slots: list) -> dict:
+    """
+    Worst ball.
+    """
+    
+    sorted_players = sorted(players_scores, key=lambda x: x["score"], reverse=True)
+    used_ids = set()
+    slot_assignments = {}
+
+    for allowed_positions in roster_slots:
+        best_player = None
+        best_score = float("inf")
+        for player in sorted_players:
+            if player["id"] in used_ids:
+                continue
+            if player["nfl_position"] in allowed_positions:
+                if player["score"] < best_score and player["score"] != 0:
+                    best_player = player
+                    best_score = player["score"]
+
+        if best_player:
+            used_ids.add(best_player["id"])
+            label = allowed_positions[0] if len(allowed_positions) == 1 else "/".join(allowed_positions)
+            slot_assignments[best_player["id"]] = label
+
+    for player in sorted_players:
+        if player["id"] not in slot_assignments:
+            slot_assignments[player["id"]] = "BENCH"
+
+    return slot_assignments
+
+def PAYTON(score: float, breakdown: list,
+           player_id: str, week: int, year: int) -> tuple[float, list]:
+    """
+    Score is zero if team lost.
+    """
+    global weekly_df, game_df
+
+    team = None
+
+    if player_id in TEAM_ABBREVIATIONS:
+        team = player_id
+
+    else:
+        wk_row = weekly_df[(weekly_df["player_id"] == player_id) & (weekly_df["week"] == week)]
+        if wk_row.empty:
+            return score, breakdown
+        stats = wk_row.iloc[0].to_dict()
+        team = stats.get("team")
+
+    game_row = game_df[(game_df["week"] == week) & ((game_df["home_team"] == team) | (game_df["away_team"] == team))]
+    if game_row.empty:
+        return score, breakdown
+    game = game_row.iloc[0].to_dict()
+    if (game.get("home_team") == team and game.get("home_score") < game.get("away_score")) or \
+       (game.get("away_team") == team and game.get("away_score") < game.get("home_score")):
+        breakdown.append({"name": "Team lost", "score": -score})
+        score = 0
+    return score, breakdown
+    
+
+def JAXON(score: float, breakdown: list,
+          player_id: str, week: int, year: int) -> tuple[float, list]:
+    """
+    -T per TD where T is the number of timeouts each team has left.
+    """
+    global pbp_df
+
+    pbp_row = pbp_df[(pbp_df["td_player_id"] == player_id) & (pbp_df["week"] == week)]
+    if pbp_row.empty:
+        return score, breakdown
+
+    for _, row in pbp_row.iterrows():
+        timeouts = row["home_timeouts_remaining"] + row["away_timeouts_remaining"]
+        breakdown.append({"name": f"Timeouts remaining TD penalty", "score": -timeouts})
+        score -= timeouts
+    return score, breakdown
+
+def TYLER(score: float, breakdown: list,
+          player_id: str, week: int, year: int) -> tuple[float, list]:
+    """
+    QB +10 per sack, DEF -10 per sack.
+    """
+    global weekly_df, team_df
+
+    if player_id in TEAM_ABBREVIATIONS:
+        team_row = team_df[(team_df["team"] == player_id) & (team_df["week"] == week)]
+        if team_row.empty:
+            return score, breakdown
+        sacks = team_row.iloc[0].get("def_sacks", 0)
+        if sacks:
+            bonus = -10 * sacks
+            breakdown.append({"name": f"{sacks} sacks", "score": bonus})
+            score += bonus
+        return score, breakdown
+
+    week_row = weekly_df[(weekly_df["player_id"] == player_id) & (weekly_df["week"] == week)]
+    if week_row.empty:
+        return score, breakdown
+
+    stats = week_row.iloc[0].to_dict()
+
+    sacks = stats.get("sacks_suffered", 0)
+    if sacks:
+        bonus = 10 * sacks
+        breakdown.append({"name": f"Suffered {sacks} sacks", "score": bonus})
+        score += bonus
+    return score, breakdown
+
+def MARK(score: float, breakdown: list,
+         player_id: str, week: int, year: int) -> tuple[float, list]:
+    """
+    +1 PPR for players who play on a team with a bird mascot.
+    """
+    global weekly_df
+    wk_row = weekly_df[(weekly_df["player_id"] == player_id) & (weekly_df["week"] == week)]
+    if wk_row.empty:
+        return score, breakdown
+    stats = wk_row.iloc[0].to_dict()
+
+    bird_teams = ["ARI", "ATL", "BAL", "PHI"]  # Example list of teams with bird mascots
+    team = stats.get("team")
+    if team in bird_teams:
+        bonus = stats.get("reception", 0) or stats.get("receptions", 0)
+        breakdown.append({"name": f"{bonus} receptions for a bird team", "score": bonus})
+        score += bonus
+
+    return score, breakdown
+
+def JACOB(score: float, breakdown: list,
+          player_id: str, week: int, year: int) -> tuple[float, list]:
+    """
+    2x points, +10 points for plays over 20 yards
+    """
+    global pbp_df
+    big_plays = 0
+    bonus = 0
+    for _, row in pbp_df[((pbp_df["rusher_player_id"] == player_id) | (pbp_df["lateral_rusher_player_id"] == player_id) | (pbp_df["lateral_receiver_player_id"] == player_id)) & (pbp_df["week"] == week)].iterrows():
+        yards = row.get("rushing_yards", 0)
+        if yards >= 20:
+            big_plays += 1
+            bonus += 10
+            bonus += row.get("rushing_yards", 0) * 0.1
+            if row.get("td_player_id") == player_id:
+                bonus += 6
+
+    for _, row in pbp_df[(pbp_df["receiving_player_id"] == player_id) & (pbp_df["week"] == week)].iterrows():
+        yards = row.get("receiving_yards", 0)
+        if yards >= 20:
+            big_plays += 1
+            bonus += 11
+            bonus += row.get("receiving_yards", 0) * 0.1
+            if row.get("td_player_id") == player_id:
+                bonus += 6
+
+    if big_plays > 0:
+        breakdown.append({"name": f"{big_plays} big plays (>=20 yards)", "score": bonus})
+        score += bonus
+    return score, breakdown
+
+def MATT(score: float, breakdown: list,
+             player_id: str, week: int, year: int) -> tuple[float, list]:
+    """
+    +100 for tackle by QB.
+    """
+    global weekly_df
+    wk_row = weekly_df[(weekly_df["player_id"] == player_id) & (weekly_df["week"] == week)]
+    if wk_row.empty:
+        return score, breakdown
+    stats = wk_row.iloc[0].to_dict()
+    tackles = stats.get("tackles", 0)
+    if tackles > 0 and (stats.get("position") == "QB"):
+        bonus = 100 * tackles
+        breakdown.append({"name": f"{tackles} tackle(s) by QB", "score": bonus})
+        score += bonus
+    return score, breakdown
+
 def Y2023(score: float, breakdown: list,
           player_id: str, week: int, year: int) -> tuple[float, list]:
+    """
+    0.5 points per return yard.
+    """
     global weekly_df
-
     wk_row = weekly_df[(weekly_df["player_id"] == player_id) & (weekly_df["week"] == week)]
     if wk_row.empty:
         return score, breakdown
@@ -304,16 +486,32 @@ def Y2023(score: float, breakdown: list,
     
     return score, breakdown
 
+def Y2024(score: float, breakdown: list,
+          player_id: str, week: int, year: int) -> tuple[float, list]:
+    """
+    +1 point per sack yard.
+    """
+    if player_id in TEAM_ABBREVIATIONS:
+        global team_df
+        team_row = team_df[(team_df["team"] == player_id) & (team_df["week"] == week)]
+        if not team_row.empty:
+            sack_yards = team_row.iloc[0].get("def_sack_yards", 0)
+            if sack_yards:
+                breakdown.append({"name": f"{sack_yards} sack yards", "score": sack_yards})
+                score += sack_yards
+
+    return score, breakdown
+
 def Y2025(score: float, breakdown: list,
           player_id: str, week: int, year: int) -> tuple[float, list]:
+    """
+    x2 points for defense.
+    """
     if player_id in TEAM_ABBREVIATIONS:
         breakdown.append({"name": "Defense x2", "score": score})
         score *= 2
     return score, breakdown
 
-# ═══════════════════════════════════════════════════════════════════
-# MAIN SCORING PIPELINE – chain your rules here
-# ═══════════════════════════════════════════════════════════════════
 
 def calculate_score(player_id: str, week: int, year: int) -> tuple[float, list[dict]]:
     """
@@ -321,8 +519,16 @@ def calculate_score(player_id: str, week: int, year: int) -> tuple[float, list[d
     """
     score, breakdown = default_sleeper(player_id, week, year)
     score, breakdown = Y2023(score, breakdown, player_id, week, year)
+    score, breakdown = Y2024(score, breakdown, player_id, week, year)
     score, breakdown = Y2025(score, breakdown, player_id, week, year)
     score, breakdown = MASON(score, breakdown, player_id, week, year)
+    score, breakdown = JAXON(score, breakdown, player_id, week, year)
+    score, breakdown = TYLER(score, breakdown, player_id, week, year)
+    score, breakdown = MARK(score, breakdown, player_id, week, year)
+    score, breakdown = JACOB(score, breakdown, player_id, week, year)
+    score, breakdown = MATT(score, breakdown, player_id, week, year)
+    score, breakdown = PAYTON(score, breakdown, player_id, week, year)
+
     return score, breakdown
 
 
@@ -432,7 +638,7 @@ def main():
                 })
 
             # Best‑ball lineup optimisation
-            assignment = assign_best_ball_positions(roster_players, roster_slots)
+            assignment = DYLAN(roster_players, roster_slots)
 
             team_players_scores = {}
             for rp in roster_players:
