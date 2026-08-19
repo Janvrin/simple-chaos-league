@@ -621,9 +621,15 @@ def main():
 
             for player_entry in team_info["roster"]:
                 internal_id = player_entry["id"]
-                nfl_id = internal_id if internal_id in TEAM_ABBREVIATIONS else resolve_nfl_id(internal_id)
+                nfl_id = resolve_nfl_id(internal_id)
                 print(f"Processing team {team_id}, player {internal_id} (NFL ID: {nfl_id}) for week {week_int} ...")
                 if not nfl_id:
+                    roster_players.append({
+                        "id": internal_id,
+                        "score": 0,
+                        "breakdown": [],
+                        "nfl_position": "BENCH",
+                    })
                     continue
 
                 # Run scoring pipeline
@@ -663,6 +669,12 @@ def resolve_nfl_id(internal_id: str) -> str:
     """
     Resolve internal player ID to NFL ID using player_map.
     """
+    if internal_id in TEAM_ABBREVIATIONS:
+        return internal_id
+
+    if internal_id == "LAR":
+        return "LA"
+
     ids = player_map.get(internal_id)
     if not ids:
         return None
@@ -670,6 +682,10 @@ def resolve_nfl_id(internal_id: str) -> str:
         return ids["gsis_id"]
     if ids.get("espn_id"):
         players_df_row = players_df[players_df["espn_id"] == ids["espn_id"]]
+        if not players_df_row.empty:
+            return players_df_row.iloc[0]["gsis_id"]
+    if ids.get("last_name") and ids.get("first_name"):
+        players_df_row = players_df[(players_df["last_name"] == ids["last_name"]) & (players_df["first_name"] == ids["first_name"])]
         if not players_df_row.empty:
             return players_df_row.iloc[0]["gsis_id"]
     if ids.get("full_name"):

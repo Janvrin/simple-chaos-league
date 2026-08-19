@@ -4,9 +4,15 @@ data = requests.get("https://api.sleeper.app/v1/players/nfl").json()
 mapping = {}
 for sleeper_id, info in data.items():
     mapping[sleeper_id] = {}
-    name = info.get("full_name")
-    if name:
-        mapping[sleeper_id]["full_name"] = name
+    fullname = info.get("full_name")
+    if fullname:
+        mapping[sleeper_id]["full_name"] = fullname
+    lastname = info.get("last_name")
+    if lastname:
+        mapping[sleeper_id]["last_name"] = lastname
+    firstname = info.get("first_name")
+    if firstname:
+        mapping[sleeper_id]["first_name"] = firstname
     gsis = info.get("gsis_id")
     if gsis:
         mapping[sleeper_id]["gsis_id"] = gsis
