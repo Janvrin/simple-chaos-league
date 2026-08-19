@@ -68,6 +68,8 @@
         .week-select option { background: #1a3c1a; color: #fff; }
         .btn-refresh { background: rgba(255,255,255,0.12); color: #fff; border: 2px solid rgba(255,255,255,0.25); border-radius: 8px; padding: 10px 14px; cursor: pointer; font-size: 1rem; transition: var(--transition); white-space: nowrap; font-weight: 500; }
         .btn-refresh:hover { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.5); }
+        .btn-rules { background: rgba(255,255,255,0.12); color: #fff; border: 2px solid rgba(255,255,255,0.25); border-radius: 8px; padding: 10px 14px; cursor: pointer; font-size: 1rem; transition: var(--transition); white-space: nowrap; font-weight: 500; }
+        .btn-rules:hover { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.5); }
         .main-container { max-width: 960px; margin: 0 auto; padding: 20px 16px 40px; }
         .status-message { text-align: center; padding: 60px 20px; color: var(--text-secondary); }
         .status-message .spinner { display: inline-block; width: 40px; height: 40px; border: 4px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; margin-bottom: 16px; }
@@ -214,6 +216,7 @@
             <select id="weekSelect" class="week-select" aria-label="Select Week">
                 <option value="">Loading…</option>
             </select>
+            <button id="btnRules" class="btn-rules" title="View rules" aria-label="View rules">📜 Rules</button>
             <button id="btnRefresh" class="btn-refresh" title="Refresh data" aria-label="Refresh data">↻ Refresh</button>
         </div>
     </header>
@@ -262,7 +265,6 @@
             let selectedYear = null;
             let expandedMatchupIndex = null;
             let allWeeks = [];
-            let rulesImpact = null;
 
             const mainContent = document.getElementById('mainContent');
             const weekSelect = document.getElementById('weekSelect');
@@ -427,6 +429,9 @@
 
                 mainContent.innerHTML = html;
 
+                const btnRules = document.getElementById('btnRules');
+                if (btnRules) btnRules.addEventListener('click', () => { rulesModal.style.display = 'flex'; });
+
                 document.querySelectorAll('.matchup-card').forEach(card => {
                     card.addEventListener('click', function() {
                         const idx = parseInt(this.getAttribute('data-matchup-index'));
@@ -567,7 +572,7 @@
                 const breakdown = playerData?.breakdown || [];
                 const total = playerData?.total !== undefined ? Math.round(playerData.total * 100) / 100 : null;
 
-                modalTitle.textContent = playerName || `Player ${playerId}`;
+                playerModalTitle.textContent = playerName || `Player ${playerId}`;
                 let body = `<div class="modal-total"><div class="modal-total-label">Total Score</div><div class="modal-total-value">${total !== null ? total : '—'}</div></div>`;
                 if (breakdown.length === 0) {
                     body += `<p style="text-align:center;color:#999;padding:12px;">No breakdown data available.</p>`;
@@ -579,11 +584,11 @@
                     });
                     body += `<tr class="total-row"><td><strong>Total</strong></td><td class="score-cell"><strong>${total !== null ? total : '—'}</strong></td></tr></tbody></table>`;
                 }
-                modalBody.innerHTML = body;
+                playerModalBody.innerHTML = body;
                 playerModal.style.display = 'flex';
                 playerModal.setAttribute('aria-hidden','false');
                 document.body.style.overflow = 'hidden';
-                modalClose.focus();
+                playerModalClose.focus();
             }
 
             function hidePlayerModal() {
@@ -593,7 +598,6 @@
             }
 
             function calculateRuleImpact() {
-                if (rulesImpact !== null) return rulesImpact;
                 rulesImpact = {};
                 
                 for (const rule of rulesData || []) {
@@ -608,23 +612,20 @@
                         }
                     }
                 }
+
+                return rulesImpact;
             }
 
-            function showRulesModal() {
-                calculateRuleImpact();
+            function populateRulesModal() {
+                rulesImpact = calculateRuleImpact();
                 rulesModalTitle.textContent = 'League Rules';
-                let body = `<div class="modal-total"><div class="modal-total-label">Total Score</div><div class="modal-total-value">${total !== null ? total : '—'}</div></div>`;
-                body += `<table class="breakdown-table"><thead><tr><th>Name</th><th>Owner</th><th>Description</th><th>Example</th><th>Impact</th></tr></thead><tbody>`;
+                let body = `<table class="breakdown-table"><thead><tr><th>Name</th><th>Owner</th><th>Description</th><th>Example</th><th>Impact</th></tr></thead><tbody>`;
                 for (const rule of rulesData || []) {
                     body += `<tr><td>${escapeHTML(rule.name||'Unknown')}</td><td>${escapeHTML(rule.owner||'Unknown')}</td><td>${escapeHTML(rule.description||'Unknown')}</td><td>${escapeHTML(rule.example||'Unknown')}</td><td>${escapeHTML(rulesImpact[rule.id]||'Unknown')}</td></tr>`;
                 }
                 body += `</tbody></table>`;
 
                 rulesModalBody.innerHTML = body;
-                rulesModal.style.display = 'flex';
-                rulesModal.setAttribute('aria-hidden','false');
-                document.body.style.overflow = 'hidden';
-                rulesModalClose.focus();
             }
 
             function hideRulesModal() {
@@ -653,6 +654,7 @@
                     rulesData = data.rules;
                     populateWeekSelect();
                     renderHomeView();
+                    populateRulesModal();
                 } catch (err) {
                     console.error(err);
                     mainContent.innerHTML = `<div class="error-box"><p><strong>⚠️ Unable to load league data</strong></p><p style="font-size:0.85rem;margin-top:4px;">${escapeHTML(err.message)}</p><p style="font-size:0.8rem;color:#888;margin-top:6px;">Check repo settings and file paths:<br><code style="word-break:break-all;">${RAW_BASE}schedule.json</code></p><button onclick="location.reload()">🔄 Retry</button></div>`;
@@ -703,8 +705,10 @@
                     scheduleData = data.schedule;
                     teamsData = data.teams;
                     scoresData = data.scores;
+                    rulesData = data.rules;
                     populateWeekSelect();
                     renderHomeView();
+                    populateRulesModal();
                     window.scrollTo({top:0,behavior:'smooth'});
                 }).catch(err => {
                     console.error(err);
@@ -724,7 +728,7 @@
                 try {
                     populateYearSelect();
                     const data = await loadAllData();
-                    scheduleData = data.schedule; teamsData = data.teams; scoresData = data.scores;
+                    scheduleData = data.schedule; teamsData = data.teams; scoresData = data.scores; rulesData = data.rules;
                     allWeeks = Object.keys(scheduleData?.weeks || {}).sort((a,b) => {
                         const na = parseInt(a,10), nb = parseInt(b,10);
                         if (!isNaN(na) && !isNaN(nb)) return na - nb;
@@ -732,6 +736,7 @@
                     });
                     populateWeekSelect();
                     renderHomeView();
+                    populateRulesModal();
                     window.scrollTo({top:0,behavior:'smooth'});
                 } catch (err) {
                     alert('Refresh failed: ' + err.message);
@@ -740,8 +745,11 @@
                 }
             });
 
-            modalClose.addEventListener('click', hidePlayerModal);
+            playerModalClose.addEventListener('click', hidePlayerModal);
+            rulesModalClose.addEventListener('click', hideRulesModal);
+
             playerModal.addEventListener('click', function(e) { if (e.target === playerModal) hidePlayerModal(); });
+            rulesModal.addEventListener('click', function(e) { if (e.target === rulesModal) hideRulesModal(); });
 
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
@@ -751,6 +759,11 @@
                         expandedMatchupIndex = null;
                         document.getElementById('backBar')?.classList.remove('visible');
                     }
+                }
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    if (rulesModal.style.display === 'flex') hideRulesModal();
                 }
             });
 

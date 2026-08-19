@@ -37,6 +37,8 @@ GAME_STATS_URL = "https://github.com/nflverse/nflverse-data/releases/download/sc
 
 TEAM_ABBREVIATIONS = set()
 
+player_map = {}
+
 def load_json(path):
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
@@ -572,7 +574,7 @@ def assign_best_ball_positions(players_scores: list, roster_slots: list) -> dict
 # ═══════════════════════════════════════════════════════════════════
 
 def main():
-    global pbp_df, snap_df, weekly_df, players_df, team_df, game_df, TEAM_ABBREVIATIONS
+    global pbp_df, snap_df, weekly_df, players_df, team_df, game_df, TEAM_ABBREVIATIONS, player_map
 
     parser = argparse.ArgumentParser(description="Generate best‑ball fantasy scores.")
     parser.add_argument("--week", type=int)
@@ -619,7 +621,7 @@ def main():
 
             for player_entry in team_info["roster"]:
                 internal_id = player_entry["id"]
-                nfl_id = internal_id if internal_id in TEAM_ABBREVIATIONS else player_map.get(internal_id)
+                nfl_id = internal_id if internal_id in TEAM_ABBREVIATIONS else resolve_nfl_id(internal_id)
                 print(f"Processing team {team_id}, player {internal_id} (NFL ID: {nfl_id}) for week {week_int} ...")
                 if not nfl_id:
                     continue
@@ -656,6 +658,24 @@ def main():
     with open(args.output, "w", encoding="utf-8") as f:
         json.dump(make_json_safe(scores), f, indent=2)
     print(f"scores.json written to {args.output}")
+
+def resolve_nfl_id(internal_id: str) -> str:
+    """
+    Resolve internal player ID to NFL ID using player_map.
+    """
+    ids = player_map.get(internal_id)
+    if not ids:
+        return None
+    if ids.get("gsis_id"):
+        return ids["gsis_id"]
+    if ids.get("espn_id"):
+        players_df_row = players_df[players_df["espn_id"] == ids["espn_id"]]
+        if not players_df_row.empty:
+            return players_df_row.iloc[0]["gsis_id"]
+    if ids.get("full_name"):
+        players_df_row = players_df[players_df["display_name"] == ids["full_name"]]
+        if not players_df_row.empty:
+            return players_df_row.iloc[0]["gsis_id"]
 
 def make_json_safe(obj):
     """Recursively convert numpy/pandas types to native Python types."""
