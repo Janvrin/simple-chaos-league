@@ -191,20 +191,21 @@ def main():
 
             week_teams[roster_id] = {"players": team_players, "total": round(total_points, 2)}
 
-        for m in matchups:
-            roster_id = str(m["roster_id"])
-            opponent_id = str(m["matchup_id"] ^ m["roster_id"])
-            team_score = week_teams[roster_id]["total"]
-            opponent_score = week_teams.get(opponent_id, {}).get("total", 0.0)
+        for m in schedule["weeks"][week_str]["matchups"]:
+            team1 = str(m["team1"])
+            team2 = str(m["team2"])
+            s1 = week_teams[team1]["total"]
+            s2 = week_teams.get(team2, {}).get("total", 0.0)
 
-            if team_score > opponent_score:
-                result = "WIN"
-            elif team_score < opponent_score:
-                result = "LOSS"
+            if s1 > s2:
+                week_teams[team1]["result"] = "WIN"
+                week_teams[team2]["result"] = "LOSS"
+            elif s1 < s2:
+                week_teams[team1]["result"] = "LOSS"
+                week_teams[team2]["result"] = "WIN"
             else:
-                result = "TIE"
-
-            week_teams[roster_id]["result"] = result
+                week_teams[team1]["result"] = "TIE"
+                week_teams[team2]["result"] = "TIE"
 
         scores["weeks"][week_str] = {"teams": week_teams}
 

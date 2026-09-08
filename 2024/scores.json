@@ -2816,7 +2816,7 @@
             }
           },
           "total": 273.34,
-          "result": "WIN"
+          "result": "LOSS"
         },
         "5": {
           "players": {
@@ -3492,7 +3492,7 @@
             }
           },
           "total": 280.67,
-          "result": "LOSS"
+          "result": "WIN"
         },
         "6": {
           "players": {
@@ -4936,7 +4936,7 @@
             }
           },
           "total": 305.32,
-          "result": "WIN"
+          "result": "LOSS"
         },
         "8": {
           "players": {
@@ -5592,7 +5592,7 @@
             }
           },
           "total": 247.26,
-          "result": "WIN"
+          "result": "LOSS"
         }
       }
     },
@@ -6272,7 +6272,7 @@
             }
           },
           "total": 334.16,
-          "result": "LOSS"
+          "result": "WIN"
         },
         "2": {
           "players": {
@@ -6924,7 +6924,7 @@
             }
           },
           "total": 352.68,
-          "result": "WIN"
+          "result": "LOSS"
         },
         "3": {
           "players": {
@@ -9592,7 +9592,7 @@
             }
           },
           "total": 317.6,
-          "result": "LOSS"
+          "result": "WIN"
         },
         "7": {
           "players": {
@@ -12920,7 +12920,7 @@
             }
           },
           "total": 355.3,
-          "result": "LOSS"
+          "result": "WIN"
         },
         "4": {
           "players": {
@@ -13568,7 +13568,7 @@
             }
           },
           "total": 295.96,
-          "result": "WIN"
+          "result": "LOSS"
         },
         "5": {
           "players": {
@@ -14792,7 +14792,7 @@
             }
           },
           "total": 319.61,
-          "result": "WIN"
+          "result": "LOSS"
         },
         "7": {
           "players": {
@@ -16852,7 +16852,7 @@
             }
           },
           "total": 315.73,
-          "result": "WIN"
+          "result": "LOSS"
         },
         "2": {
           "players": {
@@ -21464,7 +21464,7 @@
             }
           },
           "total": 303.43,
-          "result": "WIN"
+          "result": "LOSS"
         }
       }
     },
@@ -22152,7 +22152,7 @@
             }
           },
           "total": 345.96,
-          "result": "LOSS"
+          "result": "WIN"
         },
         "2": {
           "players": {
@@ -22788,7 +22788,7 @@
             }
           },
           "total": 305.47,
-          "result": "WIN"
+          "result": "LOSS"
         },
         "3": {
           "players": {
@@ -24000,7 +24000,7 @@
             }
           },
           "total": 264.43,
-          "result": "WIN"
+          "result": "LOSS"
         },
         "5": {
           "players": {
@@ -25864,7 +25864,7 @@
             }
           },
           "total": 289.98,
-          "result": "LOSS"
+          "result": "WIN"
         },
         "8": {
           "players": {
@@ -26484,7 +26484,7 @@
             }
           },
           "total": 363.56,
-          "result": "WIN"
+          "result": "LOSS"
         }
       }
     },
@@ -27728,7 +27728,7 @@
             }
           },
           "total": 281.81,
-          "result": "WIN"
+          "result": "LOSS"
         },
         "3": {
           "players": {
@@ -29404,7 +29404,7 @@
             }
           },
           "total": 288.42,
-          "result": "LOSS"
+          "result": "WIN"
         },
         "6": {
           "players": {
@@ -31308,7 +31308,7 @@
             }
           },
           "total": 300.93,
-          "result": "WIN"
+          "result": "LOSS"
         }
       }
     },
@@ -31900,7 +31900,7 @@
             }
           },
           "total": 297.95,
-          "result": "LOSS"
+          "result": "WIN"
         },
         "2": {
           "players": {
@@ -32516,7 +32516,7 @@
             }
           },
           "total": 290.02,
-          "result": "WIN"
+          "result": "LOSS"
         },
         "3": {
           "players": {
@@ -34316,7 +34316,7 @@
             }
           },
           "total": 306.04,
-          "result": "LOSS"
+          "result": "WIN"
         },
         "6": {
           "players": {
@@ -35504,7 +35504,7 @@
             }
           },
           "total": 273.41,
-          "result": "WIN"
+          "result": "LOSS"
         },
         "8": {
           "players": {
@@ -40036,7 +40036,7 @@
             }
           },
           "total": 310.82,
-          "result": "WIN"
+          "result": "LOSS"
         },
         "7": {
           "players": {
@@ -43248,7 +43248,7 @@
             }
           },
           "total": 344.87,
-          "result": "LOSS"
+          "result": "WIN"
         },
         "4": {
           "players": {
@@ -45712,7 +45712,7 @@
             }
           },
           "total": 335.6,
-          "result": "WIN"
+          "result": "LOSS"
         },
         "8": {
           "players": {
@@ -51148,7 +51148,7 @@
             }
           },
           "total": 299.93,
-          "result": "WIN"
+          "result": "LOSS"
         }
       }
     },
@@ -51736,7 +51736,7 @@
             }
           },
           "total": 178.98,
-          "result": "WIN"
+          "result": "LOSS"
         },
         "2": {
           "players": {
@@ -52416,7 +52416,7 @@
             }
           },
           "total": 320.98,
-          "result": "WIN"
+          "result": "LOSS"
         },
         "3": {
           "players": {
@@ -56672,7 +56672,7 @@
             }
           },
           "total": 297.15,
-          "result": "WIN"
+          "result": "LOSS"
         },
         "2": {
           "players": {
@@ -58428,7 +58428,7 @@
             }
           },
           "total": 292.11,
-          "result": "WIN"
+          "result": "LOSS"
         },
         "5": {
           "players": {
@@ -61276,7 +61276,7 @@
             }
           },
           "total": 308.09,
-          "result": "LOSS"
+          "result": "WIN"
         },
         "2": {
           "players": {
@@ -62664,7 +62664,7 @@
             }
           },
           "total": 354.33,
-          "result": "LOSS"
+          "result": "WIN"
         },
         "4": {
           "players": {
@@ -63348,7 +63348,7 @@
             }
           },
           "total": 317.54,
-          "result": "WIN"
+          "result": "LOSS"
         },
         "5": {
           "players": {
@@ -68684,7 +68684,7 @@
             }
           },
           "total": 294.69,
-          "result": "WIN"
+          "result": "LOSS"
         },
         "6": {
           "players": {
@@ -69196,7 +69196,7 @@
             }
           },
           "total": 269.84,
-          "result": "LOSS"
+          "result": "WIN"
         },
         "7": {
           "players": {
@@ -69820,7 +69820,7 @@
             }
           },
           "total": 327.65,
-          "result": "WIN"
+          "result": "LOSS"
         },
         "8": {
           "players": {
@@ -70372,7 +70372,7 @@
             }
           },
           "total": 246.06,
-          "result": "WIN"
+          "result": "LOSS"
         }
       }
     },
@@ -71040,7 +71040,7 @@
             }
           },
           "total": 366.67,
-          "result": "WIN"
+          "result": "LOSS"
         },
         "2": {
           "players": {
@@ -72932,7 +72932,7 @@
             }
           },
           "total": 283.06,
-          "result": "WIN"
+          "result": "LOSS"
         },
         "5": {
           "players": {
@@ -73592,7 +73592,7 @@
             }
           },
           "total": 352.15,
-          "result": "LOSS"
+          "result": "WIN"
         },
         "6": {
           "players": {
@@ -74168,7 +74168,7 @@
             }
           },
           "total": 295.11,
-          "result": "WIN"
+          "result": "LOSS"
         },
         "7": {
           "players": {
