@@ -408,7 +408,7 @@ def MARK(score: float, breakdown: list,
         return score, breakdown
     stats = wk_row.iloc[0].to_dict()
 
-    bird_teams = ["ARI", "ATL", "BAL", "PHI"]  # Example list of teams with bird mascots
+    bird_teams = ["ARI", "ATL", "BAL", "PHI", "SEA"]
     team = stats.get("team")
     if team in bird_teams:
         bonus = stats.get("reception", 0) or stats.get("receptions", 0)
@@ -650,6 +650,7 @@ def main():
             # Best‑ball lineup optimisation
             assignment = DYLAN(roster_players, roster_slots)
 
+            team_score = 0
             team_players_scores = {}
             for rp in roster_players:
                 team_players_scores[rp["id"]] = {
@@ -657,7 +658,24 @@ def main():
                     "breakdown": rp["breakdown"],
                     "position": assignment[rp["id"]]
                 }
-            week_scores_teams[team_id] = {"players": team_players_scores}
+                if assignment[rp["id"]] != "BENCH":
+                    team_score += rp["score"]
+            week_scores_teams[team_id] = {"players": team_players_scores, "total": round(team_score, 2)}
+
+        for matchup in schedule_data["weeks"][week_str]["matchups"]:
+            team_a = matchup["team1"]
+            team_b = matchup["team2"]
+            score_a = week_scores_teams[team_a]["total"]
+            score_b = week_scores_teams[team_b]["total"]
+            if score_a > score_b:
+                week_scores_teams[team_a]["result"] = "WIN"
+                week_scores_teams[team_b]["result"] = "LOSS"
+            elif score_b > score_a:
+                week_scores_teams[team_b]["result"] = "WIN"
+                week_scores_teams[team_a]["result"] = "LOSS"
+            else:
+                week_scores_teams[team_a]["result"] = "TIE"
+                week_scores_teams[team_b]["result"] = "TIE"
 
         scores["weeks"][week_str] = {"teams": week_scores_teams}
 

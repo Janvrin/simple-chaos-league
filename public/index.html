@@ -415,13 +415,13 @@
                         <div class="matchup-card" data-matchup-index="${idx}" role="button" tabindex="0" aria-expanded="false">
                             <div class="matchup-card-header">
                                 <div class="matchup-team">
-                                    <div class="matchup-team-name" title="${escapeHTML(t1Name)}">${escapeHTML(t1Name)}</div>
+                                    <div class="matchup-team-name" title="${escapeHTML(t1Name)}">${escapeHTML(t1Name)} ${teamsData[m.team1] ? teamsData[m.team1].record : '0-0-0'}</div>
                                     <div class="matchup-team-owner" title="${escapeHTML(t1Owner)}">${escapeHTML(t1Owner)}</div>
                                     <div class="matchup-team-score${s1 === null ? ' zero' : ''}">${s1 !== null ? s1 : '—'}</div>
                                 </div>
                                 <div class="matchup-vs">VS</div>
                                 <div class="matchup-team">
-                                    <div class="matchup-team-name" title="${escapeHTML(t2Name)}">${escapeHTML(t2Name)}</div>
+                                    <div class="matchup-team-name" title="${escapeHTML(t2Name)}">${escapeHTML(t2Name)} ${teamsData[m.team2] ? teamsData[m.team2].record : '0-0-0'}</div>
                                     <div class="matchup-team-owner" title="${escapeHTML(t2Owner)}">${escapeHTML(t2Owner)}</div>
                                     <div class="matchup-team-score${s2 === null ? ' zero' : ''}">${s2 !== null ? s2 : '—'}</div>
                                 </div>
@@ -661,6 +661,7 @@
                     teamsData = data.teams;
                     scoresData = data.scores;
                     rulesData = data.rules;
+                    calculateRecords();
                     populateWeekSelect();
                     renderHomeView();
                     populateRulesModal();
@@ -668,6 +669,24 @@
                     console.error(err);
                     mainContent.innerHTML = `<div class="error-box"><p><strong>⚠️ Unable to load league data</strong></p><p style="font-size:0.85rem;margin-top:4px;">${escapeHTML(err.message)}</p><p style="font-size:0.8rem;color:#888;margin-top:6px;">Check repo settings and file paths:<br><code style="word-break:break-all;">${RAW_BASE}schedule.json</code></p><button onclick="location.reload()">🔄 Retry</button></div>`;
                     weekSelect.innerHTML = '<option value="">—</option>';
+                }
+            }
+
+            function calculateRecords() {
+                const records = {};
+                for (const teamId of Object.keys(teamsData?.teams || {})) {
+                    records[teamId] = { wins: 0, losses: 0, ties: 0 };
+                }
+                for (const week of Object.values(scoresData?.weeks || {})) {
+                    for (const team of Object.keys(week.teams || {})) {
+                        const result = week.teams[team].result;
+                        if (result === 'WIN') records[team].wins++;
+                        else if (result === 'LOSS') records[team].losses++;
+                        else if (result === 'TIE') records[team].ties++;
+                    }
+                }
+                for (const teamId of Object.keys(records)) {
+                    teamsData.teams[teamId].record = `${records[teamId].wins}-${records[teamId].losses}-${records[teamId].ties}`;
                 }
             }
 
@@ -715,6 +734,7 @@
                     teamsData = data.teams;
                     scoresData = data.scores;
                     rulesData = data.rules;
+                    calculateRecords();
                     populateWeekSelect();
                     renderHomeView();
                     populateRulesModal();
@@ -743,6 +763,7 @@
                         if (!isNaN(na) && !isNaN(nb)) return na - nb;
                         return a.localeCompare(b, undefined, {numeric:true});
                     });
+                    calculateRecords();
                     populateWeekSelect();
                     renderHomeView();
                     populateRulesModal();
