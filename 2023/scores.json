@@ -508,7 +508,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 232.18,
+          "result": "WIN"
         },
         "2": {
           "players": {
@@ -956,7 +958,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 163.86,
+          "result": "LOSS"
         },
         "3": {
           "players": {
@@ -1520,7 +1524,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 307.74,
+          "result": "WIN"
         },
         "4": {
           "players": {
@@ -2068,7 +2074,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 208.96,
+          "result": "WIN"
         },
         "5": {
           "players": {
@@ -2572,7 +2580,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 204.5,
+          "result": "LOSS"
         },
         "6": {
           "players": {
@@ -3012,7 +3022,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 186.57,
+          "result": "LOSS"
         },
         "7": {
           "players": {
@@ -3516,7 +3528,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 258.37,
+          "result": "WIN"
         },
         "8": {
           "players": {
@@ -4040,7 +4054,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 221.84,
+          "result": "WIN"
         }
       }
     },
@@ -4548,7 +4564,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 247.68,
+          "result": "WIN"
         },
         "2": {
           "players": {
@@ -5000,7 +5018,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 212.05,
+          "result": "LOSS"
         },
         "3": {
           "players": {
@@ -5516,7 +5536,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 284.59,
+          "result": "WIN"
         },
         "4": {
           "players": {
@@ -6072,7 +6094,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 218.5,
+          "result": "LOSS"
         },
         "5": {
           "players": {
@@ -6604,7 +6628,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 226.01,
+          "result": "LOSS"
         },
         "6": {
           "players": {
@@ -7112,7 +7138,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 252.24,
+          "result": "WIN"
         },
         "7": {
           "players": {
@@ -7616,7 +7644,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 226.94,
+          "result": "WIN"
         },
         "8": {
           "players": {
@@ -8156,7 +8186,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 293.07,
+          "result": "WIN"
         }
       }
     },
@@ -8656,7 +8688,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 283.94,
+          "result": "WIN"
         },
         "2": {
           "players": {
@@ -9108,7 +9142,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 232.71,
+          "result": "LOSS"
         },
         "3": {
           "players": {
@@ -9600,7 +9636,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 270.91,
+          "result": "WIN"
         },
         "4": {
           "players": {
@@ -10120,7 +10158,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 267.15,
+          "result": "WIN"
         },
         "5": {
           "players": {
@@ -10608,7 +10648,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 249.17,
+          "result": "WIN"
         },
         "6": {
           "players": {
@@ -11120,7 +11162,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 291.72,
+          "result": "WIN"
         },
         "7": {
           "players": {
@@ -11596,7 +11640,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 237.71,
+          "result": "LOSS"
         },
         "8": {
           "players": {
@@ -12136,7 +12182,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 343.73,
+          "result": "WIN"
         }
       }
     },
@@ -12596,7 +12644,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 185.1,
+          "result": "WIN"
         },
         "2": {
           "players": {
@@ -13028,7 +13078,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 206.07,
+          "result": "LOSS"
         },
         "3": {
           "players": {
@@ -13532,7 +13584,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 308.05,
+          "result": "WIN"
         },
         "4": {
           "players": {
@@ -14060,7 +14114,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 230.89,
+          "result": "WIN"
         },
         "5": {
           "players": {
@@ -14592,7 +14648,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 306.8,
+          "result": "WIN"
         },
         "6": {
           "players": {
@@ -15096,7 +15154,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 235.45,
+          "result": "LOSS"
         },
         "7": {
           "players": {
@@ -15628,7 +15688,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 277.75,
+          "result": "WIN"
         },
         "8": {
           "players": {
@@ -16176,7 +16238,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 222.87,
+          "result": "WIN"
         }
       }
     },
@@ -16628,7 +16692,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 253.32,
+          "result": "WIN"
         },
         "2": {
           "players": {
@@ -17008,7 +17074,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 134.34,
+          "result": "LOSS"
         },
         "3": {
           "players": {
@@ -17488,7 +17556,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 226.88,
+          "result": "WIN"
         },
         "4": {
           "players": {
@@ -18032,7 +18102,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 305.02,
+          "result": "WIN"
         },
         "5": {
           "players": {
@@ -18500,7 +18572,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 259.94,
+          "result": "WIN"
         },
         "6": {
           "players": {
@@ -18996,7 +19070,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 216.18,
+          "result": "LOSS"
         },
         "7": {
           "players": {
@@ -19484,7 +19560,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 172.01,
+          "result": "LOSS"
         },
         "8": {
           "players": {
@@ -20004,7 +20082,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 266.86,
+          "result": "WIN"
         }
       }
     },
@@ -20460,7 +20540,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 231.97,
+          "result": "WIN"
         },
         "2": {
           "players": {
@@ -20876,7 +20958,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 222.78,
+          "result": "WIN"
         },
         "3": {
           "players": {
@@ -21336,7 +21420,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 212.43,
+          "result": "LOSS"
         },
         "4": {
           "players": {
@@ -21840,7 +21926,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 225.55,
+          "result": "WIN"
         },
         "5": {
           "players": {
@@ -22328,7 +22416,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 212.67,
+          "result": "LOSS"
         },
         "6": {
           "players": {
@@ -22788,7 +22878,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 285.27,
+          "result": "WIN"
         },
         "7": {
           "players": {
@@ -23284,7 +23376,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 293.09,
+          "result": "WIN"
         },
         "8": {
           "players": {
@@ -23776,7 +23870,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 220.44,
+          "result": "WIN"
         }
       }
     },
@@ -24224,7 +24320,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 219.03,
+          "result": "WIN"
         },
         "2": {
           "players": {
@@ -24588,7 +24686,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 164.56,
+          "result": "LOSS"
         },
         "3": {
           "players": {
@@ -25032,7 +25132,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 197.59,
+          "result": "LOSS"
         },
         "4": {
           "players": {
@@ -25488,7 +25590,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 187.41,
+          "result": "WIN"
         },
         "5": {
           "players": {
@@ -25948,7 +26052,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 188.24,
+          "result": "LOSS"
         },
         "6": {
           "players": {
@@ -26452,7 +26558,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 313.31,
+          "result": "WIN"
         },
         "7": {
           "players": {
@@ -26900,7 +27008,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 243.26,
+          "result": "WIN"
         },
         "8": {
           "players": {
@@ -27424,7 +27534,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 264.86,
+          "result": "WIN"
         }
       }
     },
@@ -27876,7 +27988,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 248.58,
+          "result": "WIN"
         },
         "2": {
           "players": {
@@ -28336,7 +28450,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 267.96,
+          "result": "LOSS"
         },
         "3": {
           "players": {
@@ -28836,7 +28952,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 274.71,
+          "result": "WIN"
         },
         "4": {
           "players": {
@@ -29340,7 +29458,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 211.22,
+          "result": "LOSS"
         },
         "5": {
           "players": {
@@ -29876,7 +29996,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 277.86,
+          "result": "WIN"
         },
         "6": {
           "players": {
@@ -30392,7 +30514,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 292.98,
+          "result": "WIN"
         },
         "7": {
           "players": {
@@ -30900,7 +31024,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 217.08,
+          "result": "WIN"
         },
         "8": {
           "players": {
@@ -31440,7 +31566,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 301.86,
+          "result": "WIN"
         }
       }
     },
@@ -31892,7 +32020,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 166.7,
+          "result": "WIN"
         },
         "2": {
           "players": {
@@ -32312,7 +32442,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 260.51,
+          "result": "WIN"
         },
         "3": {
           "players": {
@@ -32776,7 +32908,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 245.57,
+          "result": "WIN"
         },
         "4": {
           "players": {
@@ -33272,7 +33406,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 163.98,
+          "result": "LOSS"
         },
         "5": {
           "players": {
@@ -33740,7 +33876,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 251.12,
+          "result": "WIN"
         },
         "6": {
           "players": {
@@ -34168,7 +34306,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 226.14,
+          "result": "WIN"
         },
         "7": {
           "players": {
@@ -34548,7 +34688,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 177.55,
+          "result": "WIN"
         },
         "8": {
           "players": {
@@ -35024,7 +35166,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 271.8,
+          "result": "WIN"
         }
       }
     },
@@ -35420,7 +35564,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 165.17,
+          "result": "WIN"
         },
         "2": {
           "players": {
@@ -35836,7 +35982,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 298.76,
+          "result": "WIN"
         },
         "3": {
           "players": {
@@ -36264,7 +36412,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 194.1,
+          "result": "LOSS"
         },
         "4": {
           "players": {
@@ -36740,7 +36890,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 227.32,
+          "result": "LOSS"
         },
         "5": {
           "players": {
@@ -37252,7 +37404,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 240.24,
+          "result": "WIN"
         },
         "6": {
           "players": {
@@ -37720,7 +37874,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 195.63,
+          "result": "LOSS"
         },
         "7": {
           "players": {
@@ -38216,7 +38372,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 200.75,
+          "result": "LOSS"
         },
         "8": {
           "players": {
@@ -38712,7 +38870,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 288.06,
+          "result": "WIN"
         }
       }
     },
@@ -39204,7 +39364,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 239.66,
+          "result": "WIN"
         },
         "2": {
           "players": {
@@ -39592,7 +39754,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 195.46,
+          "result": "LOSS"
         },
         "3": {
           "players": {
@@ -39996,7 +40160,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 157.96,
+          "result": "WIN"
         },
         "4": {
           "players": {
@@ -40488,7 +40654,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 185.95,
+          "result": "WIN"
         },
         "5": {
           "players": {
@@ -40996,7 +41164,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 252.47,
+          "result": "WIN"
         },
         "6": {
           "players": {
@@ -41436,7 +41606,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 199.79,
+          "result": "LOSS"
         },
         "7": {
           "players": {
@@ -41880,7 +42052,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 184.83,
+          "result": "LOSS"
         },
         "8": {
           "players": {
@@ -42416,7 +42590,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 284.13,
+          "result": "WIN"
         }
       }
     },
@@ -42908,7 +43084,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 210.2,
+          "result": "WIN"
         },
         "2": {
           "players": {
@@ -43324,7 +43502,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 203.79,
+          "result": "LOSS"
         },
         "3": {
           "players": {
@@ -43844,7 +44024,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 250.67,
+          "result": "WIN"
         },
         "4": {
           "players": {
@@ -44392,7 +44574,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 269.5,
+          "result": "WIN"
         },
         "5": {
           "players": {
@@ -44900,7 +45084,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 247.11,
+          "result": "WIN"
         },
         "6": {
           "players": {
@@ -45332,7 +45518,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 220.08,
+          "result": "LOSS"
         },
         "7": {
           "players": {
@@ -45800,7 +45988,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 242.76,
+          "result": "LOSS"
         },
         "8": {
           "players": {
@@ -46332,7 +46522,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 241.27,
+          "result": "WIN"
         }
       }
     },
@@ -46796,7 +46988,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 225.58,
+          "result": "WIN"
         },
         "2": {
           "players": {
@@ -47200,7 +47394,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 192.76,
+          "result": "WIN"
         },
         "3": {
           "players": {
@@ -47656,7 +47852,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 256.9,
+          "result": "WIN"
         },
         "4": {
           "players": {
@@ -48124,7 +48322,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 232.44,
+          "result": "WIN"
         },
         "5": {
           "players": {
@@ -48620,7 +48820,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 282.51,
+          "result": "WIN"
         },
         "6": {
           "players": {
@@ -49064,7 +49266,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 226.97,
+          "result": "LOSS"
         },
         "7": {
           "players": {
@@ -49464,7 +49668,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 187.37,
+          "result": "LOSS"
         },
         "8": {
           "players": {
@@ -49876,7 +50082,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 235.91,
+          "result": "WIN"
         }
       }
     },
@@ -50336,7 +50544,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 257.14,
+          "result": "WIN"
         },
         "2": {
           "players": {
@@ -50756,7 +50966,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 196.01,
+          "result": "LOSS"
         },
         "3": {
           "players": {
@@ -51240,7 +51452,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 229.02,
+          "result": "LOSS"
         },
         "4": {
           "players": {
@@ -51752,7 +51966,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 197.58,
+          "result": "WIN"
         },
         "5": {
           "players": {
@@ -52284,7 +52500,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 255.77,
+          "result": "WIN"
         },
         "6": {
           "players": {
@@ -52656,7 +52874,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 217.89,
+          "result": "LOSS"
         },
         "7": {
           "players": {
@@ -53116,7 +53336,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 238.43,
+          "result": "WIN"
         },
         "8": {
           "players": {
@@ -53592,7 +53814,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 249.04,
+          "result": "WIN"
         }
       }
     },
@@ -54044,7 +54268,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 202.79,
+          "result": "WIN"
         },
         "2": {
           "players": {
@@ -54460,7 +54686,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 175.22,
+          "result": "LOSS"
         },
         "3": {
           "players": {
@@ -54912,7 +55140,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 202.11,
+          "result": "WIN"
         },
         "4": {
           "players": {
@@ -55392,7 +55622,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 173.67,
+          "result": "LOSS"
         },
         "5": {
           "players": {
@@ -55940,7 +56172,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 266.03,
+          "result": "WIN"
         },
         "6": {
           "players": {
@@ -56408,7 +56642,9 @@
               ],
               "position": "DEF"
             }
-          }
+          },
+          "total": 245.22,
+          "result": "WIN"
         },
         "7": {
           "players": {
@@ -56868,7 +57104,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 154.96,
+          "result": "LOSS"
         },
         "8": {
           "players": {
@@ -57356,7 +57594,9 @@
               ],
               "position": "BENCH"
             }
-          }
+          },
+          "total": 304.15,
+          "result": "WIN"
         }
       }
     }

@@ -6,7 +6,7 @@ Fetch data from a Sleeper fantasy football league and generate:
 - scores.json
 
 Usage:
-    python sleeper_to_json.py <league_id> [output_dir]
+    python import_league.py <league_id> [output_dir]
 """
 
 import sys
@@ -160,6 +160,7 @@ def main():
 
             team_players = {}
             all_roster_players = roster_map[int(roster_id)].get("players", [])
+            total_points = 0.0
 
             for player_id in all_roster_players:
                 pid = str(player_id)
@@ -185,7 +186,25 @@ def main():
                     "position": position,
                 }
 
-            week_teams[roster_id] = {"players": team_players}
+                if position != "BENCH":
+                    total_points += total
+
+            week_teams[roster_id] = {"players": team_players, "total": round(total_points, 2)}
+
+        for m in matchups:
+            roster_id = str(m["roster_id"])
+            opponent_id = str(m["matchup_id"] ^ m["roster_id"])
+            team_score = week_teams[roster_id]["total"]
+            opponent_score = week_teams.get(opponent_id, {}).get("total", 0.0)
+
+            if team_score > opponent_score:
+                result = "WIN"
+            elif team_score < opponent_score:
+                result = "LOSS"
+            else:
+                result = "TIE"
+
+            week_teams[roster_id]["result"] = result
 
         scores["weeks"][week_str] = {"teams": week_teams}
 

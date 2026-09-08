@@ -2,7 +2,7 @@
   "teams": {
     "1": {
       "name": "ChucJo",
-      "owner": "Jaxon",
+      "owner": "ChucJo",
       "roster": [
         {
           "name": "Jayden Reed",
@@ -124,7 +124,7 @@
     },
     "2": {
       "name": "HolyBean",
-      "owner": "Mason",
+      "owner": "HolyBean",
       "roster": [
         {
           "name": "Jaleel McLaughlin",
@@ -246,7 +246,7 @@
     },
     "3": {
       "name": "SurfaceHayes",
-      "owner": "Payton",
+      "owner": "SurfaceHayes",
       "roster": [
         {
           "name": "Rashee Rice",
@@ -368,7 +368,7 @@
     },
     "4": {
       "name": "bowdly",
-      "owner": "Dylan",
+      "owner": "bowdly",
       "roster": [
         {
           "name": "Ray Davis",
@@ -490,7 +490,7 @@
     },
     "5": {
       "name": "LumberJohn95",
-      "owner": "Tyler",
+      "owner": "LumberJohn95",
       "roster": [
         {
           "name": "Xavier Worthy",
@@ -612,7 +612,7 @@
     },
     "6": {
       "name": "falcon695",
-      "owner": "Mark",
+      "owner": "falcon695",
       "roster": [
         {
           "name": "Braelon Allen",
@@ -734,7 +734,7 @@
     },
     "7": {
       "name": "Demalthus",
-      "owner": "Matt",
+      "owner": "Demalthus",
       "roster": [
         {
           "name": "Dalton Kincaid",
@@ -856,7 +856,7 @@
     },
     "8": {
       "name": "darthjafar",
-      "owner": "Jacob",
+      "owner": "darthjafar",
       "roster": [
         {
           "name": "Jake Moody",

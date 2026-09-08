@@ -89,6 +89,9 @@
         .matchup-team-owner { font-size: 0.75rem; color: #888; font-style: italic; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 2px; }
         .matchup-team-score { font-size: 2rem; font-weight: 800; color: var(--accent); letter-spacing: -1px; line-height: 1; margin-top: 4px; }
         .matchup-team-score.zero { color: #999; }
+        .matchup-team-score.win { color: #13722f; }
+        .matchup-team-score.loss { color: #972222; }
+        .matchup-team-score.tie { color: #a7a543; }
         .matchup-vs {
             flex-shrink: 0; width: 42px; height: 42px; background: #f5f5f5; border-radius: 50%;
             display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem; color: #888; letter-spacing: 1px;
@@ -358,24 +361,6 @@
                 return teamsData?.teams?.[teamId]?.roster || [];
             }
 
-            function getTeamTotalScore(teamId) {
-                const weekTeams = scoresData?.weeks?.[selectedWeek]?.teams;
-                const team = weekTeams ? weekTeams[teamId] : null;
-                const roster = getTeamRoster(teamId);
-                let total = 0, hasAnyScore = false;
-                for (const player of roster) {
-                    const playerData = team?.players?.[player.id];
-                    // Skip if position is BENCH
-                    if (playerData && playerData.position === "BENCH") continue;
-                    const score = getPlayerScore(teamId, player.id);
-                    if (score !== null) {
-                        total += score;
-                        hasAnyScore = true;
-                    }
-                }
-                return { total: Math.round(total * 100) / 100, hasAnyScore };
-            }
-
             // ──────────────────────────────────────
             // 🎨 Rendering
             // ──────────────────────────────────────
@@ -401,29 +386,30 @@
                     html += `<div class="no-matchups"><span class="emoji">📭</span>No matchups scheduled for Week ${selectedWeek}.</div>`;
                 } else {
                     html += `<div class="matchups-grid" id="matchupsGrid">`;
+                    const scoreWeek = scoresData.weeks[selectedWeek];
                     matchups.forEach((m, idx) => {
                         const t1Name = getTeamName(m.team1);
                         const t2Name = getTeamName(m.team2);
                         const t1Owner = getTeamOwner(m.team1);
                         const t2Owner = getTeamOwner(m.team2);
-                        const t1ScoreData = getTeamTotalScore(m.team1);
-                        const t2ScoreData = getTeamTotalScore(m.team2);
-                        const s1 = t1ScoreData.hasAnyScore ? t1ScoreData.total : null;
-                        const s2 = t2ScoreData.hasAnyScore ? t2ScoreData.total : null;
+                        const s1 = scoreWeek ? scoreWeek.teams[m.team1].total : null;
+                        const s2 = scoreWeek ? scoreWeek.teams[m.team2].total : null;
+                        const r1 = scoreWeek ? scoreWeek.teams[m.team1].result.toLowerCase() : "zero";
+                        const r2 = scoreWeek ? scoreWeek.teams[m.team2].result.toLowerCase() : "zero";
 
                         html += `
                         <div class="matchup-card" data-matchup-index="${idx}" role="button" tabindex="0" aria-expanded="false">
                             <div class="matchup-card-header">
                                 <div class="matchup-team">
-                                    <div class="matchup-team-name" title="${escapeHTML(t1Name)}">${escapeHTML(t1Name)} ${teamsData[m.team1] ? teamsData[m.team1].record : '0-0-0'}</div>
+                                    <div class="matchup-team-name" title="${escapeHTML(t1Name)}">${escapeHTML(t1Name)} (${teamsData.teams[m.team1] ? teamsData.teams[m.team1].record : '0-0-0'})</div>
                                     <div class="matchup-team-owner" title="${escapeHTML(t1Owner)}">${escapeHTML(t1Owner)}</div>
-                                    <div class="matchup-team-score${s1 === null ? ' zero' : ''}">${s1 !== null ? s1 : '—'}</div>
+                                    <div class="matchup-team-score ${r1}">${s1 !== null ? s1 : '—'}</div>
                                 </div>
                                 <div class="matchup-vs">VS</div>
                                 <div class="matchup-team">
-                                    <div class="matchup-team-name" title="${escapeHTML(t2Name)}">${escapeHTML(t2Name)} ${teamsData[m.team2] ? teamsData[m.team2].record : '0-0-0'}</div>
+                                    <div class="matchup-team-name" title="${escapeHTML(t2Name)}">${escapeHTML(t2Name)} (${teamsData.teams[m.team2] ? teamsData.teams[m.team2].record : '0-0-0'})</div>
                                     <div class="matchup-team-owner" title="${escapeHTML(t2Owner)}">${escapeHTML(t2Owner)}</div>
-                                    <div class="matchup-team-score${s2 === null ? ' zero' : ''}">${s2 !== null ? s2 : '—'}</div>
+                                    <div class="matchup-team-score ${r2}">${s2 !== null ? s2 : '—'}</div>
                                 </div>
                             </div>
                             <div class="matchup-expand-icon">▼</div>
