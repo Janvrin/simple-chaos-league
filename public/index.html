@@ -401,14 +401,14 @@
                         <div class="matchup-card" data-matchup-index="${idx}" role="button" tabindex="0" aria-expanded="false">
                             <div class="matchup-card-header">
                                 <div class="matchup-team">
-                                    <div class="matchup-team-name" title="${escapeHTML(t1Name)}">${escapeHTML(t1Name)} (${teamsData.teams[m.team1] ? teamsData.teams[m.team1].record : '0-0-0'})</div>
-                                    <div class="matchup-team-owner" title="${escapeHTML(t1Owner)}">${escapeHTML(t1Owner)}</div>
+                                    <div class="matchup-team-name" title="${escapeHTML(t1Name)}">${escapeHTML(t1Name)}</div>
+                                    <div class="matchup-team-owner"">${teamsData.teams[m.team1] ? teamsData.teams[m.team1].record : '0-0-0'}</div>
                                     <div class="matchup-team-score ${r1}">${s1 !== null ? s1 : '—'}</div>
                                 </div>
                                 <div class="matchup-vs">VS</div>
                                 <div class="matchup-team">
-                                    <div class="matchup-team-name" title="${escapeHTML(t2Name)}">${escapeHTML(t2Name)} (${teamsData.teams[m.team2] ? teamsData.teams[m.team2].record : '0-0-0'})</div>
-                                    <div class="matchup-team-owner" title="${escapeHTML(t2Owner)}">${escapeHTML(t2Owner)}</div>
+                                    <div class="matchup-team-name" title="${escapeHTML(t2Name)}">${escapeHTML(t2Name)}</div>
+                                    <div class="matchup-team-owner">${teamsData.teams[m.team2] ? teamsData.teams[m.team2].record : '0-0-0'}</div>
                                     <div class="matchup-team-score ${r2}">${s2 !== null ? s2 : '—'}</div>
                                 </div>
                             </div>
