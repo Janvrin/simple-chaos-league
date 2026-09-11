@@ -496,7 +496,7 @@ def Y2024(score: float, breakdown: list,
     x2 points for defense.
     """
     if player_id in TEAM_ABBREVIATIONS:
-        breakdown.append({"rule_id": 10, "description": "Defense x2", "score": score})
+        breakdown.append({"rule_id": 9, "description": "Defense x2", "score": score})
         score *= 2
     return score, breakdown
 
@@ -511,7 +511,7 @@ def Y2025(score: float, breakdown: list,
         if not team_row.empty:
             sack_yards = team_row.iloc[0].get("def_sack_yards", 0)
             if sack_yards:
-                breakdown.append({"rule_id": 9, "description": f"{sack_yards} sack yards", "score": sack_yards})
+                breakdown.append({"rule_id": 10, "description": f"{sack_yards} sack yards", "score": sack_yards})
                 score += sack_yards
 
     return score, breakdown

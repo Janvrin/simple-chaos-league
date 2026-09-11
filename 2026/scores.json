@@ -771,7 +771,7 @@
                   "score": 4
                 },
                 {
-                  "rule_id": 9,
+                  "rule_id": 10,
                   "description": "10 sack yards",
                   "score": 10
                 },
@@ -781,7 +781,7 @@
                   "score": -30
                 },
                 {
-                  "rule_id": 10,
+                  "rule_id": 9,
                   "description": "Defense x2",
                   "score": -10.0
                 }
@@ -1499,7 +1499,7 @@
                   "score": 4
                 },
                 {
-                  "rule_id": 9,
+                  "rule_id": 10,
                   "description": "12 sack yards",
                   "score": 12
                 },
@@ -1514,7 +1514,7 @@
                   "score": 4.0
                 },
                 {
-                  "rule_id": 10,
+                  "rule_id": 9,
                   "description": "Defense x2",
                   "score": 0
                 }
@@ -2222,7 +2222,7 @@
                   "score": -2.0
                 },
                 {
-                  "rule_id": 10,
+                  "rule_id": 9,
                   "description": "Defense x2",
                   "score": 0
                 }
@@ -2980,7 +2980,7 @@
                   "score": 4
                 },
                 {
-                  "rule_id": 10,
+                  "rule_id": 9,
                   "description": "Defense x2",
                   "score": 8.0
                 }
