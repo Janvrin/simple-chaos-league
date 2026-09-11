@@ -338,7 +338,7 @@ def PAYTON(score: float, breakdown: list,
         stats = wk_row.iloc[0].to_dict()
         team = stats.get("team")
 
-    game_row = game_df[(game_df["week"] == week) & ((game_df["home_team"] == team) | (game_df["away_team"] == team))]
+    game_row = game_df[(game_df["season"] == year) & (game_df["week"] == week) & ((game_df["home_team"] == team) | (game_df["away_team"] == team))]
     if game_row.empty:
         return score, breakdown
     game = game_row.iloc[0].to_dict()
@@ -524,15 +524,15 @@ def calculate_score(player_id: str, week: int, year: int) -> tuple[float, list[d
     """
     score, breakdown = default_sleeper(player_id, week, year)
     score, breakdown = Y2023(score, breakdown, player_id, week, year)
-    score, breakdown = Y2024(score, breakdown, player_id, week, year)
     score, breakdown = Y2025(score, breakdown, player_id, week, year)
-    score, breakdown = MASON(score, breakdown, player_id, week, year)
     score, breakdown = JAXON(score, breakdown, player_id, week, year)
     score, breakdown = TYLER(score, breakdown, player_id, week, year)
     score, breakdown = MARK(score, breakdown, player_id, week, year)
     score, breakdown = JACOB(score, breakdown, player_id, week, year)
     score, breakdown = MATT(score, breakdown, player_id, week, year)
     score, breakdown = PAYTON(score, breakdown, player_id, week, year)
+    score, breakdown = Y2024(score, breakdown, player_id, week, year)
+    score, breakdown = MASON(score, breakdown, player_id, week, year)
 
     return score, breakdown
 

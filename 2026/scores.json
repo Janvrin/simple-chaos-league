@@ -49,7 +49,7 @@
               "position": "BENCH"
             },
             "11564": {
-              "total": 45.82,
+              "total": 0.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -67,17 +67,22 @@
                   "score": 4.7
                 },
                 {
-                  "rule_id": 1,
-                  "description": "100.0% offensive snaps",
-                  "score": 0.0
-                },
-                {
                   "rule_id": 3,
                   "description": "Suffered 3 sacks",
                   "score": 30
+                },
+                {
+                  "rule_id": 6,
+                  "description": "Team lost",
+                  "score": -45.82
+                },
+                {
+                  "rule_id": 1,
+                  "description": "100.0% offensive snaps",
+                  "score": 0.0
                 }
               ],
-              "position": "QB"
+              "position": "BENCH"
             },
             "12015": {
               "total": 0,
@@ -88,14 +93,14 @@
                   "score": 1
                 },
                 {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
+                  "rule_id": 6,
+                  "description": "Team lost",
                   "score": -1.0
                 },
                 {
-                  "rule_id": 6,
-                  "description": "Team lost",
-                  "score": -0.0
+                  "rule_id": 1,
+                  "description": "0.0% offensive snaps",
+                  "score": 0
                 }
               ],
               "position": "BENCH"
@@ -155,7 +160,7 @@
               "position": "BENCH"
             },
             "2747": {
-              "total": 0,
+              "total": 0.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -173,19 +178,14 @@
                   "score": 3
                 },
                 {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": -7.0
-                },
-                {
                   "rule_id": 2,
                   "description": "0 receptions for a bird team",
                   "score": 0
                 },
                 {
-                  "rule_id": 6,
-                  "description": "Team lost",
-                  "score": -0.0
+                  "rule_id": 1,
+                  "description": "0.0% offensive snaps",
+                  "score": -7.0
                 }
               ],
               "position": "BENCH"
@@ -368,11 +368,6 @@
                   "score": 3
                 },
                 {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": -15.5
-                },
-                {
                   "rule_id": 0,
                   "description": "6 timeouts remaining during TD",
                   "score": -6
@@ -380,7 +375,12 @@
                 {
                   "rule_id": 6,
                   "description": "Team lost",
-                  "score": 6.0
+                  "score": -9.500000000000002
+                },
+                {
+                  "rule_id": 1,
+                  "description": "0.0% offensive snaps",
+                  "score": 0
                 }
               ],
               "position": "BENCH"
@@ -402,8 +402,8 @@
               "position": "BENCH"
             }
           },
-          "total": 45.82,
-          "result": "WIN"
+          "total": 0,
+          "result": "TIE"
         },
         "2": {
           "players": {
@@ -430,7 +430,7 @@
               "position": "BENCH"
             },
             "11603": {
-              "total": 0,
+              "total": 4.66,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -443,22 +443,17 @@
                   "score": 2
                 },
                 {
-                  "rule_id": 1,
-                  "description": "88.0% offensive snaps",
-                  "score": -0.4
-                },
-                {
                   "rule_id": 2,
                   "description": "2 receptions for a bird team",
                   "score": 2
                 },
                 {
-                  "rule_id": 6,
-                  "description": "Team lost",
-                  "score": -4.9
+                  "rule_id": 1,
+                  "description": "88.0% offensive snaps",
+                  "score": -0.64
                 }
               ],
-              "position": "BENCH"
+              "position": "TE"
             },
             "11620": {
               "total": 0.0,
@@ -559,7 +554,7 @@
               "position": "BENCH"
             },
             "4034": {
-              "total": 0,
+              "total": 0.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -580,11 +575,6 @@
                   "rule_id": 1,
                   "description": "0.0% offensive snaps",
                   "score": -13.8
-                },
-                {
-                  "rule_id": 6,
-                  "description": "Team lost",
-                  "score": -0.0
                 }
               ],
               "position": "BENCH"
@@ -735,11 +725,6 @@
                   "score": 5
                 },
                 {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": -12.4
-                },
-                {
                   "rule_id": 5,
                   "description": "41.0 yard reception",
                   "score": 15.100000000000001
@@ -752,7 +737,12 @@
                 {
                   "rule_id": 6,
                   "description": "Team lost",
-                  "score": -28.400000000000002
+                  "score": -40.8
+                },
+                {
+                  "rule_id": 1,
+                  "description": "0.0% offensive snaps",
+                  "score": 0
                 }
               ],
               "position": "BENCH"
@@ -768,7 +758,7 @@
               "position": "BENCH"
             },
             "SEA": {
-              "total": 0,
+              "total": -14.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -786,11 +776,6 @@
                   "score": 4
                 },
                 {
-                  "rule_id": 10,
-                  "description": "Defense x2",
-                  "score": 13.0
-                },
-                {
                   "rule_id": 9,
                   "description": "10 sack yards",
                   "score": 10
@@ -801,15 +786,15 @@
                   "score": -30
                 },
                 {
-                  "rule_id": 6,
-                  "description": "Team lost",
-                  "score": -6.0
+                  "rule_id": 10,
+                  "description": "Defense x2",
+                  "score": -7.0
                 }
               ],
-              "position": "BENCH"
+              "position": "DEF"
             }
           },
-          "total": 0,
+          "total": -9.34,
           "result": "LOSS"
         },
         "3": {
@@ -861,14 +846,14 @@
                   "score": 5.4
                 },
                 {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
+                  "rule_id": 6,
+                  "description": "Team lost",
                   "score": -5.4
                 },
                 {
-                  "rule_id": 6,
-                  "description": "Team lost",
-                  "score": -0.0
+                  "rule_id": 1,
+                  "description": "0.0% offensive snaps",
+                  "score": 0
                 }
               ],
               "position": "BENCH"
@@ -971,7 +956,7 @@
               "position": "BENCH"
             },
             "5189": {
-              "total": 0,
+              "total": 0.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -997,11 +982,6 @@
                   "rule_id": 1,
                   "description": "0.0% offensive snaps",
                   "score": -10.0
-                },
-                {
-                  "rule_id": 6,
-                  "description": "Team lost",
-                  "score": -0.0
                 }
               ],
               "position": "BENCH"
@@ -1128,7 +1108,7 @@
               "position": "BENCH"
             },
             "8676": {
-              "total": 0,
+              "total": 30.95,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -1151,22 +1131,17 @@
                   "score": 40.0
                 },
                 {
-                  "rule_id": 1,
-                  "description": "66.0% offensive snaps",
-                  "score": -15.61
-                },
-                {
                   "rule_id": 2,
                   "description": "1 receptions for a bird team",
                   "score": 1
                 },
                 {
-                  "rule_id": 6,
-                  "description": "Team lost",
-                  "score": -31.29
+                  "rule_id": 1,
+                  "description": "66.0% offensive snaps",
+                  "score": -15.95
                 }
               ],
-              "position": "BENCH"
+              "position": "WR"
             },
             "9754": {
               "total": 0.0,
@@ -1180,8 +1155,8 @@
               "position": "BENCH"
             }
           },
-          "total": 0,
-          "result": "LOSS"
+          "total": 30.95,
+          "result": "WIN"
         },
         "4": {
           "players": {
@@ -1308,14 +1283,14 @@
                   "score": 3
                 },
                 {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
+                  "rule_id": 6,
+                  "description": "Team lost",
                   "score": -5.6
                 },
                 {
-                  "rule_id": 6,
-                  "description": "Team lost",
-                  "score": -0.0
+                  "rule_id": 1,
+                  "description": "0.0% offensive snaps",
+                  "score": 0
                 }
               ],
               "position": "BENCH"
@@ -1367,14 +1342,14 @@
                   "score": -0.1
                 },
                 {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": -6.1
-                },
-                {
                   "rule_id": 6,
                   "description": "Team lost",
-                  "score": -0.0
+                  "score": -6.1000000000000005
+                },
+                {
+                  "rule_id": 1,
+                  "description": "0.0% offensive snaps",
+                  "score": 0
                 }
               ],
               "position": "BENCH"
@@ -1446,7 +1421,7 @@
               "position": "BENCH"
             },
             "7611": {
-              "total": 12.32,
+              "total": 0.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -1464,12 +1439,17 @@
                   "score": 5
                 },
                 {
+                  "rule_id": 6,
+                  "description": "Team lost",
+                  "score": -14.5
+                },
+                {
                   "rule_id": 1,
                   "description": "85.0% offensive snaps",
-                  "score": -2.18
+                  "score": 0.0
                 }
               ],
-              "position": "RB"
+              "position": "BENCH"
             },
             "7901": {
               "total": 0.0,
@@ -1516,7 +1496,7 @@
               "position": "BENCH"
             },
             "NE": {
-              "total": 4.0,
+              "total": 0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -1529,11 +1509,6 @@
                   "score": 4
                 },
                 {
-                  "rule_id": 10,
-                  "description": "Defense x2",
-                  "score": 6.0
-                },
-                {
                   "rule_id": 9,
                   "description": "12 sack yards",
                   "score": 12
@@ -1542,9 +1517,19 @@
                   "rule_id": 3,
                   "description": "2 sacks",
                   "score": -20
+                },
+                {
+                  "rule_id": 6,
+                  "description": "Team lost",
+                  "score": 2.0
+                },
+                {
+                  "rule_id": 10,
+                  "description": "Defense x2",
+                  "score": 0
                 }
               ],
-              "position": "DEF"
+              "position": "BENCH"
             },
             "PHI": {
               "total": 0,
@@ -1557,8 +1542,8 @@
               "position": "BENCH"
             }
           },
-          "total": 16.32,
-          "result": "WIN"
+          "total": 0,
+          "result": "LOSS"
         },
         "5": {
           "players": {
@@ -1628,7 +1613,7 @@
               "position": "BENCH"
             },
             "2216": {
-              "total": 0,
+              "total": 0.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -1646,19 +1631,14 @@
                   "score": 6
                 },
                 {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": -16.9
-                },
-                {
                   "rule_id": 0,
                   "description": "5 timeouts remaining during TD",
                   "score": -5
                 },
                 {
-                  "rule_id": 6,
-                  "description": "Team lost",
-                  "score": 5.0
+                  "rule_id": 1,
+                  "description": "0.0% offensive snaps",
+                  "score": -11.9
                 }
               ],
               "position": "BENCH"
@@ -1686,17 +1666,12 @@
               "position": "BENCH"
             },
             "4943": {
-              "total": 0,
+              "total": 1.05,
               "breakdown": [
                 {
                   "rule_id": -1,
                   "description": "13 passing yards",
                   "score": 0.52
-                },
-                {
-                  "rule_id": 1,
-                  "description": "10.0% offensive snaps",
-                  "score": -0.47
                 },
                 {
                   "rule_id": 3,
@@ -1709,12 +1684,12 @@
                   "score": 0
                 },
                 {
-                  "rule_id": 6,
-                  "description": "Team lost",
-                  "score": -10.05
+                  "rule_id": 1,
+                  "description": "10.0% offensive snaps",
+                  "score": -9.47
                 }
               ],
-              "position": "BENCH"
+              "position": "QB"
             },
             "4983": {
               "total": 0.0,
@@ -1838,7 +1813,7 @@
               "position": "BENCH"
             },
             "8183": {
-              "total": 0,
+              "total": 0.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -1859,11 +1834,6 @@
                   "rule_id": 1,
                   "description": "0.0% offensive snaps",
                   "score": -23.1
-                },
-                {
-                  "rule_id": 6,
-                  "description": "Team lost",
-                  "score": -0.0
                 }
               ],
               "position": "BENCH"
@@ -1934,8 +1904,8 @@
               "position": "BENCH"
             }
           },
-          "total": 0,
-          "result": "TIE"
+          "total": 1.05,
+          "result": "WIN"
         },
         "6": {
           "players": {
@@ -2011,7 +1981,7 @@
               "position": "BENCH"
             },
             "13414": {
-              "total": 0,
+              "total": 0.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -2032,11 +2002,6 @@
                   "rule_id": 1,
                   "description": "0.0% offensive snaps",
                   "score": -8.0
-                },
-                {
-                  "rule_id": 6,
-                  "description": "Team lost",
-                  "score": -0.0
                 }
               ],
               "position": "BENCH"
@@ -2262,21 +2227,21 @@
                   "score": 0
                 },
                 {
-                  "rule_id": 10,
-                  "description": "Defense x2",
-                  "score": 2.0
-                },
-                {
                   "rule_id": 6,
                   "description": "Team lost",
-                  "score": -4.0
+                  "score": -2.0
+                },
+                {
+                  "rule_id": 10,
+                  "description": "Defense x2",
+                  "score": 0
                 }
               ],
               "position": "BENCH"
             }
           },
           "total": 0,
-          "result": "TIE"
+          "result": "LOSS"
         },
         "7": {
           "players": {
@@ -2612,7 +2577,7 @@
             }
           },
           "total": 0,
-          "result": "LOSS"
+          "result": "TIE"
         },
         "8": {
           "players": {
@@ -2668,9 +2633,14 @@
                   "score": 5
                 },
                 {
+                  "rule_id": 6,
+                  "description": "Team lost",
+                  "score": -6.0
+                },
+                {
                   "rule_id": 1,
                   "description": "0.0% offensive snaps",
-                  "score": -6.0
+                  "score": 0.0
                 }
               ],
               "position": "BENCH"
@@ -2698,7 +2668,7 @@
               "position": "BENCH"
             },
             "13286": {
-              "total": 0,
+              "total": 4.7,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -2716,22 +2686,17 @@
                   "score": 2
                 },
                 {
-                  "rule_id": 1,
-                  "description": "48.0% offensive snaps",
-                  "score": -4.06
-                },
-                {
                   "rule_id": 2,
                   "description": "2 receptions for a bird team",
                   "score": 2
                 },
                 {
-                  "rule_id": 6,
-                  "description": "Team lost",
-                  "score": -5.74
+                  "rule_id": 1,
+                  "description": "48.0% offensive snaps",
+                  "score": -5.1
                 }
               ],
-              "position": "BENCH"
+              "position": "RB"
             },
             "13833": {
               "total": 0.0,
@@ -2745,7 +2710,7 @@
               "position": "BENCH"
             },
             "3214": {
-              "total": 4.26,
+              "total": 0.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -2758,12 +2723,17 @@
                   "score": 3
                 },
                 {
+                  "rule_id": 6,
+                  "description": "Team lost",
+                  "score": -5.6
+                },
+                {
                   "rule_id": 1,
                   "description": "76.0% offensive snaps",
-                  "score": -1.34
+                  "score": 0.0
                 }
               ],
-              "position": "TE"
+              "position": "BENCH"
             },
             "3678": {
               "total": 0.0,
@@ -2799,7 +2769,7 @@
               "position": "BENCH"
             },
             "4217": {
-              "total": 0,
+              "total": 0.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -2815,11 +2785,6 @@
                   "rule_id": 1,
                   "description": "0.0% offensive snaps",
                   "score": -3.2
-                },
-                {
-                  "rule_id": 6,
-                  "description": "Team lost",
-                  "score": -0.0
                 }
               ],
               "position": "BENCH"
@@ -2946,7 +2911,7 @@
               "position": "BENCH"
             },
             "9488": {
-              "total": 0,
+              "total": 57.42,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -2962,11 +2927,6 @@
                   "rule_id": -1,
                   "description": "8 receptions",
                   "score": 8
-                },
-                {
-                  "rule_id": 1,
-                  "description": "90.0% offensive snaps",
-                  "score": -2.62
                 },
                 {
                   "rule_id": 0,
@@ -2989,12 +2949,12 @@
                   "score": 21.5
                 },
                 {
-                  "rule_id": 6,
-                  "description": "Team lost",
-                  "score": -61.18
+                  "rule_id": 1,
+                  "description": "90.0% offensive snaps",
+                  "score": -6.38
                 }
               ],
-              "position": "BENCH"
+              "position": "WR"
             },
             "BAL": {
               "total": 0,
@@ -3012,7 +2972,7 @@
               "position": "BENCH"
             },
             "SF": {
-              "total": 0,
+              "total": 16.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -3033,17 +2993,12 @@
                   "rule_id": 10,
                   "description": "Defense x2",
                   "score": 8.0
-                },
-                {
-                  "rule_id": 6,
-                  "description": "Team lost",
-                  "score": -16.0
                 }
               ],
-              "position": "BENCH"
+              "position": "DEF"
             }
           },
-          "total": 4.26,
+          "total": 78.12,
           "result": "WIN"
         }
       }
