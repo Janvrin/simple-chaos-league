@@ -9,6 +9,7 @@ Usage:
 """
 
 import argparse
+import datetime
 import json
 import sys
 from io import StringIO
@@ -661,6 +662,10 @@ def main():
                 if assignment[rp["id"]] != "BENCH":
                     team_score += rp["score"]
             week_scores_teams[team_id] = {"players": team_players_scores, "total": round(team_score, 2)}
+
+        current_time = datetime.date.today()
+        if current_time.year == 2026 and current_time < (datetime.datetime.strptime(schedule_data["weeks"][week_str]["date"], "%Y-%m-%d").date() + datetime.timedelta(days=7)):
+            continue
 
         for matchup in schedule_data["weeks"][week_str]["matchups"]:
             team_a = matchup["team1"]
