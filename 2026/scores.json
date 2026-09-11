@@ -758,13 +758,8 @@
               "position": "BENCH"
             },
             "SEA": {
-              "total": -14.0,
+              "total": -20.0,
               "breakdown": [
-                {
-                  "rule_id": -1,
-                  "description": "3 sacks",
-                  "score": 3
-                },
                 {
                   "rule_id": -1,
                   "description": "3 interceptions",
@@ -788,13 +783,13 @@
                 {
                   "rule_id": 10,
                   "description": "Defense x2",
-                  "score": -7.0
+                  "score": -10.0
                 }
               ],
               "position": "DEF"
             }
           },
-          "total": -9.34,
+          "total": -15.34,
           "result": "LOSS"
         },
         "3": {
@@ -1500,11 +1495,6 @@
               "breakdown": [
                 {
                   "rule_id": -1,
-                  "description": "2 sacks",
-                  "score": 2
-                },
-                {
-                  "rule_id": -1,
                   "description": "13.0 points allowed",
                   "score": 4
                 },
@@ -1521,7 +1511,7 @@
                 {
                   "rule_id": 6,
                   "description": "Team lost",
-                  "score": 2.0
+                  "score": 4.0
                 },
                 {
                   "rule_id": 10,

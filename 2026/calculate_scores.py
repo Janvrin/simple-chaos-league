@@ -193,12 +193,12 @@ def defense_score(team_abbr: str, week: int, year: int) -> tuple[float, list]:
     pts = 0.0
     breakdown = []
 
-    # Sacks (1 point each)
-    sacks = team_row.get("def_sacks", 0)
-    if sacks:
-        pts_sacks = sacks * 1
-        breakdown.append({"rule_id": -1, "description": f"{sacks} sacks", "score": round(pts_sacks, 2)})
-        pts += pts_sacks
+    # Sacks (1 point each)  !!! OVERRIDDEN BY TYLER'S RULE !!!
+    # sacks = team_row.get("def_sacks", 0)
+    # if sacks:
+    #     pts_sacks = sacks * 1
+    #     breakdown.append({"rule_id": -1, "description": f"{sacks} sacks", "score": round(pts_sacks, 2)})
+    #     pts += pts_sacks
 
     # Interceptions (2 points)
     interceptions = team_row.get("def_interceptions", 0)
