@@ -402,7 +402,8 @@
               "position": "BENCH"
             }
           },
-          "total": 0
+          "total": 0,
+          "result": "TBD"
         },
         "2": {
           "players": {
@@ -788,7 +789,8 @@
               "position": "DEF"
             }
           },
-          "total": -15.34
+          "total": -15.34,
+          "result": "TBD"
         },
         "3": {
           "players": {
@@ -1148,7 +1150,8 @@
               "position": "BENCH"
             }
           },
-          "total": 30.95
+          "total": 30.95,
+          "result": "TBD"
         },
         "4": {
           "players": {
@@ -1529,7 +1532,8 @@
               "position": "BENCH"
             }
           },
-          "total": 0
+          "total": 0,
+          "result": "TBD"
         },
         "5": {
           "players": {
@@ -1890,7 +1894,8 @@
               "position": "BENCH"
             }
           },
-          "total": 1.05
+          "total": 1.05,
+          "result": "TBD"
         },
         "6": {
           "players": {
@@ -2225,7 +2230,8 @@
               "position": "BENCH"
             }
           },
-          "total": 0
+          "total": 0,
+          "result": "TBD"
         },
         "7": {
           "players": {
@@ -2560,7 +2566,8 @@
               "position": "BENCH"
             }
           },
-          "total": 0
+          "total": 0,
+          "result": "TBD"
         },
         "8": {
           "players": {
@@ -2981,7 +2988,8 @@
               "position": "DEF"
             }
           },
-          "total": 78.12
+          "total": 78.12,
+          "result": "TBD"
         }
       }
     }

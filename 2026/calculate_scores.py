@@ -665,6 +665,8 @@ def main():
 
         current_time = datetime.date.today()
         if current_time.year == 2026 and current_time < (datetime.datetime.strptime(schedule_data["weeks"][week_str]["date"], "%Y-%m-%d").date() + datetime.timedelta(days=7)):
+            for team_id in week_scores_teams:
+                week_scores_teams[team_id]["result"] = "TBD"
             scores["weeks"][week_str] = {"teams": week_scores_teams}
             continue
         
