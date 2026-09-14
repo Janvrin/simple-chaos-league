@@ -629,7 +629,6 @@ def main():
             for player_entry in team_info["roster"]:
                 internal_id = player_entry["id"]
                 nfl_id = resolve_nfl_id(internal_id)
-                print(f"Processing team {team_id}, player {internal_id} (NFL ID: {nfl_id}) for week {week_int} ...")
                 if not nfl_id:
                     roster_players.append({
                         "id": internal_id,
@@ -717,13 +716,16 @@ def resolve_nfl_id(internal_id: str) -> str:
         if not players_df_row.empty:
             return players_df_row.iloc[0]["gsis_id"]
     if ids.get("last_name") and ids.get("first_name"):
-        players_df_row = players_df[(players_df["last_name"] == ids["last_name"]) & ((players_df["first_name"] == ids["first_name"]) | (players_df["common_first_name"] == ids["first_name"].split()[0]))]
+        players_df_row = players_df[(players_df["last_name"] == ids["last_name"]) & ((players_df["first_name"] == ids["first_name"].split()[0]) | (players_df["common_first_name"] == ids["first_name"].split()[0]))]
         if not players_df_row.empty:
             return players_df_row.iloc[0]["gsis_id"]
     if ids.get("full_name"):
         players_df_row = players_df[players_df["display_name"] == ids["full_name"]]
         if not players_df_row.empty:
             return players_df_row.iloc[0]["gsis_id"]
+
+    print(f"Could not resolve NFL ID for internal ID: {internal_id}")
+    print(f"Player map entry: {ids}")
 
 def make_json_safe(obj):
     """Recursively convert numpy/pandas types to native Python types."""
