@@ -119,6 +119,13 @@ def default_sleeper(player_id: str, week: int, year: int) -> tuple[float, list]:
         breakdown.append({"rule_id": -1, "description": f"{receptions} receptions", "score": round(pts_receptions, 2)})
     pts += pts_rec_yards + pts_rec_tds + pts_receptions
 
+    # Interceptions
+    interceptions = stats.get("interceptions", 0)
+    if interceptions:
+        pts_int = interceptions * -2
+        breakdown.append({"rule_id": -1, "description": f"{interceptions} interceptions", "score": round(pts_int, 2)})
+        pts += pts_int
+
     # Fumbles lost
     fumbles_lost = stats.get("fumble_lost", 0) or stats.get("fumbles_lost", 0)
     if fumbles_lost:
