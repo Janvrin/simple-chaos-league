@@ -717,7 +717,7 @@ def resolve_nfl_id(internal_id: str) -> str:
         if not players_df_row.empty:
             return players_df_row.iloc[0]["gsis_id"]
     if ids.get("last_name") and ids.get("first_name"):
-        players_df_row = players_df[(players_df["last_name"] == ids["last_name"]) & (players_df["first_name"] == ids["first_name"])]
+        players_df_row = players_df[(players_df["last_name"] == ids["last_name"]) & ((players_df["first_name"] == ids["first_name"]) | (players_df["common_first_name"] == ids["first_name"].split()[0]))]
         if not players_df_row.empty:
             return players_df_row.iloc[0]["gsis_id"]
     if ids.get("full_name"):
