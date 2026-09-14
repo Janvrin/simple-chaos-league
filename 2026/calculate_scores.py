@@ -122,7 +122,7 @@ def default_sleeper(player_id: str, week: int, year: int) -> tuple[float, list]:
     # Interceptions
     interceptions = stats.get("interceptions", 0)
     if interceptions:
-        pts_int = interceptions * -2
+        pts_int = interceptions * -1
         breakdown.append({"rule_id": -1, "description": f"{interceptions} interceptions", "score": round(pts_int, 2)})
         pts += pts_int
 
