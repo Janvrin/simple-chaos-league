@@ -544,9 +544,9 @@ def calculate_score(player_id: str, week: int, year: int) -> tuple[float, list[d
     score, breakdown = MARK(score, breakdown, player_id, week, year)
     score, breakdown = JACOB(score, breakdown, player_id, week, year)
     score, breakdown = MATT(score, breakdown, player_id, week, year)
+    score, breakdown = MASON(score, breakdown, player_id, week, year)
     score, breakdown = PAYTON(score, breakdown, player_id, week, year)
     score, breakdown = Y2024(score, breakdown, player_id, week, year)
-    score, breakdown = MASON(score, breakdown, player_id, week, year)
 
     return score, breakdown
 
