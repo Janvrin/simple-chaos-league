@@ -6,39 +6,21 @@
           "players": {
             "1029": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "1049": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "11266": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "11560": {
-              "total": 66.16,
+              "total": 54.16,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -67,8 +49,18 @@
                 },
                 {
                   "rule_id": 0,
+                  "description": "6 timeouts remaining during TD",
+                  "score": -6
+                },
+                {
+                  "rule_id": 0,
                   "description": "4 timeouts remaining during TD",
                   "score": -4
+                },
+                {
+                  "rule_id": 0,
+                  "description": "6 timeouts remaining during TD",
+                  "score": -6
                 },
                 {
                   "rule_id": 3,
@@ -107,6 +99,11 @@
                   "score": 4.7
                 },
                 {
+                  "rule_id": 0,
+                  "description": "6 timeouts remaining during TD",
+                  "score": -6
+                },
+                {
                   "rule_id": 3,
                   "description": "Suffered 3 sacks",
                   "score": 30
@@ -114,7 +111,7 @@
                 {
                   "rule_id": 6,
                   "description": "Team lost",
-                  "score": -45.82
+                  "score": -39.82
                 },
                 {
                   "rule_id": 1,
@@ -125,7 +122,7 @@
               "position": "BENCH"
             },
             "12015": {
-              "total": 0.0,
+              "total": 0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -136,11 +133,6 @@
                   "rule_id": 6,
                   "description": "Team lost",
                   "score": -1.0
-                },
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
                 }
               ],
               "position": "BENCH"
@@ -183,13 +175,7 @@
             },
             "13162": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "13294": {
@@ -216,17 +202,11 @@
                   "score": -1.98
                 }
               ],
-              "position": "WR/RB/TE"
+              "position": "WR"
             },
             "167": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "2502": {
@@ -235,7 +215,7 @@
               "position": "BENCH"
             },
             "2747": {
-              "total": 0.0,
+              "total": 7.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -256,24 +236,13 @@
                   "rule_id": 2,
                   "description": "0 receptions for a bird team",
                   "score": 0
-                },
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": -7.0
                 }
               ],
-              "position": "BENCH"
+              "position": "K"
             },
             "289": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "3198": {
@@ -339,35 +308,17 @@
             },
             "3309": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "331": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "3816": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "5012": {
@@ -444,46 +395,22 @@
             },
             "5927": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "6192": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "6906": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "7558": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "7564": {
@@ -546,7 +473,7 @@
                   "score": -8.44
                 }
               ],
-              "position": "BENCH"
+              "position": "WR/RB/TE"
             },
             "8148": {
               "total": 18.23,
@@ -622,30 +549,18 @@
             },
             "8248": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             }
           },
-          "total": 128.67,
+          "total": 157.43,
           "result": "TBD"
         },
         "2": {
           "players": {
             "11563": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "11584": {
@@ -747,7 +662,7 @@
               "position": "WR"
             },
             "11786": {
-              "total": 0.0,
+              "total": 12.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -758,24 +673,13 @@
                   "rule_id": -1,
                   "description": "2 FG 40-49 yards",
                   "score": 8
-                },
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": -12.0
                 }
               ],
               "position": "BENCH"
             },
             "11946": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "11995": {
@@ -841,7 +745,7 @@
               "position": "BENCH"
             },
             "12961": {
-              "total": 0.0,
+              "total": 0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -857,28 +761,17 @@
                   "rule_id": 6,
                   "description": "Team lost",
                   "score": -8.0
-                },
-                {
-                  "rule_id": 1,
-                  "description": "1.0% offensive snaps",
-                  "score": 0.0
                 }
               ],
               "position": "BENCH"
             },
             "13804": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "2020": {
-              "total": 0.0,
+              "total": 12.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -889,11 +782,6 @@
                   "rule_id": -1,
                   "description": "1 FG 40-49 yards",
                   "score": 4
-                },
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": -12.0
                 }
               ],
               "position": "BENCH"
@@ -927,10 +815,10 @@
                   "score": -6.21
                 }
               ],
-              "position": "WR/RB/TE"
+              "position": "RB"
             },
             "4195": {
-              "total": 0.0,
+              "total": 6.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -946,46 +834,23 @@
                   "rule_id": 2,
                   "description": "0 receptions for a bird team",
                   "score": 0
-                },
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": -6.0
                 }
               ],
-              "position": "BENCH"
+              "position": "K"
             },
             "5253": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "5844": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "5980": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "6797": {
@@ -1007,6 +872,11 @@
                   "score": 2.9
                 },
                 {
+                  "rule_id": 0,
+                  "description": "5 timeouts remaining during TD",
+                  "score": -5
+                },
+                {
                   "rule_id": 3,
                   "description": "Suffered 3 sacks",
                   "score": 30
@@ -1014,7 +884,7 @@
                 {
                   "rule_id": 6,
                   "description": "Team lost",
-                  "score": -45.26
+                  "score": -40.26
                 },
                 {
                   "rule_id": 1,
@@ -1038,6 +908,16 @@
                   "score": 8
                 },
                 {
+                  "rule_id": 0,
+                  "description": "6 timeouts remaining during TD",
+                  "score": -6
+                },
+                {
+                  "rule_id": 0,
+                  "description": "5 timeouts remaining during TD",
+                  "score": -5
+                },
+                {
                   "rule_id": 3,
                   "description": "Suffered 4 sacks",
                   "score": 40
@@ -1045,7 +925,7 @@
                 {
                   "rule_id": 6,
                   "description": "Team lost",
-                  "score": -63.480000000000004
+                  "score": -52.480000000000004
                 },
                 {
                   "rule_id": 1,
@@ -1084,7 +964,7 @@
                   "score": -1.27
                 }
               ],
-              "position": "BENCH"
+              "position": "WR"
             },
             "7543": {
               "total": 0.0,
@@ -1196,13 +1076,7 @@
             },
             "8809": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "9480": {
@@ -1361,7 +1235,7 @@
               "position": "BENCH"
             }
           },
-          "total": 10.71,
+          "total": 40.84,
           "result": "TBD"
         },
         "3": {
@@ -1390,6 +1264,16 @@
                   "score": 3.1
                 },
                 {
+                  "rule_id": 0,
+                  "description": "5 timeouts remaining during TD",
+                  "score": -5
+                },
+                {
+                  "rule_id": 0,
+                  "description": "4 timeouts remaining during TD",
+                  "score": -4
+                },
+                {
                   "rule_id": 3,
                   "description": "Suffered 1 sacks",
                   "score": 10
@@ -1397,7 +1281,7 @@
                 {
                   "rule_id": 6,
                   "description": "Team lost",
-                  "score": -27.66
+                  "score": -18.66
                 },
                 {
                   "rule_id": 1,
@@ -1508,17 +1392,11 @@
             },
             "12370": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "12508": {
-              "total": 58.8,
+              "total": 45.8,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -1534,6 +1412,21 @@
                   "rule_id": -1,
                   "description": "54 rushing yards",
                   "score": 5.4
+                },
+                {
+                  "rule_id": 0,
+                  "description": "3 timeouts remaining during TD",
+                  "score": -3
+                },
+                {
+                  "rule_id": 0,
+                  "description": "5 timeouts remaining during TD",
+                  "score": -5
+                },
+                {
+                  "rule_id": 0,
+                  "description": "5 timeouts remaining during TD",
+                  "score": -5
                 },
                 {
                   "rule_id": 3,
@@ -1597,13 +1490,7 @@
             },
             "12529": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "12905": {
@@ -1618,13 +1505,7 @@
             },
             "1678": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "4504": {
@@ -1638,7 +1519,7 @@
               "position": "BENCH"
             },
             "5189": {
-              "total": 0.0,
+              "total": 10.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -1659,83 +1540,42 @@
                   "rule_id": -1,
                   "description": "1 FG missed",
                   "score": -1
-                },
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": -10.0
                 }
               ],
-              "position": "BENCH"
+              "position": "K"
             },
             "5850": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "5859": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "5892": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "6469": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "6554": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "6806": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "7042": {
-              "total": 0.0,
+              "total": 13.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -1751,17 +1591,12 @@
                   "rule_id": -1,
                   "description": "1 FG 40-49 yards",
                   "score": 4
-                },
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": -13.0
                 }
               ],
               "position": "BENCH"
             },
             "7523": {
-              "total": 31.77,
+              "total": 10.65,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -1779,6 +1614,26 @@
                   "score": 0.3
                 },
                 {
+                  "rule_id": 0,
+                  "description": "6 timeouts remaining during TD",
+                  "score": -6
+                },
+                {
+                  "rule_id": 0,
+                  "description": "6 timeouts remaining during TD",
+                  "score": -6
+                },
+                {
+                  "rule_id": 0,
+                  "description": "6 timeouts remaining during TD",
+                  "score": -6
+                },
+                {
+                  "rule_id": 0,
+                  "description": "6 timeouts remaining during TD",
+                  "score": -6
+                },
+                {
                   "rule_id": 3,
                   "description": "Suffered 1 sacks",
                   "score": 10
@@ -1786,20 +1641,14 @@
                 {
                   "rule_id": 1,
                   "description": "88.0% offensive snaps",
-                  "score": -4.33
+                  "score": -1.45
                 }
               ],
               "position": "QB"
             },
             "7526": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "7547": {
@@ -1836,17 +1685,11 @@
                   "score": -1.87
                 }
               ],
-              "position": "WR/RB/TE"
+              "position": "WR"
             },
             "8008": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "8676": {
@@ -1883,7 +1726,7 @@
                   "score": -15.95
                 }
               ],
-              "position": "BENCH"
+              "position": "WR/RB/TE"
             },
             "9754": {
               "total": 0.0,
@@ -1912,13 +1755,13 @@
               "position": "BENCH"
             }
           },
-          "total": 73.49,
+          "total": 93.32,
           "result": "TBD"
         },
         "4": {
           "players": {
             "11533": {
-              "total": 0.0,
+              "total": 0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -1934,11 +1777,6 @@
                   "rule_id": 6,
                   "description": "Team lost",
                   "score": -1.0
-                },
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
                 }
               ],
               "position": "BENCH"
@@ -1986,35 +1824,17 @@
             },
             "12190": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "12489": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "12493": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "12507": {
@@ -2117,13 +1937,7 @@
             },
             "1466": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "2133": {
@@ -2153,7 +1967,7 @@
               "position": "BENCH"
             },
             "3163": {
-              "total": 26.44,
+              "total": 16.44,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -2171,6 +1985,16 @@
                   "score": 0.2
                 },
                 {
+                  "rule_id": 0,
+                  "description": "6 timeouts remaining during TD",
+                  "score": -6
+                },
+                {
+                  "rule_id": 0,
+                  "description": "4 timeouts remaining during TD",
+                  "score": -4
+                },
+                {
                   "rule_id": 3,
                   "description": "Suffered 1 sacks",
                   "score": 10
@@ -2185,24 +2009,12 @@
             },
             "3770": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "4127": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "421": {
@@ -2233,46 +2045,22 @@
             },
             "4227": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "4942": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "5870": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "6374": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "7021": {
@@ -2365,13 +2153,7 @@
             },
             "7901": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "8137": {
@@ -2586,7 +2368,7 @@
               "position": "BENCH"
             }
           },
-          "total": 18.56,
+          "total": 8.56,
           "result": "TBD"
         },
         "5": {
@@ -2603,39 +2385,21 @@
             },
             "11058": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "11145": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "11604": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "11792": {
-              "total": 0.0,
+              "total": 7.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -2646,14 +2410,9 @@
                   "rule_id": -1,
                   "description": "1 FG 30-39 yards",
                   "score": 3
-                },
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": -7.0
                 }
               ],
-              "position": "BENCH"
+              "position": "K"
             },
             "12527": {
               "total": 16.06,
@@ -2728,7 +2487,7 @@
               "position": "WR"
             },
             "3451": {
-              "total": 0.0,
+              "total": 0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -2744,11 +2503,6 @@
                   "rule_id": 6,
                   "description": "Team lost",
                   "score": -9.0
-                },
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
                 }
               ],
               "position": "BENCH"
@@ -2854,72 +2608,36 @@
                   "score": -8.95
                 }
               ],
-              "position": "WR/RB/TE"
+              "position": "WR"
             },
             "4994": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "5045": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "5295": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "5590": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "6083": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "6650": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "6794": {
@@ -2961,7 +2679,7 @@
                   "score": -3.29
                 }
               ],
-              "position": "BENCH"
+              "position": "WR/RB/TE"
             },
             "6813": {
               "total": 0.0,
@@ -3016,13 +2734,7 @@
             },
             "7094": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "8144": {
@@ -3072,7 +2784,7 @@
               "position": "BENCH"
             },
             "8183": {
-              "total": 23.1,
+              "total": 8.1,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -3090,15 +2802,30 @@
                   "score": 2.9
                 },
                 {
+                  "rule_id": 0,
+                  "description": "5 timeouts remaining during TD",
+                  "score": -5
+                },
+                {
+                  "rule_id": 0,
+                  "description": "5 timeouts remaining during TD",
+                  "score": -5
+                },
+                {
+                  "rule_id": 0,
+                  "description": "5 timeouts remaining during TD",
+                  "score": -5
+                },
+                {
                   "rule_id": 1,
                   "description": "100.0% offensive snaps",
-                  "score": 0.0
+                  "score": -0.0
                 }
               ],
               "position": "BENCH"
             },
             "8259": {
-              "total": 0.0,
+              "total": 0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -3109,11 +2836,6 @@
                   "rule_id": 6,
                   "description": "Team lost",
                   "score": -2.0
-                },
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
                 }
               ],
               "position": "BENCH"
@@ -3162,7 +2884,7 @@
                   "score": -9.28
                 }
               ],
-              "position": "WR/RB/TE"
+              "position": "RB"
             },
             "9226": {
               "total": 0.0,
@@ -3250,6 +2972,16 @@
                   "score": 1.5
                 },
                 {
+                  "rule_id": 0,
+                  "description": "5 timeouts remaining during TD",
+                  "score": -5
+                },
+                {
+                  "rule_id": 0,
+                  "description": "6 timeouts remaining during TD",
+                  "score": -6
+                },
+                {
                   "rule_id": 3,
                   "description": "Suffered 3 sacks",
                   "score": 30
@@ -3257,7 +2989,7 @@
                 {
                   "rule_id": 6,
                   "description": "Team lost",
-                  "score": -50.46
+                  "score": -39.46
                 },
                 {
                   "rule_id": 1,
@@ -3335,35 +3067,23 @@
               "position": "DEF"
             }
           },
-          "total": 36.8,
+          "total": 81.61,
           "result": "TBD"
         },
         "6": {
           "players": {
             "10229": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "11380": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "12185": {
-              "total": 0.0,
+              "total": 0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -3384,11 +3104,6 @@
                   "rule_id": 6,
                   "description": "Team lost",
                   "score": -6.0
-                },
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
                 }
               ],
               "position": "BENCH"
@@ -3489,7 +3204,7 @@
                   "score": -5.7
                 }
               ],
-              "position": "WR/RB/TE"
+              "position": "RB"
             },
             "13414": {
               "total": 3.44,
@@ -3518,7 +3233,7 @@
               "position": "RB"
             },
             "13545": {
-              "total": 0.0,
+              "total": 0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -3549,11 +3264,6 @@
                   "rule_id": 6,
                   "description": "Team lost",
                   "score": -12.0
-                },
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
                 }
               ],
               "position": "BENCH"
@@ -3569,7 +3279,7 @@
               "position": "BENCH"
             },
             "1945": {
-              "total": 0.0,
+              "total": 8.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -3590,14 +3300,9 @@
                   "rule_id": -1,
                   "description": "1 FG missed",
                   "score": -1
-                },
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": -8.0
                 }
               ],
-              "position": "BENCH"
+              "position": "K"
             },
             "3294": {
               "total": 0.0,
@@ -3618,9 +3323,19 @@
                   "score": 1.4
                 },
                 {
+                  "rule_id": 0,
+                  "description": "5 timeouts remaining during TD",
+                  "score": -5
+                },
+                {
+                  "rule_id": 0,
+                  "description": "5 timeouts remaining during TD",
+                  "score": -5
+                },
+                {
                   "rule_id": 6,
                   "description": "Team lost",
-                  "score": -16.4
+                  "score": -6.399999999999999
                 },
                 {
                   "rule_id": 1,
@@ -3658,17 +3373,11 @@
             },
             "5970": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "6770": {
-              "total": 26.16,
+              "total": 21.16,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -3684,6 +3393,11 @@
                   "rule_id": -1,
                   "description": "20 rushing yards",
                   "score": 2.0
+                },
+                {
+                  "rule_id": 0,
+                  "description": "5 timeouts remaining during TD",
+                  "score": -5
                 },
                 {
                   "rule_id": 3,
@@ -3813,13 +3527,7 @@
             },
             "7951": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "8112": {
@@ -3923,7 +3631,7 @@
                   "score": -2.77
                 }
               ],
-              "position": "BENCH"
+              "position": "WR/RB/TE"
             },
             "8146": {
               "total": 30.9,
@@ -4009,24 +3717,12 @@
             },
             "8198": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "9483": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "DEN": {
@@ -4092,7 +3788,7 @@
               "position": "BENCH"
             }
           },
-          "total": 80.05,
+          "total": 90.18,
           "result": "TBD"
         },
         "7": {
@@ -4120,24 +3816,12 @@
             },
             "10861": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "110": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "11570": {
@@ -4204,35 +3888,17 @@
             },
             "11628": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "120": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "1244": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "12490": {
@@ -4264,10 +3930,10 @@
                   "score": -11.73
                 }
               ],
-              "position": "WR/RB/TE"
+              "position": "RB"
             },
             "12711": {
-              "total": 0.0,
+              "total": 14.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -4288,72 +3954,37 @@
                   "rule_id": 2,
                   "description": "0 receptions for a bird team",
                   "score": 0
-                },
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": -14.0
                 }
               ],
-              "position": "BENCH"
+              "position": "K"
             },
             "178": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "232": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "344": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "4401": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "455": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "4881": {
-              "total": 40.96,
+              "total": 36.96,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -4381,6 +4012,11 @@
                   "score": -6
                 },
                 {
+                  "rule_id": 0,
+                  "description": "4 timeouts remaining during TD",
+                  "score": -4
+                },
+                {
                   "rule_id": 3,
                   "description": "Suffered 2 sacks",
                   "score": 20
@@ -4399,7 +4035,7 @@
               "position": "QB"
             },
             "4984": {
-              "total": 62.76,
+              "total": 52.76,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -4432,6 +4068,16 @@
                   "score": -5
                 },
                 {
+                  "rule_id": 0,
+                  "description": "5 timeouts remaining during TD",
+                  "score": -5
+                },
+                {
+                  "rule_id": 0,
+                  "description": "5 timeouts remaining during TD",
+                  "score": -5
+                },
+                {
                   "rule_id": 3,
                   "description": "Suffered 2 sacks",
                   "score": 20
@@ -4451,68 +4097,32 @@
             },
             "515": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "5403": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "5872": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "6491": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "7412": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "7499": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "7553": {
@@ -4537,7 +4147,7 @@
               "position": "BENCH"
             },
             "7839": {
-              "total": 0.0,
+              "total": 19.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -4558,24 +4168,13 @@
                   "rule_id": -1,
                   "description": "2 FG 50-59 yards",
                   "score": 10
-                },
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": -19.0
                 }
               ],
               "position": "BENCH"
             },
             "8151": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "8155": {
@@ -4689,7 +4288,7 @@
                   "score": -17.16
                 }
               ],
-              "position": "WR/RB/TE"
+              "position": "WR"
             },
             "9997": {
               "total": 18.94,
@@ -4738,7 +4337,7 @@
               "position": "WR"
             }
           },
-          "total": 113.95,
+          "total": 123.95,
           "result": "TBD"
         },
         "8": {
@@ -4785,7 +4384,7 @@
               "position": "BENCH"
             },
             "11539": {
-              "total": 0.0,
+              "total": 7.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -4796,28 +4395,17 @@
                   "rule_id": -1,
                   "description": "1 FG 20-29 yards",
                   "score": 3
-                },
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": -7.0
                 }
               ],
               "position": "BENCH"
             },
             "12070": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "12713": {
-              "total": 0.0,
+              "total": 0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -4833,24 +4421,13 @@
                   "rule_id": 6,
                   "description": "Team lost",
                   "score": -6.0
-                },
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
                 }
               ],
               "position": "BENCH"
             },
             "12975": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "13279": {
@@ -4911,20 +4488,15 @@
               "position": "RB"
             },
             "13833": {
-              "total": 0.0,
+              "total": 4.0,
               "breakdown": [
                 {
                   "rule_id": -1,
                   "description": "4 PATs made",
                   "score": 4
-                },
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": -4.0
                 }
               ],
-              "position": "BENCH"
+              "position": "K"
             },
             "3214": {
               "total": 0.0,
@@ -4954,13 +4526,7 @@
             },
             "3678": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "4037": {
@@ -5001,13 +4567,7 @@
             },
             "4046": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "4217": {
@@ -5033,24 +4593,12 @@
             },
             "4326": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "4545": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "4866": {
@@ -5091,13 +4639,7 @@
             },
             "5849": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "6790": {
@@ -5154,7 +4696,7 @@
                   "score": -21.24
                 }
               ],
-              "position": "BENCH"
+              "position": "WR/RB/TE"
             },
             "6801": {
               "total": 16.42,
@@ -5183,7 +4725,7 @@
               "position": "WR"
             },
             "6904": {
-              "total": 66.92,
+              "total": 51.92,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -5199,6 +4741,21 @@
                   "rule_id": -1,
                   "description": "46 rushing yards",
                   "score": 4.6
+                },
+                {
+                  "rule_id": 0,
+                  "description": "5 timeouts remaining during TD",
+                  "score": -5
+                },
+                {
+                  "rule_id": 0,
+                  "description": "5 timeouts remaining during TD",
+                  "score": -5
+                },
+                {
+                  "rule_id": 0,
+                  "description": "5 timeouts remaining during TD",
+                  "score": -5
                 },
                 {
                   "rule_id": 3,
@@ -5271,13 +4828,7 @@
             },
             "8038": {
               "total": 0.0,
-              "breakdown": [
-                {
-                  "rule_id": 1,
-                  "description": "0.0% offensive snaps",
-                  "score": 0.0
-                }
-              ],
+              "breakdown": [],
               "position": "BENCH"
             },
             "8110": {
@@ -5340,7 +4891,7 @@
                   "score": -3.86
                 }
               ],
-              "position": "WR/RB/TE"
+              "position": "RB"
             },
             "9488": {
               "total": 57.42,
@@ -5386,7 +4937,7 @@
                   "score": -6.38
                 }
               ],
-              "position": "BENCH"
+              "position": "WR"
             },
             "BAL": {
               "total": 2.0,
@@ -5492,7 +5043,7 @@
               "position": "BENCH"
             }
           },
-          "total": 90.63,
+          "total": 165.21,
           "result": "TBD"
         }
       }

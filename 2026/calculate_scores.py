@@ -259,7 +259,7 @@ def MASON(score: float, breakdown: list,
     """
     Multiply score by offensive snap percentage.
     """
-    global players_df, snap_df, TEAM_ABBREVIATIONS
+    global players_df, snap_df, weekly_df, TEAM_ABBREVIATIONS
 
     # Skip defenses
     if player_id in TEAM_ABBREVIATIONS:
@@ -268,8 +268,14 @@ def MASON(score: float, breakdown: list,
     # Step 1: get pfr_id from players_df using gsis_id
     player_info = players_df[players_df["gsis_id"] == player_id]
     if player_info.empty:
-        snap_pct = 0
+        return score, breakdown
     else:
+        wk_row = weekly_df[(weekly_df["player_id"] == player_id) & (weekly_df["week"] == week)]
+        if wk_row.empty:
+            return score, breakdown
+        stats = wk_row.iloc[0].to_dict()
+        if stats.get("position") == "K":
+            return score, breakdown
         pfr_id = player_info.iloc[0]["pfr_id"]
         if pd.isna(pfr_id) or pfr_id == "":
             snap_pct = 0
@@ -357,7 +363,7 @@ def JAXON(score: float, breakdown: list,
     """
     global pbp_df
 
-    pbp_row = pbp_df[(pbp_df["td_player_id"] == player_id) & (pbp_df["week"] == week)]
+    pbp_row = pbp_df[((pbp_df["td_player_id"] == player_id) | ((pbp_df["pass_touchdown"] == 1) & (pbp_df["passer_player_id"] == player_id))) & (pbp_df["week"] == week)]
     if pbp_row.empty:
         return score, breakdown
 
