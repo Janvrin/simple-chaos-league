@@ -585,8 +585,49 @@
         "2": {
           "players": {
             "11563": {
-              "total": 0.0,
-              "breakdown": [],
+              "total": 0,
+              "breakdown": [
+                {
+                  "rule_id": -1,
+                  "description": "131 passing yards",
+                  "score": 5.24
+                },
+                {
+                  "rule_id": -1,
+                  "description": "1 passing TDs",
+                  "score": 4
+                },
+                {
+                  "rule_id": -1,
+                  "description": "2 rushing yards",
+                  "score": 0.2
+                },
+                {
+                  "rule_id": -1,
+                  "description": "1 interceptions",
+                  "score": -1
+                },
+                {
+                  "rule_id": 0,
+                  "description": "6 timeouts remaining during TD",
+                  "score": -6
+                },
+                {
+                  "rule_id": 3,
+                  "description": "Suffered 4 sacks",
+                  "score": 40
+                },
+                {
+                  "rule_id": 1,
+                  "description": "100.0% offensive snaps",
+                  "score": 0.0
+                },
+                {
+                  "rule_id": 6,
+                  "description": "Team lost",
+                  "score": -42.44
+                }
+              ],
               "position": "BENCH"
             },
             "11584": {
@@ -1704,8 +1745,24 @@
               "position": "BENCH"
             },
             "6806": {
-              "total": 0.0,
-              "breakdown": [],
+              "total": 0,
+              "breakdown": [
+                {
+                  "rule_id": -1,
+                  "description": "36 rushing yards",
+                  "score": 3.6
+                },
+                {
+                  "rule_id": 1,
+                  "description": "43.0% offensive snaps",
+                  "score": -2.05
+                },
+                {
+                  "rule_id": 6,
+                  "description": "Team lost",
+                  "score": -1.55
+                }
+              ],
               "position": "BENCH"
             },
             "7042": {
@@ -1781,8 +1838,29 @@
               "position": "QB"
             },
             "7526": {
-              "total": 0.0,
-              "breakdown": [],
+              "total": 0,
+              "breakdown": [
+                {
+                  "rule_id": -1,
+                  "description": "2 receiving yards",
+                  "score": 0.2
+                },
+                {
+                  "rule_id": -1,
+                  "description": "1 receptions",
+                  "score": 1
+                },
+                {
+                  "rule_id": 1,
+                  "description": "75.0% offensive snaps",
+                  "score": -0.3
+                },
+                {
+                  "rule_id": 6,
+                  "description": "Team lost",
+                  "score": -0.9
+                }
+              ],
               "position": "BENCH"
             },
             "7547": {
@@ -1962,8 +2040,39 @@
               "position": "BENCH"
             },
             "12489": {
-              "total": 0.0,
-              "breakdown": [],
+              "total": 0,
+              "breakdown": [
+                {
+                  "rule_id": -1,
+                  "description": "18 rushing yards",
+                  "score": 1.8
+                },
+                {
+                  "rule_id": -1,
+                  "description": "23 receiving yards",
+                  "score": 2.3
+                },
+                {
+                  "rule_id": -1,
+                  "description": "4 receptions",
+                  "score": 4
+                },
+                {
+                  "rule_id": 8,
+                  "description": "111 kickoff return yards",
+                  "score": 55.5
+                },
+                {
+                  "rule_id": 1,
+                  "description": "51.0% offensive snaps",
+                  "score": -31.16
+                },
+                {
+                  "rule_id": 6,
+                  "description": "Team lost",
+                  "score": -32.44
+                }
+              ],
               "position": "BENCH"
             },
             "12493": {
@@ -2070,9 +2179,30 @@
               "position": "BENCH"
             },
             "1466": {
-              "total": 0.0,
-              "breakdown": [],
-              "position": "BENCH"
+              "total": 19.17,
+              "breakdown": [
+                {
+                  "rule_id": -1,
+                  "description": "71 receiving yards",
+                  "score": 7.1
+                },
+                {
+                  "rule_id": -1,
+                  "description": "3 receptions",
+                  "score": 3
+                },
+                {
+                  "rule_id": 5,
+                  "description": "59.0 yard reception",
+                  "score": 16.9
+                },
+                {
+                  "rule_id": 1,
+                  "description": "71.0% offensive snaps",
+                  "score": -7.83
+                }
+              ],
+              "position": "WR/RB/TE"
             },
             "2133": {
               "total": 0,
@@ -2183,9 +2313,20 @@
               "position": "BENCH"
             },
             "4227": {
-              "total": 0.0,
-              "breakdown": [],
-              "position": "BENCH"
+              "total": 7.0,
+              "breakdown": [
+                {
+                  "rule_id": -1,
+                  "description": "4 PATs made",
+                  "score": 4
+                },
+                {
+                  "rule_id": -1,
+                  "description": "1 FG 20-29 yards",
+                  "score": 3
+                }
+              ],
+              "position": "K"
             },
             "4942": {
               "total": 0.0,
@@ -2548,7 +2689,7 @@
               "position": "BENCH"
             }
           },
-          "total": 8.56,
+          "total": 34.73,
           "result": "TBD"
         },
         "5": {
@@ -2796,8 +2937,29 @@
               "position": "BENCH"
             },
             "5045": {
-              "total": 0.0,
-              "breakdown": [],
+              "total": 0,
+              "breakdown": [
+                {
+                  "rule_id": -1,
+                  "description": "11 receiving yards",
+                  "score": 1.1
+                },
+                {
+                  "rule_id": -1,
+                  "description": "2 receptions",
+                  "score": 2
+                },
+                {
+                  "rule_id": 1,
+                  "description": "76.0% offensive snaps",
+                  "score": -0.74
+                },
+                {
+                  "rule_id": 6,
+                  "description": "Team lost",
+                  "score": -2.36
+                }
+              ],
               "position": "BENCH"
             },
             "5295": {
@@ -3295,9 +3457,35 @@
         "6": {
           "players": {
             "10229": {
-              "total": 0.0,
-              "breakdown": [],
-              "position": "BENCH"
+              "total": 4.9,
+              "breakdown": [
+                {
+                  "rule_id": -1,
+                  "description": "19 receiving yards",
+                  "score": 1.9
+                },
+                {
+                  "rule_id": -1,
+                  "description": "1 receiving TDs",
+                  "score": 6
+                },
+                {
+                  "rule_id": -1,
+                  "description": "2 receptions",
+                  "score": 2
+                },
+                {
+                  "rule_id": 0,
+                  "description": "4 timeouts remaining during TD",
+                  "score": -4
+                },
+                {
+                  "rule_id": 1,
+                  "description": "83.0% offensive snaps",
+                  "score": -1.0
+                }
+              ],
+              "position": "WR"
             },
             "11380": {
               "total": 0.0,
@@ -3975,7 +4163,38 @@
             },
             "DEN": {
               "total": 0,
-              "breakdown": [],
+              "breakdown": [
+                {
+                  "rule_id": -1,
+                  "description": "1 interceptions",
+                  "score": 2
+                },
+                {
+                  "rule_id": -1,
+                  "description": "31.0 points allowed",
+                  "score": -1
+                },
+                {
+                  "rule_id": 10,
+                  "description": "12 sack yards",
+                  "score": 12
+                },
+                {
+                  "rule_id": 3,
+                  "description": "2 sacks",
+                  "score": -20
+                },
+                {
+                  "rule_id": 6,
+                  "description": "Team lost",
+                  "score": 7.0
+                },
+                {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": 0
+                }
+              ],
               "position": "BENCH"
             },
             "HOU": {
@@ -4036,7 +4255,7 @@
               "position": "BENCH"
             }
           },
-          "total": 89.18,
+          "total": 94.08,
           "result": "TBD"
         },
         "7": {
@@ -4457,9 +4676,60 @@
               "position": "BENCH"
             },
             "8151": {
-              "total": 0.0,
-              "breakdown": [],
-              "position": "BENCH"
+              "total": 38.69,
+              "breakdown": [
+                {
+                  "rule_id": -1,
+                  "description": "173 rushing yards",
+                  "score": 17.3
+                },
+                {
+                  "rule_id": -1,
+                  "description": "1 rushing TDs",
+                  "score": 6
+                },
+                {
+                  "rule_id": -1,
+                  "description": "18 receiving yards",
+                  "score": 1.8
+                },
+                {
+                  "rule_id": -1,
+                  "description": "1 receiving TDs",
+                  "score": 6
+                },
+                {
+                  "rule_id": -1,
+                  "description": "3 receptions",
+                  "score": 3
+                },
+                {
+                  "rule_id": 0,
+                  "description": "6 timeouts remaining during TD",
+                  "score": -6
+                },
+                {
+                  "rule_id": 0,
+                  "description": "6 timeouts remaining during TD",
+                  "score": -6
+                },
+                {
+                  "rule_id": 5,
+                  "description": "28.0 yard rush",
+                  "score": 12.8
+                },
+                {
+                  "rule_id": 5,
+                  "description": "60.0 yard TD rush",
+                  "score": 22.0
+                },
+                {
+                  "rule_id": 1,
+                  "description": "68.0% offensive snaps",
+                  "score": -18.21
+                }
+              ],
+              "position": "WR/RB/TE"
             },
             "8155": {
               "total": 8.0,
@@ -4621,7 +4891,7 @@
               "position": "WR"
             }
           },
-          "total": 144.95,
+          "total": 183.64,
           "result": "TBD"
         },
         "8": {
@@ -4809,8 +5079,24 @@
               "position": "BENCH"
             },
             "3678": {
-              "total": 0.0,
-              "breakdown": [],
+              "total": 0,
+              "breakdown": [
+                {
+                  "rule_id": -1,
+                  "description": "1 PATs made",
+                  "score": 1
+                },
+                {
+                  "rule_id": -1,
+                  "description": "1 FG 30-39 yards",
+                  "score": 3
+                },
+                {
+                  "rule_id": 6,
+                  "description": "Team lost",
+                  "score": -4.0
+                }
+              ],
               "position": "BENCH"
             },
             "4037": {
@@ -4850,8 +5136,59 @@
               "position": "BENCH"
             },
             "4046": {
-              "total": 0.0,
-              "breakdown": [],
+              "total": 26.66,
+              "breakdown": [
+                {
+                  "rule_id": -1,
+                  "description": "184 passing yards",
+                  "score": 7.36
+                },
+                {
+                  "rule_id": -1,
+                  "description": "2 passing TDs",
+                  "score": 8
+                },
+                {
+                  "rule_id": -1,
+                  "description": "23 rushing yards",
+                  "score": 2.3
+                },
+                {
+                  "rule_id": -1,
+                  "description": "1 rushing TDs",
+                  "score": 6
+                },
+                {
+                  "rule_id": -1,
+                  "description": "1 interceptions",
+                  "score": -1
+                },
+                {
+                  "rule_id": 0,
+                  "description": "6 timeouts remaining during TD",
+                  "score": -6
+                },
+                {
+                  "rule_id": 0,
+                  "description": "4 timeouts remaining during TD",
+                  "score": -4
+                },
+                {
+                  "rule_id": 0,
+                  "description": "6 timeouts remaining during TD",
+                  "score": -6
+                },
+                {
+                  "rule_id": 3,
+                  "description": "Suffered 2 sacks",
+                  "score": 20
+                },
+                {
+                  "rule_id": 1,
+                  "description": "100.0% offensive snaps",
+                  "score": 0.0
+                }
+              ],
               "position": "BENCH"
             },
             "4217": {
@@ -5317,8 +5654,39 @@
               "position": "DEF"
             },
             "KC": {
-              "total": 0,
-              "breakdown": [],
+              "total": -26.0,
+              "breakdown": [
+                {
+                  "rule_id": -1,
+                  "description": "1 interceptions",
+                  "score": 2
+                },
+                {
+                  "rule_id": -1,
+                  "description": "1 fumble recoveries",
+                  "score": 2
+                },
+                {
+                  "rule_id": -1,
+                  "description": "10.0 points allowed",
+                  "score": 4
+                },
+                {
+                  "rule_id": 10,
+                  "description": "9 sack yards",
+                  "score": 9
+                },
+                {
+                  "rule_id": 3,
+                  "description": "3 sacks",
+                  "score": -30
+                },
+                {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": -13.0
+                }
+              ],
               "position": "BENCH"
             },
             "SF": {
