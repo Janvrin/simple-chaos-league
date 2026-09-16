@@ -580,7 +580,7 @@
             }
           },
           "total": 157.43,
-          "result": "TBD"
+          "result": "LOSS"
         },
         "2": {
           "players": {
@@ -1339,7 +1339,7 @@
             }
           },
           "total": 46.52,
-          "result": "TBD"
+          "result": "LOSS"
         },
         "3": {
           "players": {
@@ -1968,7 +1968,7 @@
             }
           },
           "total": 93.32,
-          "result": "TBD"
+          "result": "WIN"
         },
         "4": {
           "players": {
@@ -2690,7 +2690,7 @@
             }
           },
           "total": 34.73,
-          "result": "TBD"
+          "result": "LOSS"
         },
         "5": {
           "players": {
@@ -3452,7 +3452,7 @@
             }
           },
           "total": 81.61,
-          "result": "TBD"
+          "result": "LOSS"
         },
         "6": {
           "players": {
@@ -4256,7 +4256,7 @@
             }
           },
           "total": 94.08,
-          "result": "TBD"
+          "result": "WIN"
         },
         "7": {
           "players": {
@@ -4892,7 +4892,7 @@
             }
           },
           "total": 183.64,
-          "result": "TBD"
+          "result": "WIN"
         },
         "8": {
           "players": {
@@ -5717,7 +5717,7 @@
             }
           },
           "total": 113.4,
-          "result": "TBD"
+          "result": "WIN"
         }
       }
     }
