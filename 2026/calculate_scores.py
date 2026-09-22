@@ -624,10 +624,15 @@ def main():
 
     TEAM_ABBREVIATIONS = set(team_df["team"].dropna().unique())
     TEAM_ABBREVIATIONS.add("LAR")
+    TEAM_ABBREVIATIONS.add("LA")
+
 
     scores = {"weeks": {}}
 
     for week_str in weeks_to_process:
+        if schedule_data["weeks"][week_str]["date"] > datetime.date.today().strftime("%Y-%m-%d"):
+            break
+
         week_int = int(week_str)
         week_scores_teams = {}
 
@@ -710,6 +715,9 @@ def resolve_nfl_id(internal_id: str) -> str:
     """
     if internal_id in TEAM_ABBREVIATIONS:
         return internal_id
+
+    if internal_id == "LAR":
+        return "LA"
 
     ids = player_map.get(internal_id)
     if not ids:
