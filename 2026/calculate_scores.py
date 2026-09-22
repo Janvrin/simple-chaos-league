@@ -716,8 +716,8 @@ def resolve_nfl_id(internal_id: str) -> str:
     if internal_id in TEAM_ABBREVIATIONS:
         return internal_id
 
-    if internal_id == "LAR":
-        return "LA"
+    if internal_id == "LA":
+        return "LAR"
 
     ids = player_map.get(internal_id)
     if not ids:
