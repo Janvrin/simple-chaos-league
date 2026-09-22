@@ -623,6 +623,7 @@ def main():
     game_df = fetch_csv(GAME_STATS_URL)
 
     TEAM_ABBREVIATIONS = set(team_df["team"].dropna().unique())
+    TEAM_ABBREVIATIONS.add("LAR")
 
     scores = {"weeks": {}}
 
@@ -676,7 +677,7 @@ def main():
             week_scores_teams[team_id] = {"players": team_players_scores, "total": round(team_score, 2)}
 
         current_time = datetime.date.today()
-        if current_time.year == 2026 and current_time < (datetime.datetime.strptime(schedule_data["weeks"][week_str]["date"], "%Y-%m-%d").date() + datetime.timedelta(days=7)):
+        if current_time.year == 2026 and current_time < (datetime.datetime.strptime(schedule_data["weeks"][week_str]["date"], "%Y-%m-%d").date() + datetime.timedelta(days=6)):
             for team_id in week_scores_teams:
                 week_scores_teams[team_id]["result"] = "TBD"
             scores["weeks"][week_str] = {"teams": week_scores_teams}
@@ -709,9 +710,6 @@ def resolve_nfl_id(internal_id: str) -> str:
     """
     if internal_id in TEAM_ABBREVIATIONS:
         return internal_id
-
-    if internal_id == "LAR":
-        return "LA"
 
     ids = player_map.get(internal_id)
     if not ids:
