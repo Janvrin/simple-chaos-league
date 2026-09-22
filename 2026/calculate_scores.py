@@ -537,6 +537,7 @@ def calculate_score(player_id: str, week: int, year: int) -> tuple[float, list[d
     Compute fantasy score by chaining rules.
     """
     score, breakdown = default_sleeper(player_id, week, year)
+    score, breakdown = Y2024(score, breakdown, player_id, week, year)
     score, breakdown = Y2023(score, breakdown, player_id, week, year)
     score, breakdown = Y2025(score, breakdown, player_id, week, year)
     score, breakdown = JAXON(score, breakdown, player_id, week, year)
@@ -546,7 +547,6 @@ def calculate_score(player_id: str, week: int, year: int) -> tuple[float, list[d
     score, breakdown = MATT(score, breakdown, player_id, week, year)
     score, breakdown = MASON(score, breakdown, player_id, week, year)
     score, breakdown = PAYTON(score, breakdown, player_id, week, year)
-    score, breakdown = Y2024(score, breakdown, player_id, week, year)
 
     return score, breakdown
 
@@ -623,9 +623,6 @@ def main():
     game_df = fetch_csv(GAME_STATS_URL)
 
     TEAM_ABBREVIATIONS = set(team_df["team"].dropna().unique())
-    TEAM_ABBREVIATIONS.add("LAR")
-    TEAM_ABBREVIATIONS.add("LA")
-
 
     scores = {"weeks": {}}
 
@@ -715,9 +712,6 @@ def resolve_nfl_id(internal_id: str) -> str:
     """
     if internal_id in TEAM_ABBREVIATIONS:
         return internal_id
-
-    if internal_id == "LA":
-        return "LAR"
 
     ids = player_map.get(internal_id)
     if not ids:

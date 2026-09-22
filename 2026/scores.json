@@ -1250,7 +1250,7 @@
               "position": "BENCH"
             },
             "BUF": {
-              "total": -20.0,
+              "total": -7.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -1263,6 +1263,11 @@
                   "score": -1
                 },
                 {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": 3.0
+                },
+                {
                   "rule_id": 10,
                   "description": "17 sack yards",
                   "score": 17
@@ -1271,11 +1276,6 @@
                   "rule_id": 3,
                   "description": "3 sacks",
                   "score": -30
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": -10.0
                 }
               ],
               "position": "DEF"
@@ -1289,6 +1289,11 @@
                   "score": 0
                 },
                 {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": 0.0
+                },
+                {
                   "rule_id": 3,
                   "description": "1 sacks",
                   "score": -10
@@ -1297,17 +1302,12 @@
                   "rule_id": 6,
                   "description": "Team lost",
                   "score": 10.0
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": 0
                 }
               ],
               "position": "BENCH"
             },
             "SEA": {
-              "total": -20.0,
+              "total": 0.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -1320,6 +1320,11 @@
                   "score": 4
                 },
                 {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": 10.0
+                },
+                {
                   "rule_id": 10,
                   "description": "10 sack yards",
                   "score": 10
@@ -1328,17 +1333,12 @@
                   "rule_id": 3,
                   "description": "3 sacks",
                   "score": -30
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": -10.0
                 }
               ],
               "position": "BENCH"
             }
           },
-          "total": 46.52,
+          "total": 59.52,
           "result": "LOSS"
         },
         "3": {
@@ -2604,6 +2604,11 @@
                   "score": 4
                 },
                 {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": 4.0
+                },
+                {
                   "rule_id": 10,
                   "description": "12 sack yards",
                   "score": 12
@@ -2616,23 +2621,23 @@
                 {
                   "rule_id": 6,
                   "description": "Team lost",
-                  "score": 4.0
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": 0
+                  "score": -0.0
                 }
               ],
               "position": "BENCH"
             },
             "PHI": {
-              "total": -18.0,
+              "total": -9.0,
               "breakdown": [
                 {
                   "rule_id": -1,
                   "description": "22.0 points allowed",
                   "score": 0
+                },
+                {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": 0.0
                 },
                 {
                   "rule_id": 10,
@@ -2643,17 +2648,12 @@
                   "rule_id": 3,
                   "description": "1 sacks",
                   "score": -10
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": -9.0
                 }
               ],
               "position": "DEF"
             },
             "PIT": {
-              "total": -2.0,
+              "total": 13.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -2671,6 +2671,11 @@
                   "score": 4
                 },
                 {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": 14.0
+                },
+                {
                   "rule_id": 10,
                   "description": "25 sack yards",
                   "score": 25
@@ -2679,17 +2684,12 @@
                   "rule_id": 3,
                   "description": "4 sacks",
                   "score": -40
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": -1.0
                 }
               ],
               "position": "BENCH"
             }
           },
-          "total": 34.73,
+          "total": 43.73,
           "result": "LOSS"
         },
         "5": {
@@ -3384,7 +3384,7 @@
               "position": "BENCH"
             },
             "CIN": {
-              "total": -18.0,
+              "total": -1.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -3397,6 +3397,11 @@
                   "score": 0
                 },
                 {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": 8.0
+                },
+                {
                   "rule_id": 10,
                   "description": "23 sack yards",
                   "score": 23
@@ -3405,17 +3410,12 @@
                   "rule_id": 3,
                   "description": "4 sacks",
                   "score": -40
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": -9.0
                 }
               ],
               "position": "BENCH"
             },
             "JAX": {
-              "total": -44.0,
+              "total": -14.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -3433,6 +3433,11 @@
                   "score": 4
                 },
                 {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": 8.0
+                },
+                {
                   "rule_id": 10,
                   "description": "20 sack yards",
                   "score": 20
@@ -3441,18 +3446,13 @@
                   "rule_id": 3,
                   "description": "5 sacks",
                   "score": -50
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": -22.0
                 }
               ],
               "position": "DEF"
             }
           },
-          "total": 81.61,
-          "result": "LOSS"
+          "total": 111.61,
+          "result": "WIN"
         },
         "6": {
           "players": {
@@ -4175,6 +4175,11 @@
                   "score": -1
                 },
                 {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": 1.0
+                },
+                {
                   "rule_id": 10,
                   "description": "12 sack yards",
                   "score": 12
@@ -4187,12 +4192,7 @@
                 {
                   "rule_id": 6,
                   "description": "Team lost",
-                  "score": 7.0
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": 0
+                  "score": 6.0
                 }
               ],
               "position": "BENCH"
@@ -4204,6 +4204,11 @@
                   "rule_id": -1,
                   "description": "36.0 points allowed",
                   "score": -4
+                },
+                {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": -4.0
                 },
                 {
                   "rule_id": 10,
@@ -4218,30 +4223,40 @@
                 {
                   "rule_id": 6,
                   "description": "Team lost",
-                  "score": 13.0
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": 0
+                  "score": 17.0
                 }
               ],
               "position": "BENCH"
             },
-            "LAR": {
-              "total": 0.0,
+            "LA": {
+              "total": 0,
               "breakdown": [
+                {
+                  "rule_id": -1,
+                  "description": "1 interceptions",
+                  "score": 2
+                },
+                {
+                  "rule_id": -1,
+                  "description": "27.0 points allowed",
+                  "score": 0
+                },
                 {
                   "rule_id": 9,
                   "description": "Defense x2",
-                  "score": 0.0
+                  "score": 2.0
+                },
+                {
+                  "rule_id": 6,
+                  "description": "Team lost",
+                  "score": -4.0
                 }
               ],
               "position": "BENCH"
             }
           },
           "total": 94.08,
-          "result": "WIN"
+          "result": "LOSS"
         },
         "7": {
           "players": {
@@ -5567,7 +5582,7 @@
               "position": "WR"
             },
             "BAL": {
-              "total": 2.0,
+              "total": 5.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -5585,6 +5600,11 @@
                   "score": 0
                 },
                 {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": 4.0
+                },
+                {
                   "rule_id": 10,
                   "description": "17 sack yards",
                   "score": 17
@@ -5593,17 +5613,12 @@
                   "rule_id": 3,
                   "description": "2 sacks",
                   "score": -20
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": 1.0
                 }
               ],
               "position": "BENCH"
             },
             "DET": {
-              "total": -26.0,
+              "total": -8.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -5621,6 +5636,11 @@
                   "score": -1
                 },
                 {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": 5.0
+                },
+                {
                   "rule_id": 10,
                   "description": "32 sack yards",
                   "score": 32
@@ -5629,17 +5649,12 @@
                   "rule_id": 3,
                   "description": "5 sacks",
                   "score": -50
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": -13.0
                 }
               ],
               "position": "DEF"
             },
             "KC": {
-              "total": -26.0,
+              "total": -5.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -5657,6 +5672,11 @@
                   "score": 4
                 },
                 {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": 8.0
+                },
+                {
                   "rule_id": 10,
                   "description": "9 sack yards",
                   "score": 9
@@ -5665,11 +5685,6 @@
                   "rule_id": 3,
                   "description": "3 sacks",
                   "score": -30
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": -13.0
                 }
               ],
               "position": "BENCH"
@@ -5701,7 +5716,7 @@
               "position": "BENCH"
             }
           },
-          "total": 113.4,
+          "total": 131.4,
           "result": "WIN"
         }
       }
@@ -6900,12 +6915,17 @@
               "position": "BENCH"
             },
             "BUF": {
-              "total": -6.0,
+              "total": -4.0,
               "breakdown": [
                 {
                   "rule_id": -1,
                   "description": "31.0 points allowed",
                   "score": -1
+                },
+                {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": -1.0
                 },
                 {
                   "rule_id": 10,
@@ -6916,11 +6936,6 @@
                   "rule_id": 3,
                   "description": "4 sacks",
                   "score": -40
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": -3.0
                 }
               ],
               "position": "DEF"
@@ -6939,6 +6954,11 @@
                   "score": 0
                 },
                 {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": 2.0
+                },
+                {
                   "rule_id": 10,
                   "description": "5 sack yards",
                   "score": 5
@@ -6951,18 +6971,13 @@
                 {
                   "rule_id": 6,
                   "description": "Team lost",
-                  "score": 13.0
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": 0
+                  "score": 11.0
                 }
               ],
               "position": "BENCH"
             },
             "SEA": {
-              "total": 0.0,
+              "total": 6.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -6975,6 +6990,11 @@
                   "score": 4
                 },
                 {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": 6.0
+                },
+                {
                   "rule_id": 10,
                   "description": "14 sack yards",
                   "score": 14
@@ -6983,17 +7003,12 @@
                   "rule_id": 3,
                   "description": "2 sacks",
                   "score": -20
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": 0.0
                 }
               ],
               "position": "BENCH"
             }
           },
-          "total": 124.4,
+          "total": 126.4,
           "result": "WIN"
         },
         "3": {
@@ -8260,7 +8275,7 @@
               "position": "BENCH"
             },
             "NE": {
-              "total": 28.0,
+              "total": 25.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -8278,6 +8293,11 @@
                   "score": 7
                 },
                 {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": 11.0
+                },
+                {
                   "rule_id": 10,
                   "description": "43 sack yards",
                   "score": 43
@@ -8286,22 +8306,22 @@
                   "rule_id": 3,
                   "description": "4 sacks",
                   "score": -40
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": 14.0
                 }
               ],
               "position": "BENCH"
             },
             "PHI": {
-              "total": -12.0,
+              "total": -6.0,
               "breakdown": [
                 {
                   "rule_id": -1,
                   "description": "20.0 points allowed",
                   "score": 0
+                },
+                {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": 0.0
                 },
                 {
                   "rule_id": 10,
@@ -8312,11 +8332,6 @@
                   "rule_id": 3,
                   "description": "2 sacks",
                   "score": -20
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": -6.0
                 }
               ],
               "position": "DEF"
@@ -8340,6 +8355,11 @@
                   "score": 0
                 },
                 {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": 4.0
+                },
+                {
                   "rule_id": 10,
                   "description": "17 sack yards",
                   "score": 17
@@ -8352,18 +8372,13 @@
                 {
                   "rule_id": 6,
                   "description": "Team lost",
-                  "score": 9.0
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": 0
+                  "score": 5.0
                 }
               ],
               "position": "BENCH"
             }
           },
-          "total": 105.1,
+          "total": 111.1,
           "result": "WIN"
         },
         "5": {
@@ -8952,12 +8967,17 @@
               "position": "BENCH"
             },
             "CIN": {
-              "total": 12.0,
+              "total": 13.0,
               "breakdown": [
                 {
                   "rule_id": -1,
                   "description": "6.0 points allowed",
                   "score": 7
+                },
+                {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": 7.0
                 },
                 {
                   "rule_id": 10,
@@ -8968,11 +8988,6 @@
                   "rule_id": 3,
                   "description": "4 sacks",
                   "score": -40
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": 6.0
                 }
               ],
               "position": "DEF"
@@ -8991,20 +9006,20 @@
                   "score": 0
                 },
                 {
-                  "rule_id": 6,
-                  "description": "Team lost",
-                  "score": -2.0
-                },
-                {
                   "rule_id": 9,
                   "description": "Defense x2",
-                  "score": 0
+                  "score": 2.0
+                },
+                {
+                  "rule_id": 6,
+                  "description": "Team lost",
+                  "score": -4.0
                 }
               ],
               "position": "BENCH"
             }
           },
-          "total": 80.79,
+          "total": 81.79,
           "result": "LOSS"
         },
         "6": {
@@ -9710,7 +9725,7 @@
               "position": "BENCH"
             },
             "DEN": {
-              "total": 4.0,
+              "total": 8.0,
               "breakdown": [
                 {
                   "rule_id": -1,
@@ -9723,6 +9738,11 @@
                   "score": 4
                 },
                 {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": 6.0
+                },
+                {
                   "rule_id": 10,
                   "description": "16 sack yards",
                   "score": 16
@@ -9731,14 +9751,9 @@
                   "rule_id": 3,
                   "description": "2 sacks",
                   "score": -20
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": 2.0
                 }
               ],
-              "position": "DEF"
+              "position": "BENCH"
             },
             "HOU": {
               "total": 0,
@@ -9747,6 +9762,11 @@
                   "rule_id": -1,
                   "description": "20.0 points allowed",
                   "score": 0
+                },
+                {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": 0.0
                 },
                 {
                   "rule_id": 10,
@@ -9762,28 +9782,43 @@
                   "rule_id": 6,
                   "description": "Team lost",
                   "score": 25.0
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": 0
                 }
               ],
               "position": "BENCH"
             },
-            "LAR": {
-              "total": 0.0,
+            "LA": {
+              "total": -1.0,
               "breakdown": [
+                {
+                  "rule_id": -1,
+                  "description": "1 interceptions",
+                  "score": 2
+                },
+                {
+                  "rule_id": -1,
+                  "description": "6.0 points allowed",
+                  "score": 7
+                },
                 {
                   "rule_id": 9,
                   "description": "Defense x2",
-                  "score": 0.0
+                  "score": 9.0
+                },
+                {
+                  "rule_id": 10,
+                  "description": "1 sack yards",
+                  "score": 1
+                },
+                {
+                  "rule_id": 3,
+                  "description": "2 sacks",
+                  "score": -20
                 }
               ],
-              "position": "BENCH"
+              "position": "DEF"
             }
           },
-          "total": 176.47,
+          "total": 171.47,
           "result": "WIN"
         },
         "7": {
@@ -11025,6 +11060,11 @@
                   "score": 0
                 },
                 {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": 0.0
+                },
+                {
                   "rule_id": 10,
                   "description": "19 sack yards",
                   "score": 19
@@ -11038,11 +11078,6 @@
                   "rule_id": 6,
                   "description": "Team lost",
                   "score": 11.0
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": 0
                 }
               ],
               "position": "BENCH"
@@ -11054,6 +11089,11 @@
                   "rule_id": -1,
                   "description": "41.0 points allowed",
                   "score": -4
+                },
+                {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": -4.0
                 },
                 {
                   "rule_id": 10,
@@ -11068,12 +11108,7 @@
                 {
                   "rule_id": 6,
                   "description": "Team lost",
-                  "score": 19.0
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": 0
+                  "score": 23.0
                 }
               ],
               "position": "BENCH"
@@ -11100,12 +11135,17 @@
               "position": "BENCH"
             },
             "SF": {
-              "total": -42.0,
+              "total": -17.0,
               "breakdown": [
                 {
                   "rule_id": -1,
                   "description": "13.0 points allowed",
                   "score": 4
+                },
+                {
+                  "rule_id": 9,
+                  "description": "Defense x2",
+                  "score": 4.0
                 },
                 {
                   "rule_id": 10,
@@ -11116,17 +11156,12 @@
                   "rule_id": 3,
                   "description": "4 sacks",
                   "score": -40
-                },
-                {
-                  "rule_id": 9,
-                  "description": "Defense x2",
-                  "score": -21.0
                 }
               ],
               "position": "DEF"
             }
           },
-          "total": 117.58,
+          "total": 142.58,
           "result": "LOSS"
         }
       }
