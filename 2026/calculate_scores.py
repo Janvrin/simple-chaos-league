@@ -596,7 +596,8 @@ def main():
     parser.add_argument("--schedule", default="schedule.json")
     parser.add_argument("--player-map", default="player_map.json")
     parser.add_argument("--roster", default="roster.json")
-    parser.add_argument("--output", default="scores.json")
+    parser.add_argument("--scores", default="scores.json")
+    parser.add_argument("--standings", default="standings.json")
     args = parser.parse_args()
 
     teams_data = load_json(f"2026/{args.teams}")
@@ -609,7 +610,7 @@ def main():
         w = str(args.week)
         if w not in schedule_data["weeks"]:
             sys.exit(f"Week {w} not in schedule.")
-        weeks_to_process = [w]
+        weeks_to_process = list(map(str, range(1, int(w)+1)))
     else:
         weeks_to_process = list(schedule_data["weeks"].keys())
 
@@ -702,9 +703,52 @@ def main():
 
         scores["weeks"][week_str] = {"teams": week_scores_teams}
 
-    with open(args.output, "w", encoding="utf-8") as f:
+    with open("2026/" + args.scores, "w", encoding="utf-8") as f:
         json.dump(make_json_safe(scores), f, indent=2)
-    print(f"scores.json written to {args.output}")
+    print(f"scores.json written to 2026/{args.scores}")
+
+    standings = calculate_standings(scores, schedule_data)
+    with open("2026/" + args.standings, "w", encoding="utf-8") as f:
+        json.dump(make_json_safe(standings), f, indent=2)
+    print(f"standings.json written to 2026/{args.standings}")
+
+def calculate_standings(scores, schedule):
+    standings = {}
+    for week_str, week_data in schedule["weeks"].items():
+        if scores["weeks"].get(week_str) is None:
+            continue
+
+        for matchup in week_data["matchups"]:
+            team_a = matchup["team1"]
+            team_b = matchup["team2"]
+            score_a = scores["weeks"][week_str]["teams"][team_a]["total"]
+            score_b = scores["weeks"][week_str]["teams"][team_b]["total"]
+
+            for team_id in [team_a, team_b]:
+                if team_id not in standings:
+                    standings[team_id] = {"wins": 0, "losses": 0, "ties": 0, "points_for": 0, "points_against": 0}
+
+            standings[team_a]["points_for"] += score_a
+            standings[team_a]["points_against"] += score_b
+            standings[team_b]["points_for"] += score_b
+            standings[team_b]["points_against"] += score_a
+
+            standings[team_a]["points_for"] = round(standings[team_a]["points_for"], 2)
+            standings[team_a]["points_against"] = round(standings[team_a]["points_against"], 2)
+            standings[team_b]["points_for"] = round(standings[team_b]["points_for"], 2)
+            standings[team_b]["points_against"] = round(standings[team_b]["points_against"], 2)
+
+            if score_a > score_b:
+                standings[team_a]["wins"] += 1
+                standings[team_b]["losses"] += 1
+            elif score_b > score_a:
+                standings[team_b]["wins"] += 1
+                standings[team_a]["losses"] += 1
+            else:
+                standings[team_a]["ties"] += 1
+                standings[team_b]["ties"] += 1
+
+    return standings
 
 def resolve_nfl_id(internal_id: str) -> str:
     """
