@@ -10,76 +10,76 @@
         "name": "TD Timeout",
         "user": "Jaxon",
         "description": "-1 pt per TD for each timeout each team has remaining",
-        "example": "Offense 2 timeouts, Defense 1 timeout -> -3 pts"
+        "example": "Offense 2 timeouts, Defense 1 timeout → -3 pts"
     },
     {
         "id": 1,
         "name": "Get Your Reps",
         "user": "Mason",
         "description": "Offensive players have their final score multiplied by their offensive snap %",
-        "example": "85% snap -> final score x 0.85"
+        "example": "85% snap → final score x 0.85"
     },
     {
         "id": 2,
         "name": "Bird Law",
         "user": "Mark",
         "description": "+1 pt per reception for players on teams with a bird mascot (Cardinals, Falcons, Ravens, Seahawks, Eagles)",
-        "example": "Player on Falcons team catches 3 passes -> +3 pts"
+        "example": "Player on Falcons team catches 3 passes → +3 pts"
     },
     {
         "id": 3,
         "name": "Sack Attack",
         "user": "Tyler",
         "description": "+10 pts per sack suffered by QB, -10 pts per sack for defense",
-        "example": "2 sacks -> QB +20 pts, Defense -20 pts"
+        "example": "2 sacks → QB +20 pts, Defense -20 pts"
     },
     {
         "id": 4,
         "name": "The Miracle",
         "user": "Matt",
         "description": "+100 pts for tackle by QB",
-        "example": "QB makes a tackle -> +100 pts"
+        "example": "QB makes a tackle → +100 pts"
     },
     {
         "id": 5,
         "name": "Makin' Big Plays",
         "user": "Jacob",
         "description": "x2, +10 pts for plays of 20 or more yards",
-        "example": "25yd rec TD -> (2.5 + 6 + 1) x 2 + 10 = 29"
+        "example": "25yd rec TD → (2.5 + 6 + 1) x 2 + 10 = 29"
     },
     {
         "id": 6,
         "name": "Win or Go Home",
         "user": "Payton",
         "description": "x0 pts for players on a team that lost",
-        "example": "Player's team lost -> final score x 0 = 0"
+        "example": "Player's team lost → final score x 0 = 0"
     },
     {
         "id": 7,
         "name": "Worst Ball",
         "user": "Dylan",
         "description": "Starting slots are now filled with the lowest scoring players, this excludes scores of zero but not negative scores",
-        "example": "Player 1: 10 pts, Player 2: 5 pts, Player 3: 0 pts -> Player 2 starts"
+        "example": "Player 1: 10 pts, Player 2: 5 pts, Player 3: 0 pts → Player 2 starts"
     },
     {
         "id": 8,
         "name": "Dylan's Dumb Rule",
         "user": "2023",
         "description": "+0.5 pts per punt/kickoff return yard",
-        "example": "20 return yards -> +10 pts"
+        "example": "20 return yards → +10 pts"
     },
     {
         "id": 9,
         "name": "Double Defense",
         "user": "2024",
         "description": "x2 base pts for defense",
-        "example": "Defense scores 10 base pts -> 10 x 2 = 20"
+        "example": "Defense scores 10 base pts → 10 x 2 = 20"
     },
     {
         "id": 10,
         "name": "Big Juicy Sacks",
         "user": "2025",
         "description": "+1 pt per sack yard for defense",
-        "example": "6 yard sack -> +6 pts"
+        "example": "6 yard sack → +6 pts"
     }
 ]
