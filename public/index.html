@@ -30,6 +30,7 @@
             min-height: 100vh;
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
+            background: #2FA237 
         }
         .header {
             background: linear-gradient(135deg, #1a3c1a 0%, #1b5e20 40%, #1a3c1a 100%);
@@ -70,16 +71,11 @@
         .btn-refresh:hover { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.5); }
         .btn-rules { background: rgba(255,255,255,0.12); color: #fff; border: 2px solid rgba(255,255,255,0.25); border-radius: 8px; padding: 10px 14px; cursor: pointer; font-size: 1rem; transition: var(--transition); white-space: nowrap; font-weight: 500; }
         .btn-rules:hover { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.5); }
-        .btn-matchups { background: rgba(255,255,255,0.12); color: #1b5e20; border: 2px solid rgba(255,255,255,0.25); border-radius: 8px; padding: 10px 14px; cursor: pointer; font-size: 1rem; transition: var(--transition); white-space: nowrap; font-weight: 500; }
-        .btn-matchups:hover { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.5); }
-        .btn-matchups:disabled { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); cursor: not-allowed; }
-        .btn-standings { background: rgba(255,255,255,0.12); color: #1b5e20; border: 2px solid rgba(255,255,255,0.25); border-radius: 8px; padding: 10px 14px; cursor: pointer; font-size: 1rem; transition: var(--transition); white-space: nowrap; font-weight: 500; }
-        .btn-standings:hover { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.5); }
-        .btn-standings:disabled { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); cursor: not-allowed; }
-        .btn-players { background: rgba(255,255,255,0.12); color: #1b5e20; border: 2px solid rgba(255,255,255,0.25); border-radius: 8px; padding: 10px 14px; cursor: pointer; font-size: 1rem; transition: var(--transition); white-space: nowrap; font-weight: 500; }
-        .btn-players:hover { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.5); }
-        .btn-players:disabled { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); cursor: not-allowed; }
+        .btn-tab { background: #2FA237; color: #fff5f5; border: 2px solid #1b5e20; border-radius: 8px; padding: 10px 14px; cursor: pointer; font-size: 1rem; transition: var(--transition); white-space: nowrap; font-weight: 500; }
+        .btn-tab:hover { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.5); }
+        .btn-tab:disabled { background: #fff5f5; color: #1b5e20; cursor: not-allowed; }
         .main-container { max-width: 960px; margin: 0 auto; padding: 20px 16px 40px; }
+        .container { border: 2px solid #1b5e20; border-radius: 8px; padding: 20px; background: #fff5f5 }
         .status-message { text-align: center; padding: 60px 20px; color: var(--text-secondary); }
         .status-message .spinner { display: inline-block; width: 40px; height: 40px; border: 4px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; margin-bottom: 16px; }
         @keyframes spin { to { transform: rotate(360deg); } }
@@ -99,7 +95,7 @@
         .matchup-team-score { font-size: 2rem; font-weight: 800; color: var(--accent); letter-spacing: -1px; line-height: 1; margin-top: 4px; }
         .matchup-team-score.zero { color: #999; }
         .matchup-team-score.tbd { color: #130f0f; }
-        .matchup-team-score.win { color: #13722f; }
+        .matchup-team-score.win { color: #257E2B; }
         .matchup-team-score.loss { color: #972222; }
         .matchup-team-score.tie { color: #a7a543; }
         .matchup-vs {
@@ -146,13 +142,13 @@
         .modal-total { text-align: center; margin-bottom: 16px; padding: 14px; background: var(--gold-light); border-radius: var(--radius-sm); }
         .modal-total-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; color: #8d6e00; font-weight: 600; }
         .modal-total-value { font-size: 2.4rem; font-weight: 800; color: #5d4037; letter-spacing: -1px; }
-        .breakdown-table { width: 100%; border-collapse: collapse; }
-        .breakdown-table th, .breakdown-table td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #f0f0f0; }
-        .breakdown-table th { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; color: #888; font-weight: 600; }
-        .breakdown-table td { font-weight: 500; }
-        .breakdown-table .score-cell { text-align: right; font-weight: 700; color: var(--accent); font-size: 1rem; }
-        .breakdown-table tr:last-child td { border-bottom: none; }
-        .breakdown-table .total-row td { font-weight: 800; border-top: 2px solid #ddd; font-size: 1.05rem; }
+        .chaos-table { width: 100%; border-collapse: collapse; }
+        .chaos-table th, .chaos-table td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #1b5e20; }
+        .chaos-table th { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; color: #888; font-weight: 600; }
+        .chaos-table td { font-weight: 500; }
+        .chaos-table .score-cell { text-align: right; font-weight: 700; color: var(--accent); font-size: 1rem; }
+        .chaos-table tr:last-child td { border-bottom: none; }
+        .chaos-table .total-row td { font-weight: 800; border-top: 2px solid #1b5e20; font-size: 1.05rem; }
         .no-matchups { text-align: center; padding: 50px 20px; color: #999; font-size: 1.05rem; }
         .no-matchups .emoji { font-size: 3rem; display: block; margin-bottom: 12px; }
         .back-bar { display: none; align-items: center; gap: 8px; padding: 8px 0 16px; cursor: pointer; color: var(--accent); font-weight: 600; font-size: 0.9rem; transition: var(--transition); }
@@ -222,20 +218,6 @@
         .rules-modal-card .modal-body {
             overflow-x: auto;
         }
-
-        .standings-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .standings-table th, .standings-table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-        .standings-table th {
-            background-color: #f4f4f4;
-            font-weight: 600;
-        }
     </style>
 </head>
 <body>
@@ -251,19 +233,20 @@
             <select id="weekSelect" class="week-select" aria-label="Select Week">
                 <option value="">Loading…</option>
             </select>
-            <button id="btnRules" class="btn-rules" title="View rules" aria-label="View rules">📜 Rules</button>
         </div>
     </header>
 
     <main class="main-container" id="mainContent">
         <div id="controlsContainer">
-            <button id="btnShowMatchups" class="btn-matchups" title="Matchups" aria-label="Matchups" disabled>📅 Matchups</button>
-            <button id="btnShowStandings" class="btn-standings" title="Standings" aria-label="Standings">📊 Standings</button>
-            <button id="btnShowPlayers" class="btn-players" title="Players" aria-label="Players">👤 Players</button>
+            <button id="btnShowMatchups" btn-container="matchups" class="btn-matchups btn-tab" title="Matchups" aria-label="Matchups" disabled>📅 Matchups</button>
+            <button id="btnShowStandings" btn-container="standings" class="btn-standings btn-tab" title="Standings" aria-label="Standings">📊 Standings</button>
+            <button id="btnShowPlayers" btn-container="players" class="btn-players btn-tab" title="Players" aria-label="Players">👤 Players</button>
+            <button id="btnShowRules" btn-container="rules" class="btn-rules btn-tab" title="Rules" aria-label="Rules">📜 Rules</button>
         </div>
-        <div id="matchupsContainer"></div>
-        <div id="standingsContainer" style="display:none;"></div>
-        <div id="playersContainer" style="display:none;"></div>
+        <div class="container" id="matchupsContainer" container="matchups"></div>
+        <div class="container" id="standingsContainer" container="standings" style="display:none;"></div>
+        <div class="container" id="playersContainer" container="players" style="display:none;"></div>
+        <div class="container" id="rulesContainer" container="rules" style="display:none;"></div>
     </main>
 
     <div id="playerModal" class="modal-overlay" style="display:none;" aria-hidden="true">
@@ -313,16 +296,14 @@
 
             const matchupsContainer = document.getElementById('matchupsContainer');
             const standingsContainer = document.getElementById('standingsContainer');
+            const playersContainer = document.getElementById('playersContainer');
+            const rulesContainer = document.getElementById('rulesContainer');
             const weekSelect = document.getElementById('weekSelect');
             const btnRefresh = document.getElementById('btnRefresh');
             const playerModal = document.getElementById('playerModal');
             const playerModalTitle = document.getElementById('playerModalTitle');
             const playerModalBody = document.getElementById('playerModalBody');
             const playerModalClose = document.getElementById('playerModalClose');
-            const rulesModal = document.getElementById('rulesModal');
-            const rulesModalTitle = document.getElementById('rulesModalTitle');
-            const rulesModalBody = document.getElementById('rulesModalBody');
-            const rulesModalClose = document.getElementById('rulesModalClose');
 
             async function fetchJSON(filename) {
                 const url = RAW_BASE + filename;
@@ -401,7 +382,24 @@
             // ──────────────────────────────────────
             // 🎨 Rendering
             // ──────────────────────────────────────
-            function renderHomeView() {
+            function renderViews() {
+                renderMatchupsView();
+                renderStandingsView();
+                renderPlayersView();
+                renderRulesView();
+
+                document.querySelectorAll('.btn-tab').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        document.querySelectorAll('.btn-tab').forEach(b => b.disabled = false);
+                        btn.disabled = true;
+                        document.querySelectorAll('[container]').forEach(c => c.style.display = 'none');
+                        const container = btn.getAttribute('btn-container');
+                        if (container) document.querySelector(`[container="${container}"]`).style.display = 'block';
+                    });
+                });
+            }
+
+            function renderMatchupsView() {
                 expandedMatchupIndex = null;
                 const weekData = scheduleData?.weeks?.[selectedWeek];
                 const matchups = weekData?.matchups || [];
@@ -460,12 +458,31 @@
 
                 matchupsContainer.innerHTML = html;
 
+                document.querySelectorAll('.matchup-card').forEach(card => {
+                    card.addEventListener('click', function() {
+                        const idx = parseInt(this.getAttribute('data-matchup-index'));
+                        handleMatchupClick(idx);
+                    });
+                    card.addEventListener('keydown', function(e) {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            const idx = parseInt(this.getAttribute('data-matchup-index'));
+                            handleMatchupClick(idx);
+                        }
+                    });
+                });
+
+                const backBar = document.getElementById('backBar');
+                if (backBar) backBar.addEventListener('click', () => { renderMatchupsView(); window.scrollTo({top:0,behavior:'smooth'}); });
+            }
+
+            function renderStandingsView() {
                 var orderedTeams = Object.keys(standingsData).sort((a, b) => 
                     standingsData[b].wins === standingsData[a].wins ? 
                         standingsData[b].ties === standingsData[a].ties ? 
                             standingsData[b].points_for - standingsData[a].points_for : standingsData[b].ties - standingsData[a].ties : standingsData[b].wins - standingsData[a].wins);
                 
-                html = "<table class=\"standings-table\"><thead><tr><th>Place</th><th>Team</th><th>Record</th><th>PF</th><th>PA</th></tr></thead><tbody>";
+                var html = "<table class=\"chaos-table\"><thead><tr><th>Place</th><th>Team</th><th>Record</th><th>PF</th><th>PA</th></tr></thead><tbody>";
                 var place = 1;
                 for (const teamId of orderedTeams) {
                     html += `
@@ -483,12 +500,14 @@
                 html += "</table>";
 
                 standingsContainer.innerHTML = html;
+            }
 
+            function renderPlayersView() {
                 var orderedPlayers = Object.keys(playersData).sort((a, b) => 
                     playersData[b].total - playersData[a].total
                 );
                 
-                html = "<table class=\"standings-table\"><thead><tr><th>Player</th><th>Points</th><th>High</th><th>Owner</th></tr></thead><tbody>";
+                var html = "<table class=\"chaos-table\"><thead><tr><th>Player</th><th>Points</th><th>High</th><th>Owner</th></tr></thead><tbody>";
                 var place = 1;
                 for (const playerId of orderedPlayers) {
                     html += `
@@ -505,51 +524,18 @@
                 html += "</table>";
 
                 playersContainer.innerHTML = html;
+            }
 
-                const btnRules = document.getElementById('btnRules');
-                if (btnRules) btnRules.addEventListener('click', () => { rulesModal.style.display = 'flex'; });
+            function renderRulesView() {
+                rulesImpact = calculateRuleImpact();
+                rulesModalTitle.textContent = 'League Rules';
+                let body = `<table class="chaos-table"><thead><tr><th>Name</th><th>Owner</th><th>Description</th><th>Example</th><th>Impact</th></tr></thead><tbody>`;
+                for (const rule of rulesData || []) {
+                    body += `<tr><td>${escapeHTML(rule.name||'-')}</td><td>${escapeHTML(rule.user||'-')}</td><td>${escapeHTML(rule.description||'-')}</td><td>${escapeHTML(rule.example||'-')}</td><td>${escapeHTML(rulesImpact[rule.id]||'-')}</td></tr>`;
+                }
+                body += `</tbody></table>`;
 
-                document.querySelectorAll('.matchup-card').forEach(card => {
-                    card.addEventListener('click', function() {
-                        const idx = parseInt(this.getAttribute('data-matchup-index'));
-                        handleMatchupClick(idx);
-                    });
-                    card.addEventListener('keydown', function(e) {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            const idx = parseInt(this.getAttribute('data-matchup-index'));
-                            handleMatchupClick(idx);
-                        }
-                    });
-                });
-
-                document.getElementById('btnShowMatchups')?.addEventListener('click', () => {
-                    document.getElementById('matchupsContainer').style.display = 'block';
-                    document.getElementById('standingsContainer').style.display = 'none';
-                    document.getElementById('playersContainer').style.display = 'none';
-                    document.getElementById('btnShowMatchups').disabled = true;
-                    document.getElementById('btnShowStandings').disabled = false;
-                    document.getElementById('btnShowPlayers').disabled = false;
-                });
-                document.getElementById('btnShowStandings')?.addEventListener('click', () => {
-                    document.getElementById('matchupsContainer').style.display = 'none';
-                    document.getElementById('standingsContainer').style.display = 'block';
-                    document.getElementById('playersContainer').style.display = 'none';
-                    document.getElementById('btnShowMatchups').disabled = false;
-                    document.getElementById('btnShowStandings').disabled = true;
-                    document.getElementById('btnShowPlayers').disabled = false;
-                });
-                document.getElementById('btnShowPlayers')?.addEventListener('click', () => {
-                    document.getElementById('matchupsContainer').style.display = 'none';
-                    document.getElementById('standingsContainer').style.display = 'none';
-                    document.getElementById('playersContainer').style.display = 'block';
-                    document.getElementById('btnShowMatchups').disabled = false;
-                    document.getElementById('btnShowStandings').disabled = false;
-                    document.getElementById('btnShowPlayers').disabled = true;
-                });
-
-                const backBar = document.getElementById('backBar');
-                if (backBar) backBar.addEventListener('click', () => { renderHomeView(); window.scrollTo({top:0,behavior:'smooth'}); });
+                rulesContainer.innerHTML = body;
             }
 
             function renderMatchupDetail(index) {
@@ -679,7 +665,7 @@
                 if (breakdown.length === 0) {
                     body += `<p style="text-align:center;color:#999;padding:12px;">No breakdown data available.</p>`;
                 } else {
-                    body += `<table class="breakdown-table"><thead><tr><th>Category</th><th>Score</th></tr></thead><tbody>`;
+                    body += `<table class="chaos-table"><thead><tr><th>Category</th><th>Score</th></tr></thead><tbody>`;
                     breakdown.forEach(item => {
                         const score = Math.round((item.score || 0) * 100) / 100;
                         body += `<tr><td>${escapeHTML(item.description||'Unknown')}</td><td class="score-cell">${score}</td></tr>`;
@@ -719,24 +705,6 @@
                 return rulesImpact;
             }
 
-            function populateRulesModal() {
-                rulesImpact = calculateRuleImpact();
-                rulesModalTitle.textContent = 'League Rules';
-                let body = `<table class="breakdown-table"><thead><tr><th>Name</th><th>Owner</th><th>Description</th><th>Example</th><th>Impact</th></tr></thead><tbody>`;
-                for (const rule of rulesData || []) {
-                    body += `<tr><td>${escapeHTML(rule.name||'-')}</td><td>${escapeHTML(rule.user||'-')}</td><td>${escapeHTML(rule.description||'-')}</td><td>${escapeHTML(rule.example||'-')}</td><td>${escapeHTML(rulesImpact[rule.id]||'-')}</td></tr>`;
-                }
-                body += `</tbody></table>`;
-
-                rulesModalBody.innerHTML = body;
-            }
-
-            function hideRulesModal() {
-                rulesModal.style.display = 'none';
-                rulesModal.setAttribute('aria-hidden','true');
-                document.body.style.overflow = '';
-            }
-
             function escapeHTML(str) {
                 const div = document.createElement('div');
                 div.textContent = str || '';
@@ -757,8 +725,7 @@
                     standingsData = data.standings;
                     playersData = data.players;
                     populateWeekSelect();
-                    renderHomeView();
-                    populateRulesModal();
+                    renderViews();
                 } catch (err) {
                     console.error(err);
                     mainContent.innerHTML = `<div class="error-box"><p><strong>⚠️ Unable to load league data</strong></p><p style="font-size:0.85rem;margin-top:4px;">${escapeHTML(err.message)}</p><p style="font-size:0.8rem;color:#888;margin-top:6px;">Check repo settings and file paths:<br><code style="word-break:break-all;">${RAW_BASE}schedule.json</code></p><button onclick="location.reload()">🔄 Retry</button></div>`;
@@ -813,7 +780,7 @@
                     standingsData = data.standings;
                     playersData = data.players;
                     populateWeekSelect();
-                    renderHomeView();
+                    renderViews();
                     populateRulesModal();
                     window.scrollTo({top:0,behavior:'smooth'});
                 }).catch(err => {
@@ -825,15 +792,13 @@
             weekSelect.addEventListener('change', function() {
                 selectedWeek = this.value;
                 expandedMatchupIndex = null;
-                renderHomeView();
+                renderViews();
                 window.scrollTo({top:0,behavior:'smooth'});
             });
 
             playerModalClose.addEventListener('click', hidePlayerModal);
-            rulesModalClose.addEventListener('click', hideRulesModal);
 
             playerModal.addEventListener('click', function(e) { if (e.target === playerModal) hidePlayerModal(); });
-            rulesModal.addEventListener('click', function(e) { if (e.target === rulesModal) hideRulesModal(); });
 
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
@@ -843,11 +808,6 @@
                         expandedMatchupIndex = null;
                         document.getElementById('backBar')?.classList.remove('visible');
                     }
-                }
-            });
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    if (rulesModal.style.display === 'flex') hideRulesModal();
                 }
             });
 
