@@ -598,6 +598,7 @@ def main():
     parser.add_argument("--roster", default="roster.json")
     parser.add_argument("--scores", default="scores.json")
     parser.add_argument("--standings", default="standings.json")
+    parser.add_argument("--players", default="players.json")
     args = parser.parse_args()
 
     teams_data = load_json(f"2026/{args.teams}")
@@ -712,6 +713,11 @@ def main():
         json.dump(make_json_safe(standings), f, indent=2)
     print(f"standings.json written to 2026/{args.standings}")
 
+    players = calculate_players(scores)
+    with open("2026/" + args.players, "w", encoding="utf-8") as f:
+        json.dump(make_json_safe(players), f, indent=2)
+    print(f"players.json written to 2026/{args.players}")
+
 def calculate_standings(scores, schedule):
     standings = {}
     for week_str, week_data in schedule["weeks"].items():
@@ -749,6 +755,20 @@ def calculate_standings(scores, schedule):
                 standings[team_b]["ties"] += 1
 
     return standings
+
+def calculate_players(scores):
+    players = {}
+    for week_str, week_data in scores["weeks"].items():
+        for team_id, team_data in week_data["teams"].items():
+            for player_id, player_data in team_data["players"].items():
+                if player_id not in players:
+                    players[player_id] = {"total": 0, "high": float("-inf"), "owner": team_id, "name": player_map.get(player_id, {}).get("full_name")}
+                players[player_id]["total"] += player_data["total"]
+                players[player_id]["total"] = round(players[player_id]["total"], 2)
+                if players[player_id]["high"] < player_data["total"]:
+                    players[player_id]["high"] = player_data["total"]
+
+    return players
 
 def resolve_nfl_id(internal_id: str) -> str:
     """

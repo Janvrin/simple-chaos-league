@@ -70,12 +70,15 @@
         .btn-refresh:hover { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.5); }
         .btn-rules { background: rgba(255,255,255,0.12); color: #fff; border: 2px solid rgba(255,255,255,0.25); border-radius: 8px; padding: 10px 14px; cursor: pointer; font-size: 1rem; transition: var(--transition); white-space: nowrap; font-weight: 500; }
         .btn-rules:hover { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.5); }
-        .btn-matchups { background: rgba(255,255,255,0.12); color: #fff; border: 2px solid rgba(255,255,255,0.25); border-radius: 8px; padding: 10px 14px; cursor: pointer; font-size: 1rem; transition: var(--transition); white-space: nowrap; font-weight: 500; }
+        .btn-matchups { background: rgba(255,255,255,0.12); color: #1b5e20; border: 2px solid rgba(255,255,255,0.25); border-radius: 8px; padding: 10px 14px; cursor: pointer; font-size: 1rem; transition: var(--transition); white-space: nowrap; font-weight: 500; }
         .btn-matchups:hover { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.5); }
         .btn-matchups:disabled { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); cursor: not-allowed; }
-        .btn-standings { background: rgba(255,255,255,0.12); color: #fff; border: 2px solid rgba(255,255,255,0.25); border-radius: 8px; padding: 10px 14px; cursor: pointer; font-size: 1rem; transition: var(--transition); white-space: nowrap; font-weight: 500; }
+        .btn-standings { background: rgba(255,255,255,0.12); color: #1b5e20; border: 2px solid rgba(255,255,255,0.25); border-radius: 8px; padding: 10px 14px; cursor: pointer; font-size: 1rem; transition: var(--transition); white-space: nowrap; font-weight: 500; }
         .btn-standings:hover { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.5); }
         .btn-standings:disabled { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); cursor: not-allowed; }
+        .btn-players { background: rgba(255,255,255,0.12); color: #1b5e20; border: 2px solid rgba(255,255,255,0.25); border-radius: 8px; padding: 10px 14px; cursor: pointer; font-size: 1rem; transition: var(--transition); white-space: nowrap; font-weight: 500; }
+        .btn-players:hover { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.5); }
+        .btn-players:disabled { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); cursor: not-allowed; }
         .main-container { max-width: 960px; margin: 0 auto; padding: 20px 16px 40px; }
         .status-message { text-align: center; padding: 60px 20px; color: var(--text-secondary); }
         .status-message .spinner { display: inline-block; width: 40px; height: 40px; border: 4px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; margin-bottom: 16px; }
@@ -219,6 +222,20 @@
         .rules-modal-card .modal-body {
             overflow-x: auto;
         }
+
+        .standings-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .standings-table th, .standings-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        .standings-table th {
+            background-color: #f4f4f4;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -242,9 +259,11 @@
         <div id="controlsContainer">
             <button id="btnShowMatchups" class="btn-matchups" title="Matchups" aria-label="Matchups" disabled>📅 Matchups</button>
             <button id="btnShowStandings" class="btn-standings" title="Standings" aria-label="Standings">📊 Standings</button>
+            <button id="btnShowPlayers" class="btn-players" title="Players" aria-label="Players" disabled>👤 Players</button>
         </div>
         <div id="matchupsContainer"></div>
         <div id="standingsContainer" style="display:none;"></div>
+        <div id="playersContainer" style="display:none;"></div>
     </main>
 
     <div id="playerModal" class="modal-overlay" style="display:none;" aria-hidden="true">
@@ -286,12 +305,13 @@
             let scoresData = null;
             let rulesData = null;
             let standingsData = null;
+            let playersData = null;
             let selectedWeek = null;
             let selectedYear = null;
             let expandedMatchupIndex = null;
             let allWeeks = [];
 
-            const matchupContainer = document.getElementById('matchupContainer');
+            const matchupsContainer = document.getElementById('matchupsContainer');
             const standingsContainer = document.getElementById('standingsContainer');
             const weekSelect = document.getElementById('weekSelect');
             const btnRefresh = document.getElementById('btnRefresh');
@@ -317,9 +337,10 @@
                     fetchJSON(selectedYear + '/teams.json'),
                     fetchJSON(selectedYear + '/scores.json'),
                     fetchJSON(selectedYear + '/rules.json'),
-                    fetchJSON(selectedYear + '/standings.json')
+                    fetchJSON(selectedYear + '/standings.json'),
+                    fetchJSON(selectedYear + '/players.json')
                 ]);
-                return { schedule, teams, scores, rules, standings };
+                return { schedule, teams, scores, rules, standings, players };
             }
 
             function determineCurrentWeek(schedule) {
@@ -437,22 +458,23 @@
                     html += `</div>`;
                 }
 
-                matchupContainer.innerHTML = html;
+                matchupsContainer.innerHTML = html;
 
                 var orderedTeams = Object.keys(standingsData).sort((a, b) => 
                     standingsData[b].wins === standingsData[a].wins ? 
                         standingsData[b].ties === standingsData[a].ties ? 
                             standingsData[b].points_for - standingsData[a].points_for : standingsData[b].ties - standingsData[a].ties : standingsData[b].wins - standingsData[a].wins);
                 
-                html = "<table class=\"standings-table\">";
+                html = "<table class=\"standings-table\"><thead><tr><th>Place</th><th>Team</th><th>Record</th><th>PF</th><th>PA</th></tr></thead><tbody>";
                 var place = 1;
                 for (const teamId of orderedTeams) {
                     html += `
                         <tr class="standing-team">
                             <td class="standing-team-place">${place}</td>
                             <td class="standing-team-name" title="${escapeHTML(teamsData.teams[teamId].name)}">${escapeHTML(teamsData.teams[teamId].name)}</td>
-                            <td class="standing-team-record">${standingsData[teamId].record}</td>
-                            <td class="standing-team-points">${standingsData[teamId].points}</td>
+                            <td class="standing-team-record">${standingsData[teamId].wins}-${standingsData[teamId].losses}-${standingsData[teamId].ties}</td>
+                            <td class="standing-team-points">${standingsData[teamId].points_for}</td>
+                            <td class="standing-team-points">${standingsData[teamId].points_against}</td>
                         </tr>
                     `;
                 
@@ -461,6 +483,28 @@
                 html += "</table>";
 
                 standingsContainer.innerHTML = html;
+
+                var orderedPlayers = Object.keys(playersData).sort((a, b) => 
+                    playersData[b].total - playersData[a].total
+                );
+                
+                html = "<table class=\"standings-table\"><thead><tr><th>Player</th><th>Owner</th><th>Points</th><th>High</th></tr></thead><tbody>";
+                var place = 1;
+                for (const playerId of orderedPlayers) {
+                    html += `
+                        <tr class="standing-team">
+                            <td class="standing-team-name">${escapeHTML(playersData[playerId].name)}</td>
+                            <td class="standing-team-record">${getTeamName(playersData[playerId].owner)}</td>
+                            <td class="standing-team-points">${playersData[playerId].total}</td>
+                            <td class="standing-team-points">${playersData[playerId].high}</td>
+                        </tr>
+                    `;
+                
+                    place++;
+                }
+                html += "</table>";
+
+                playersContainer.innerHTML = html;
 
                 const btnRules = document.getElementById('btnRules');
                 if (btnRules) btnRules.addEventListener('click', () => { rulesModal.style.display = 'flex'; });
@@ -482,14 +526,26 @@
                 document.getElementById('btnShowMatchups')?.addEventListener('click', () => {
                     document.getElementById('matchupsContainer').style.display = 'block';
                     document.getElementById('standingsContainer').style.display = 'none';
+                    document.getElementById('playersContainer').style.display = 'none';
                     document.getElementById('btnShowMatchups').disabled = true;
                     document.getElementById('btnShowStandings').disabled = false;
+                    document.getElementById('btnShowPlayers').disabled = false;
                 });
                 document.getElementById('btnShowStandings')?.addEventListener('click', () => {
                     document.getElementById('matchupsContainer').style.display = 'none';
                     document.getElementById('standingsContainer').style.display = 'block';
+                    document.getElementById('playersContainer').style.display = 'none';
                     document.getElementById('btnShowMatchups').disabled = false;
                     document.getElementById('btnShowStandings').disabled = true;
+                    document.getElementById('btnShowPlayers').disabled = false;
+                });
+                document.getElementById('btnShowPlayers')?.addEventListener('click', () => {
+                    document.getElementById('matchupsContainer').style.display = 'none';
+                    document.getElementById('standingsContainer').style.display = 'none';
+                    document.getElementById('playersContainer').style.display = 'block';
+                    document.getElementById('btnShowMatchups').disabled = false;
+                    document.getElementById('btnShowStandings').disabled = false;
+                    document.getElementById('btnShowPlayers').disabled = true;
                 });
 
                 const backBar = document.getElementById('backBar');
@@ -691,7 +747,6 @@
             // 🚀 Initialization
             // ──────────────────────────────────────
             async function initialize() {
-                mainContent.innerHTML = `<div class="status-message"><div class="spinner"></div><p>Loading league data…</p><p style="font-size:0.8rem;color:#aaa;">Fetching from GitHub repo</p></div>`;
                 try {
                     populateYearSelect();
                     const data = await loadAllData();
@@ -700,6 +755,7 @@
                     scoresData = data.scores;
                     rulesData = data.rules;
                     standingsData = data.standings;
+                    playersData = data.players;
                     populateWeekSelect();
                     renderHomeView();
                     populateRulesModal();
@@ -755,6 +811,7 @@
                     scoresData = data.scores;
                     rulesData = data.rules;
                     standingsData = data.standings;
+                    playersData = data.players;
                     populateWeekSelect();
                     renderHomeView();
                     populateRulesModal();
