@@ -259,7 +259,7 @@
         <div id="controlsContainer">
             <button id="btnShowMatchups" class="btn-matchups" title="Matchups" aria-label="Matchups" disabled>📅 Matchups</button>
             <button id="btnShowStandings" class="btn-standings" title="Standings" aria-label="Standings">📊 Standings</button>
-            <button id="btnShowPlayers" class="btn-players" title="Players" aria-label="Players" disabled>👤 Players</button>
+            <button id="btnShowPlayers" class="btn-players" title="Players" aria-label="Players">👤 Players</button>
         </div>
         <div id="matchupsContainer"></div>
         <div id="standingsContainer" style="display:none;"></div>
@@ -332,7 +332,7 @@
             }
 
             async function loadAllData() {
-                const [schedule, teams, scores, rules, standings] = await Promise.all([
+                const [schedule, teams, scores, rules, standings, players] = await Promise.all([
                     fetchJSON(selectedYear + '/schedule.json'),
                     fetchJSON(selectedYear + '/teams.json'),
                     fetchJSON(selectedYear + '/scores.json'),
@@ -494,9 +494,9 @@
                     html += `
                         <tr class="standing-team">
                             <td class="standing-team-name">${escapeHTML(playersData[playerId].name)}</td>
-                            <td class="standing-team-record">${getTeamName(playersData[playerId].owner)}</td>
                             <td class="standing-team-points">${playersData[playerId].total}</td>
                             <td class="standing-team-points">${playersData[playerId].high}</td>
+                            <td class="standing-team-record">${getTeamName(playersData[playerId].owner)}</td>
                         </tr>
                     `;
                 

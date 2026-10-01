@@ -762,7 +762,7 @@ def calculate_players(scores):
         for team_id, team_data in week_data["teams"].items():
             for player_id, player_data in team_data["players"].items():
                 if player_id not in players:
-                    players[player_id] = {"total": 0, "high": float("-inf"), "owner": team_id, "name": player_map.get(player_id, {}).get("full_name")}
+                    players[player_id] = {"total": 0, "high": float("-inf"), "owner": team_id, "name": player_map.get(player_id, {}).get("first_name") + " " + player_map.get(player_id, {}).get("last_name", "")}
                 players[player_id]["total"] += player_data["total"]
                 players[player_id]["total"] = round(players[player_id]["total"], 2)
                 if players[player_id]["high"] < player_data["total"]:
