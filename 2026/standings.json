@@ -1,17 +1,17 @@
 {
   "1": {
-    "wins": 1,
-    "losses": 3,
+    "wins": 0,
+    "losses": 4,
     "ties": 0,
     "points_for": 419.17,
-    "points_against": 500.08
+    "points_against": 523.84
   },
   "7": {
     "wins": 4,
     "losses": 0,
     "ties": 0,
-    "points_for": 605.78,
-    "points_against": 493.97
+    "points_for": 618.28,
+    "points_against": 536.69
   },
   "2": {
     "wins": 2,
@@ -35,10 +35,10 @@
     "points_against": 494.01
   },
   "4": {
-    "wins": 2,
-    "losses": 2,
+    "wins": 3,
+    "losses": 1,
     "ties": 0,
-    "points_for": 378.82,
+    "points_for": 402.58,
     "points_against": 319.89
   },
   "5": {
@@ -52,7 +52,7 @@
     "wins": 2,
     "losses": 2,
     "ties": 0,
-    "points_for": 500.12,
-    "points_against": 499.61
+    "points_for": 542.84,
+    "points_against": 512.11
   }
 }

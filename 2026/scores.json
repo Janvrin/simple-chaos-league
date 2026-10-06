@@ -17101,7 +17101,7 @@
             }
           },
           "total": 97.91,
-          "result": "TBD"
+          "result": "LOSS"
         },
         "2": {
           "players": {
@@ -17873,7 +17873,7 @@
             }
           },
           "total": 205.29,
-          "result": "TBD"
+          "result": "WIN"
         },
         "3": {
           "players": {
@@ -18414,7 +18414,7 @@
             }
           },
           "total": 198.22,
-          "result": "TBD"
+          "result": "LOSS"
         },
         "4": {
           "players": {
@@ -18909,9 +18909,55 @@
               "position": "BENCH"
             },
             "9509": {
-              "total": 0.0,
-              "breakdown": [],
-              "position": "BENCH"
+              "total": 23.76,
+              "breakdown": [
+                {
+                  "rule_id": -1,
+                  "description": "145 rushing yards",
+                  "score": 14.5
+                },
+                {
+                  "rule_id": -1,
+                  "description": "2 rushing TDs",
+                  "score": 12
+                },
+                {
+                  "rule_id": -1,
+                  "description": "2 receiving yards",
+                  "score": 0.2
+                },
+                {
+                  "rule_id": -1,
+                  "description": "1 receptions",
+                  "score": 1
+                },
+                {
+                  "rule_id": 0,
+                  "description": "6 timeouts remaining during TD",
+                  "score": -6
+                },
+                {
+                  "rule_id": 0,
+                  "description": "5 timeouts remaining during TD",
+                  "score": -5
+                },
+                {
+                  "rule_id": 2,
+                  "description": "1 receptions for a bird team",
+                  "score": 1
+                },
+                {
+                  "rule_id": 5,
+                  "description": "59.0 yard TD rush",
+                  "score": 21.9
+                },
+                {
+                  "rule_id": 1,
+                  "description": "60.0% offensive snaps",
+                  "score": -15.84
+                }
+              ],
+              "position": "RB"
             },
             "NE": {
               "total": 2.0,
@@ -19027,8 +19073,8 @@
               "position": "BENCH"
             }
           },
-          "total": 88.22,
-          "result": "TBD"
+          "total": 111.98,
+          "result": "WIN"
         },
         "5": {
           "players": {
@@ -19434,8 +19480,39 @@
               "position": "BENCH"
             },
             "8144": {
-              "total": 0.0,
-              "breakdown": [],
+              "total": 0,
+              "breakdown": [
+                {
+                  "rule_id": -1,
+                  "description": "116 receiving yards",
+                  "score": 11.6
+                },
+                {
+                  "rule_id": -1,
+                  "description": "8 receptions",
+                  "score": 8
+                },
+                {
+                  "rule_id": 5,
+                  "description": "44.0 yard reception",
+                  "score": 15.4
+                },
+                {
+                  "rule_id": 5,
+                  "description": "23.0 yard reception",
+                  "score": 13.3
+                },
+                {
+                  "rule_id": 1,
+                  "description": "86.0% offensive snaps",
+                  "score": -6.76
+                },
+                {
+                  "rule_id": 6,
+                  "description": "Team lost",
+                  "score": -41.54
+                }
+              ],
               "position": "BENCH"
             },
             "8183": {
@@ -19692,7 +19769,7 @@
             }
           },
           "total": 64.93,
-          "result": "TBD"
+          "result": "LOSS"
         },
         "6": {
           "players": {
@@ -20081,11 +20158,37 @@
                   "score": -9.3
                 }
               ],
-              "position": "WR"
+              "position": "WR/RB/TE"
             },
             "7002": {
-              "total": 0.0,
-              "breakdown": [],
+              "total": 0,
+              "breakdown": [
+                {
+                  "rule_id": -1,
+                  "description": "59 receiving yards",
+                  "score": 5.9
+                },
+                {
+                  "rule_id": -1,
+                  "description": "6 receptions",
+                  "score": 6
+                },
+                {
+                  "rule_id": 5,
+                  "description": "23.0 yard reception",
+                  "score": 13.3
+                },
+                {
+                  "rule_id": 1,
+                  "description": "78.0% offensive snaps",
+                  "score": -5.54
+                },
+                {
+                  "rule_id": 6,
+                  "description": "Team lost",
+                  "score": -19.66
+                }
+              ],
               "position": "BENCH"
             },
             "7567": {
@@ -20135,9 +20238,40 @@
               "position": "BENCH"
             },
             "8112": {
-              "total": 0.0,
-              "breakdown": [],
-              "position": "BENCH"
+              "total": 42.72,
+              "breakdown": [
+                {
+                  "rule_id": -1,
+                  "description": "96 receiving yards",
+                  "score": 9.6
+                },
+                {
+                  "rule_id": -1,
+                  "description": "5 receptions",
+                  "score": 5
+                },
+                {
+                  "rule_id": 2,
+                  "description": "5 receptions for a bird team",
+                  "score": 5
+                },
+                {
+                  "rule_id": 5,
+                  "description": "27.0 yard reception",
+                  "score": 13.7
+                },
+                {
+                  "rule_id": 5,
+                  "description": "37.0 yard reception",
+                  "score": 14.7
+                },
+                {
+                  "rule_id": 1,
+                  "description": "89.0% offensive snaps",
+                  "score": -5.28
+                }
+              ],
+              "position": "WR"
             },
             "8131": {
               "total": 18.48,
@@ -20342,8 +20476,8 @@
               "position": "DEF"
             }
           },
-          "total": 132.75,
-          "result": "TBD"
+          "total": 175.47,
+          "result": "LOSS"
         },
         "7": {
           "players": {
@@ -20710,9 +20844,35 @@
               "position": "BENCH"
             },
             "7553": {
-              "total": 0.0,
-              "breakdown": [],
-              "position": "BENCH"
+              "total": 12.5,
+              "breakdown": [
+                {
+                  "rule_id": -1,
+                  "description": "47 receiving yards",
+                  "score": 4.7
+                },
+                {
+                  "rule_id": -1,
+                  "description": "3 receptions",
+                  "score": 3
+                },
+                {
+                  "rule_id": 2,
+                  "description": "3 receptions for a bird team",
+                  "score": 3
+                },
+                {
+                  "rule_id": 5,
+                  "description": "28.0 yard reception",
+                  "score": 13.8
+                },
+                {
+                  "rule_id": 1,
+                  "description": "51.0% offensive snaps",
+                  "score": -12.0
+                }
+              ],
+              "position": "TE"
             },
             "7839": {
               "total": 0,
@@ -20895,8 +21055,8 @@
               "position": "WR/RB/TE"
             }
           },
-          "total": 176.73,
-          "result": "TBD"
+          "total": 189.23,
+          "result": "WIN"
         },
         "8": {
           "players": {
@@ -21640,7 +21800,7 @@
             }
           },
           "total": 126.25,
-          "result": "TBD"
+          "result": "WIN"
         }
       }
     }
