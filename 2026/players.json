@@ -18,13 +18,13 @@
     "name": "Thyrick Pitts"
   },
   "11560": {
-    "total": 54.16,
+    "total": 104.66,
     "high": 54.16,
     "owner": "1",
     "name": "Caleb Williams"
   },
   "11564": {
-    "total": 94.24,
+    "total": 117.14,
     "high": 39.02,
     "owner": "1",
     "name": "Drake Maye"
@@ -150,7 +150,7 @@
     "name": "Ja'Marr Chase"
   },
   "8130": {
-    "total": 33.76,
+    "total": 65.67,
     "high": 33.76,
     "owner": "1",
     "name": "Trey McBride"
@@ -180,8 +180,8 @@
     "name": "Kalil Pimpleton"
   },
   "11563": {
-    "total": 41.18,
-    "high": 16.14,
+    "total": 65.66,
+    "high": 24.48,
     "owner": "2",
     "name": "Bo Nix"
   },
@@ -198,7 +198,7 @@
     "name": "AJ Barner"
   },
   "11620": {
-    "total": 78.52,
+    "total": 97.91,
     "high": 50.02,
     "owner": "2",
     "name": "Rome Odunze"
@@ -228,13 +228,13 @@
     "name": "Emeka Egbuka"
   },
   "12526": {
-    "total": 118.03,
+    "total": 149.04,
     "high": 73.07,
     "owner": "2",
     "name": "Tetairoa McMillan"
   },
   "12961": {
-    "total": 17.0,
+    "total": 26.0,
     "high": 10.0,
     "owner": "2",
     "name": "Ryan Fitzgerald"
@@ -246,7 +246,7 @@
     "name": "Kansei Matsuzawa"
   },
   "2020": {
-    "total": 33.0,
+    "total": 41.0,
     "high": 12.0,
     "owner": "2",
     "name": "Cairo Santos"
@@ -294,8 +294,8 @@
     "name": "Justin Herbert"
   },
   "6804": {
-    "total": 68.22,
-    "high": 33.8,
+    "total": 111.46,
+    "high": 43.24,
     "owner": "2",
     "name": "Jordan Love"
   },
@@ -318,7 +318,7 @@
     "name": "Javonte Williams"
   },
   "8228": {
-    "total": 121.65,
+    "total": 129.0,
     "high": 62.47,
     "owner": "2",
     "name": "Jaylen Warren"
@@ -342,8 +342,8 @@
     "name": "Puka Nacua"
   },
   "BUF": {
-    "total": -22.0,
-    "high": 0,
+    "total": -20.0,
+    "high": 2.0,
     "owner": "2",
     "name": "Buffalo Bills"
   },
@@ -372,7 +372,7 @@
     "name": "Jayden Daniels"
   },
   "11581": {
-    "total": 9.29,
+    "total": 9.69,
     "high": 5.44,
     "owner": "3",
     "name": "MarShawn Lloyd"
@@ -408,19 +408,19 @@
     "name": "Jaxson Dart"
   },
   "12517": {
-    "total": 16.37,
-    "high": 10.76,
+    "total": 27.37,
+    "high": 11.0,
     "owner": "3",
     "name": "Colston Loveland"
   },
   "12519": {
-    "total": 55.89,
+    "total": 73.13,
     "high": 21.06,
     "owner": "3",
     "name": "Luther Burden"
   },
   "12529": {
-    "total": 18.82,
+    "total": 20.02,
     "high": 16.5,
     "owner": "3",
     "name": "TreVeyon Henderson"
@@ -468,8 +468,8 @@
     "name": "Josh Jacobs"
   },
   "5859": {
-    "total": 0.0,
-    "high": 0,
+    "total": 4.33,
+    "high": 4.33,
     "owner": "3",
     "name": "A.J. Brown"
   },
@@ -492,14 +492,14 @@
     "name": "Shawn Poindexter"
   },
   "6806": {
-    "total": 9.2,
+    "total": 13.67,
     "high": 4.89,
     "owner": "3",
     "name": "J.K. Dobbins"
   },
   "7042": {
-    "total": 35.0,
-    "high": 13.0,
+    "total": 52.0,
+    "high": 17.0,
     "owner": "3",
     "name": "Tyler Bass"
   },
@@ -510,7 +510,7 @@
     "name": "Trevor Lawrence"
   },
   "7526": {
-    "total": 45.74,
+    "total": 49.9,
     "high": 39.41,
     "owner": "3",
     "name": "Jaylen Waddle"
@@ -558,7 +558,7 @@
     "name": "Jason Bean"
   },
   "12489": {
-    "total": 4.11,
+    "total": 7.95,
     "high": 3.85,
     "owner": "4",
     "name": "RJ Harvey"
@@ -600,7 +600,7 @@
     "name": "Shaleak Knotts"
   },
   "1466": {
-    "total": 57.82,
+    "total": 72.8,
     "high": 19.51,
     "owner": "4",
     "name": "Travis Kelce"
@@ -636,7 +636,7 @@
     "name": "Matthew Stafford"
   },
   "4227": {
-    "total": 34.0,
+    "total": 45.0,
     "high": 16.0,
     "owner": "4",
     "name": "Harrison Butker"
@@ -660,19 +660,19 @@
     "name": "Drew Belcher"
   },
   "7021": {
-    "total": 2.38,
+    "total": 4.51,
     "high": 2.38,
     "owner": "4",
     "name": "Rico Dowdle"
   },
   "7600": {
-    "total": 25.86,
+    "total": 28.09,
     "high": 10.98,
     "owner": "4",
     "name": "Pat Freiermuth"
   },
   "7611": {
-    "total": 30.68,
+    "total": 32.84,
     "high": 16.68,
     "owner": "4",
     "name": "Rhamondre Stevenson"
@@ -702,7 +702,7 @@
     "name": "Bijan Robinson"
   },
   "NE": {
-    "total": 26.0,
+    "total": 25.0,
     "high": 25.0,
     "owner": "4",
     "name": "New England Patriots"
@@ -768,7 +768,7 @@
     "name": "Mike Evans"
   },
   "3451": {
-    "total": 17.0,
+    "total": 28.0,
     "high": 17.0,
     "owner": "5",
     "name": "Ka'imi Fairbairn"
@@ -798,7 +798,7 @@
     "name": "Kalen Ballage"
   },
   "5045": {
-    "total": 27.24,
+    "total": 30.24,
     "high": 18.53,
     "owner": "5",
     "name": "Courtland Sutton"
@@ -846,7 +846,7 @@
     "name": "Lirim Hajrullahu"
   },
   "8144": {
-    "total": 41.75,
+    "total": 46.56,
     "high": 41.75,
     "owner": "5",
     "name": "Chris Olave"
@@ -876,13 +876,13 @@
     "name": "De'Von Achane"
   },
   "9484": {
-    "total": 34.03,
+    "total": 40.73,
     "high": 20.94,
     "owner": "5",
     "name": "Tucker Kraft"
   },
   "9758": {
-    "total": 28.94,
+    "total": 38.92,
     "high": 28.94,
     "owner": "5",
     "name": "C.J. Stroud"
@@ -924,7 +924,7 @@
     "name": "Cam Skattebo"
   },
   "12506": {
-    "total": 42.69,
+    "total": 44.38,
     "high": 20.21,
     "owner": "6",
     "name": "Harold Fannin"
@@ -948,8 +948,8 @@
     "name": "Kaelon Black"
   },
   "13545": {
-    "total": 17.0,
-    "high": 8.0,
+    "total": 29.0,
+    "high": 12.0,
     "owner": "6",
     "name": "Trey Smack"
   },
@@ -966,8 +966,8 @@
     "name": "Josh Pitsenburger"
   },
   "1945": {
-    "total": 34.0,
-    "high": 13.0,
+    "total": 51.0,
+    "high": 17.0,
     "owner": "6",
     "name": "Chris Boswell"
   },
@@ -978,7 +978,7 @@
     "name": "Dak Prescott"
   },
   "5001": {
-    "total": 3.12,
+    "total": 6.04,
     "high": 3.12,
     "owner": "6",
     "name": "Dalton Schultz"
@@ -1032,7 +1032,7 @@
     "name": "Isaiah Likely"
   },
   "8138": {
-    "total": 76.49,
+    "total": 106.98,
     "high": 39.66,
     "owner": "6",
     "name": "James Cook"
@@ -1044,7 +1044,7 @@
     "name": "Garrett Wilson"
   },
   "8167": {
-    "total": 86.55,
+    "total": 119.02,
     "high": 62.32,
     "owner": "6",
     "name": "Christian Watson"
@@ -1062,13 +1062,13 @@
     "name": "Zack Kuntz"
   },
   "DEN": {
-    "total": 15.0,
+    "total": 17.0,
     "high": 8.0,
     "owner": "6",
     "name": "Denver Broncos"
   },
   "HOU": {
-    "total": 22.0,
+    "total": 24.0,
     "high": 22.0,
     "owner": "6",
     "name": "Houston Texans"
@@ -1104,7 +1104,7 @@
     "name": "Rasheen Ali"
   },
   "11610": {
-    "total": 0,
+    "total": 0.0,
     "high": 0,
     "owner": "7",
     "name": "Malik Washington"
@@ -1176,7 +1176,7 @@
     "name": "Lamar Jackson"
   },
   "4984": {
-    "total": 187.84,
+    "total": 217.14,
     "high": 52.76,
     "owner": "7",
     "name": "Josh Allen"
@@ -1230,7 +1230,7 @@
     "name": "Evan McPherson"
   },
   "8151": {
-    "total": 137.79,
+    "total": 166.8,
     "high": 51.6,
     "owner": "7",
     "name": "Kenneth Walker"
@@ -1260,7 +1260,7 @@
     "name": "Zay Flowers"
   },
   "10236": {
-    "total": 87.49,
+    "total": 95.27,
     "high": 44.86,
     "owner": "8",
     "name": "Dalton Kincaid"
@@ -1284,7 +1284,7 @@
     "name": "McCallan Castles"
   },
   "12713": {
-    "total": 20.0,
+    "total": 27.0,
     "high": 9.0,
     "owner": "8",
     "name": "Andy Borregales"
@@ -1296,8 +1296,8 @@
     "name": "JJ Galbreath"
   },
   "13279": {
-    "total": 0,
-    "high": 0,
+    "total": 10.36,
+    "high": 10.36,
     "owner": "8",
     "name": "Carnell Tate"
   },
@@ -1314,13 +1314,13 @@
     "name": "Dominic Zvada"
   },
   "3214": {
-    "total": 49.87,
+    "total": 56.56,
     "high": 19.02,
     "owner": "8",
     "name": "Hunter Henry"
   },
   "3678": {
-    "total": 20.0,
+    "total": 27.0,
     "high": 10.0,
     "owner": "8",
     "name": "Wil Lutz"
@@ -1332,7 +1332,7 @@
     "name": "Chris Godwin"
   },
   "4046": {
-    "total": 91.58,
+    "total": 103.06,
     "high": 31.98,
     "owner": "8",
     "name": "Patrick Mahomes"
@@ -1368,7 +1368,7 @@
     "name": "Kyler Murray"
   },
   "6790": {
-    "total": 38.9,
+    "total": 46.44,
     "high": 28.16,
     "owner": "8",
     "name": "D'Andre Swift"
@@ -1386,8 +1386,8 @@
     "name": "Jalen Hurts"
   },
   "7569": {
-    "total": 16.76,
-    "high": 16.76,
+    "total": 45.38,
+    "high": 28.62,
     "owner": "8",
     "name": "Nico Collins"
   },
