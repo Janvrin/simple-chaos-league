@@ -258,8 +258,8 @@
     "name": "Eric Frohnapfel"
   },
   "4034": {
-    "total": 42.72,
-    "high": 12.95,
+    "total": 64.57,
+    "high": 21.85,
     "owner": "2",
     "name": "Christian McCaffrey"
   },
@@ -456,7 +456,7 @@
     "name": "Pig Howard"
   },
   "5189": {
-    "total": 33.0,
+    "total": 37.0,
     "high": 10.0,
     "owner": "3",
     "name": "Eddy Pineiro"
@@ -762,7 +762,7 @@
     "name": "Ashton Jeanty"
   },
   "2216": {
-    "total": 82.31,
+    "total": 99.19,
     "high": 36.98,
     "owner": "5",
     "name": "Mike Evans"
@@ -852,7 +852,7 @@
     "name": "Chris Olave"
   },
   "8183": {
-    "total": 89.27,
+    "total": 120.63,
     "high": 35.16,
     "owner": "5",
     "name": "Brock Purdy"
@@ -942,7 +942,7 @@
     "name": "Jeremiyah Love"
   },
   "13414": {
-    "total": 5.15,
+    "total": 6.23,
     "high": 3.44,
     "owner": "6",
     "name": "Kaelon Black"
@@ -1338,7 +1338,7 @@
     "name": "Patrick Mahomes"
   },
   "4217": {
-    "total": 90.88,
+    "total": 114.38,
     "high": 31.62,
     "owner": "8",
     "name": "George Kittle"
@@ -1434,7 +1434,7 @@
     "name": "Kansas City Chiefs"
   },
   "SF": {
-    "total": -12.0,
+    "total": -11.0,
     "high": 16.0,
     "owner": "8",
     "name": "San Francisco 49ers"
